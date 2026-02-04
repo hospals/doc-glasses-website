@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Building in Stealth</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #020617;
+            --secondary: #0f172a;
+            --accent: #00D2FF;
+            --accent-light: rgba(0, 210, 255, 0.1);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background: radial-gradient(circle at top right, var(--secondary) 0%, var(--primary) 100%);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Header styles */
+        header {
+            width: 100%;
+            padding: 40px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        /* Animated background elements */
+        .bg-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .glow-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .glow-circle-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            top: -100px;
+            right: -100px;
+            /* animation-delay: 0s; */
+        }
+
+        .glow-circle-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            bottom: -50px;
+            left: -100px;
+            /* animation-delay: 2s; */
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(30px);
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            width: 100%;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 180px;
+            animation: slideInDown 0.6s ease-out;
+        }
+
+        .logo img {
+            width: 75px;
+            height: auto;
+            display: block;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 210, 255, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 50px;
+            padding: 8px 16px;
+            width: fit-content;
+            margin-bottom: 24px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        .badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            /* animation: pulse 2s ease-in-out infinite; */
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        h1 {
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            animation: slideInLeft 0.8s ease-out 0.1s backwards;
+            letter-spacing: -1px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--accent) 0%, #00e5ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: clamp(16px, 3vw, 24px);
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-weight: 500;
+            animation: slideInLeft 1s ease-out 0.2s backwards;
+            max-width: 500px;
+        }
+
+        .description {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 40px;
+            animation: slideInLeft 1.2s ease-out 0.3s backwards;
+            max-width: 500px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: slideInLeft 1.4s ease-out 0.4s backwards;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent) 0%, #00e5ff 100%);
+            color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 210, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(16, 185, 129, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: slideInRight 0.8s ease-out 0.2s backwards;
+        }
+
+        .image-frame {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .image-frame::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            background: linear-gradient(135deg, var(--accent) 0%, rgba(0, 210, 255, 0));
+            border-radius: 20px;
+            opacity: 0.1;
+            /* animation: rotate 8s linear infinite; */
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 20px 50px rgba(16, 185, 129, 0.15));
+        }
+
+        .email-input {
+            display: flex;
+            gap: 8px;
+            margin-top: 24px;
+            animation: slideInLeft 1.6s ease-out 0.5s backwards;
+        }
+
+        .email-input input {
+            flex: 1;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .email-input input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .email-input input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+        }
+
+        .email-input button {
+            padding: 14px 24px;
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .email-input button:hover {
+            background: #00e5ff;
+            transform: translateY(-2px);
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 30px 20px;
+            }
+
+            .image-container {
+                order: -1;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            .tagline,
+            .description {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .badge {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .cta-group {
+                justify-content: center;
+            }
+
+            .email-input {
+                flex-direction: column;
+            }
+
+            .image-frame::before {
+                inset: -15px;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            body {
+                padding: 20px;
+            }
+
+            .container {
+                padding: 20px;
+                gap: 30px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .tagline {
+                font-size: 18px;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+
+            .glow-circle-1 {
+                width: 250px;
+                height: 250px;
+                top: -50px;
+                right: -50px;
+            }
+
+            .glow-circle-2 {
+                width: 200px;
+                height: 200px;
+                bottom: -30px;
+                left: -50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/logo.png" alt="DocGlasses.ai Logo">
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-elements">
+        <div class="glow-circle "></div>
+        <div class="glow-circle "></div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="badge">Coming Soon</div>
+            <h1>Building in <span class="highlight">Stealth</span></h1>
+            <p class="tagline">Something extraordinary is on the horizon</p>
+            <p class="description">We're crafting an innovative solution that will revolutionize the way you work. Stay
+                tuned for the big reveal.</p>
+
+            <div class="cta-group">
+                <button class="btn btn-primary">Notify Me</button>
+                <button class="btn btn-secondary">Learn More</button>
+            </div>
+
+            <div class="email-input">
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <div class="image-frame">
+                <img src="images/test.png" alt="VR Innovation">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Email subscription
+        document.querySelector('.email-input button').addEventListener('click', function () {
+            const email = document.querySelector('.email-input input').value;
+            if (email) {
+                alert(`Thanks for subscribing with ${email}!`);
+                document.querySelector('.email-input input').value = '';
+            }
+        });
+
+        // Notify button
+        document.querySelector('.btn-primary').addEventListener('click', function () {
+            alert('You will be notified when we launch!');
+        });
+    </script>
+</body>
+
+</html>
