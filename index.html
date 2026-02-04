@@ -13,10 +13,11 @@
         }
 
         :root {
-            --primary: #020617;
-            --secondary: #0f172a;
-            --accent: #00D2FF;
-            --accent-light: rgba(0, 210, 255, 0.1);
+            --primary: #010411;
+            --secondary: #050A1A;
+            --accent: #00F5FF;
+            --accent-glow: rgba(0, 245, 255, 0.4);
+            --accent-dim: rgba(0, 245, 255, 0.1);
             --text: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -27,7 +28,11 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-            background: radial-gradient(circle at top right, var(--secondary) 0%, var(--primary) 100%);
+            background:
+                radial-gradient(circle at top right, var(--secondary) 0%, var(--primary) 100%),
+                linear-gradient(rgba(0, 245, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 245, 255, 0.02) 1px, transparent 1px);
+            background-size: cover, 40px 40px, 40px 40px;
             color: var(--text);
             min-height: 100vh;
             display: flex;
@@ -36,6 +41,20 @@
             justify-content: flex-start;
             overflow-x: hidden;
             position: relative;
+        }
+
+        /* Circuit pattern overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 H90 V90 H10 Z' fill='none' stroke='rgba(0, 245, 255, 0.03)' stroke-width='0.5'/%3E%3Ccircle cx='10' cy='10' r='1' fill='rgba(0, 245, 255, 0.05)'/%3E%3Ccircle cx='90' cy='10' r='1' fill='rgba(0, 245, 255, 0.05)'/%3E%3Ccircle cx='90' cy='90' r='1' fill='rgba(0, 245, 255, 0.05)'/%3E%3Ccircle cx='10' cy='90' r='1' fill='rgba(0, 245, 255, 0.05)'/%3E%3Cpath d='M10 50 H30 M70 50 H90 M50 10 V30 M50 70 V90' stroke='rgba(0, 245, 255, 0.03)' stroke-width='0.5'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            pointer-events: none;
+            z-index: 1;
         }
 
         /* Header styles */
@@ -148,8 +167,9 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 210, 255, 0.1);
+            background: var(--accent-dim);
             border: 1px solid var(--accent);
+            box-shadow: 0 0 15px var(--accent-dim);
             border-radius: 50px;
             padding: 8px 16px;
             width: fit-content;
@@ -242,12 +262,12 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--accent) 0%, #00e5ff 100%);
             color: var(--primary);
-            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
+            box-shadow: 0 0 20px var(--accent-glow);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 210, 255, 0.3);
+            box-shadow: 0 0 30px var(--accent);
         }
 
         .btn-secondary {
@@ -302,7 +322,7 @@
             border-radius: 16px;
             position: relative;
             z-index: 2;
-            filter: drop-shadow(0 20px 50px rgba(16, 185, 129, 0.15));
+            filter: drop-shadow(0 0 30px var(--accent-dim));
         }
 
         .email-input {
