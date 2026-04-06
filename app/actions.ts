@@ -51,7 +51,7 @@ export async function submitContactForm(data: FormData) {
   };
 
   try {
-    const response = await fetch(`${PROD_API_URL}/healthapaths/sarvadoc?lang=en`, {
+    const response = await fetch(`${PROD_API_URL}/doc-glasses/contact?lang=en`, {
       method: "POST",
       headers: {
         "accept": "application/json",
