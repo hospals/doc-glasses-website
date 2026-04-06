@@ -1,0 +1,30 @@
+<svg width="180" height="48" viewBox="0 0 180 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Glasses frame left lens -->
+  <rect x="2" y="16" width="38" height="24" rx="8" stroke="#E87722" stroke-width="2.5" fill="none"/>
+  <!-- Glasses frame right lens -->
+  <rect x="54" y="16" width="38" height="24" rx="8" stroke="#E87722" stroke-width="2.5" fill="none"/>
+  <!-- Bridge connecting lenses -->
+  <path d="M40 28 L54 28" stroke="#E87722" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Left temple arm -->
+  <path d="M2 28 L-4 32" stroke="#E87722" stroke-width="2" stroke-linecap="round"/>
+  <!-- Right temple arm -->
+  <path d="M92 28 L98 32" stroke="#E87722" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Medical cross above bridge -->
+  <rect x="44.5" y="4" width="5" height="14" rx="1.5" fill="#E87722"/>
+  <rect x="40" y="8.5" width="14" height="5" rx="1.5" fill="#E87722"/>
+
+  <!-- Small lotus on bridge midpoint -->
+  <circle cx="47" cy="28" r="2" fill="#E87722" opacity="0.7"/>
+  <ellipse cx="44" cy="27" rx="2.5" ry="1.5" fill="#E87722" opacity="0.4" transform="rotate(-20 44 27)"/>
+  <ellipse cx="50" cy="27" rx="2.5" ry="1.5" fill="#E87722" opacity="0.4" transform="rotate(20 50 27)"/>
+
+  <!-- Caduceus inside left lens -->
+  <line x1="21" y1="20" x2="21" y2="36" stroke="#E87722" stroke-width="1.5" opacity="0.6"/>
+  <path d="M18 22 C15 24, 15 26, 18 28" stroke="#E87722" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M24 22 C27 24, 27 26, 24 28" stroke="#E87722" stroke-width="1" fill="none" opacity="0.6"/>
+
+  <!-- Brand name -->
+  <text x="108" y="32" font-family="Syne, sans-serif" font-weight="800" font-size="22" fill="#E87722">Sarva</text>
+  <text x="151" y="32" font-family="Syne, sans-serif" font-weight="800" font-size="22" fill="#94A3B8">Doc</text>
+</svg>
