@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 5002",
+    "start": "next start -p 5003",
     "lint": "next lint",
     "clean-cache": "rm -rf .next/cache"
   },
