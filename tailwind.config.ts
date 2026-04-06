@@ -9,9 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        orange: {
-          DEFAULT: "#E87722",
-          light: "#FF9A45",
+        brand: {
+          DEFAULT: "#0f766e",
+          light: "#2dd4bf",
         },
         navy: {
           deep: "#0A0F1E",
@@ -32,8 +32,8 @@ const config: Config = {
       },
       keyframes: {
         glowPulse: {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(232, 119, 34, 0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(232, 119, 34, 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(15, 118, 110, 0.3)" },
+          "50%": { boxShadow: "0 0 40px rgba(15, 118, 110, 0.6)" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
@@ -45,7 +45,7 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        "dot-grid": "radial-gradient(circle, rgba(232,119,34,0.15) 1px, transparent 1px)",
+        "dot-grid": "radial-gradient(circle, rgba(15, 118, 110, 0.15) 1px, transparent 1px)",
       },
       backgroundSize: {
         "dot-grid": "24px 24px",

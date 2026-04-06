@@ -36,7 +36,7 @@ function XRayImage({
         objectFit: fill ? "cover" : "contain",
         objectPosition: "center top",
         filter: glowing
-          ? "grayscale(0.15) brightness(0.95) drop-shadow(0 0 8px rgba(232,119,34,0.65))"
+          ? "grayscale(0.15) brightness(0.95) drop-shadow(0 0 8px rgba(15,118,110,0.65))"
           : "grayscale(0.1) brightness(0.9)",
         transition: "filter 0.4s ease",
         display: "block",
@@ -238,7 +238,7 @@ export default function Demo() {
           inset: 0,
           borderRadius: 20,
           background:
-            "radial-gradient(ellipse at 60% 50%, rgba(232,119,34,0.12) 0%, transparent 70%)",
+            "radial-gradient(ellipse at 60% 50%, rgba(15,118,110,0.12) 0%, transparent 70%)",
           pointerEvents: "none",
           zIndex: 0,
         }}
@@ -451,7 +451,7 @@ function PanelGlasses({
           zIndex: 4,
           fontFamily: "var(--font-dm-sans), sans-serif",
           fontSize: 9,
-          color: "#E87722",
+          color: "#0f766e",
           letterSpacing: "0.06em",
           fontWeight: 600,
         }}
@@ -549,7 +549,7 @@ function PanelGlasses({
           right: 0,
           height: 3,
           background:
-            "linear-gradient(90deg, transparent 10%, rgba(232,119,34,0.3) 50%, transparent 90%)",
+            "linear-gradient(90deg, transparent 10%, rgba(15,118,110,0.3) 50%, transparent 90%)",
         }}
       />
 
@@ -713,11 +713,11 @@ function MessageBubble({ msg, index }: { msg: Message; index: number }) {
               marginLeft: 6,
               padding: "1px 6px",
               borderRadius: 9999,
-              background: "rgba(232,119,34,0.15)",
-              border: "1px solid rgba(232,119,34,0.35)",
+              background: "rgba(15,118,110,0.15)",
+              border: "1px solid rgba(15,118,110,0.35)",
               fontSize: 9,
               fontWeight: 600,
-              color: "#E87722",
+              color: "#0f766e",
               letterSpacing: "0.04em",
               verticalAlign: "middle",
             }}
@@ -794,7 +794,7 @@ function PanelAnalysis({
               width: 7,
               height: 7,
               borderRadius: "50%",
-              background: "#E87722",
+              background: "#0f766e",
             }}
           />
           <span
@@ -819,14 +819,14 @@ function PanelAnalysis({
               height: 64,
               borderRadius: 8,
               border: xrayCaptured
-                ? "1px solid rgba(232,119,34,0.6)"
+                ? "1px solid rgba(15,118,110,0.6)"
                 : "1px solid rgba(255,255,255,0.07)",
               background: "#080C1A",
               overflow: "hidden",
               flexShrink: 0,
               transition: "border-color 0.4s ease, box-shadow 0.4s ease",
               boxShadow: xrayCaptured
-                ? "0 0 12px rgba(232,119,34,0.3)"
+                ? "0 0 12px rgba(15,118,110,0.3)"
                 : "none",
               display: "flex",
               alignItems: "center",
@@ -885,7 +885,7 @@ function PanelAnalysis({
                       width: 4,
                       height: 4,
                       borderRadius: "50%",
-                      background: "#E87722",
+                      background: "#0f766e",
                       flexShrink: 0,
                     }}
                   />
@@ -934,9 +934,9 @@ function PanelAnalysis({
               width: 7,
               height: 7,
               borderRadius: "50%",
-              background: "#E87722",
+              background: "#0f766e",
               animation: "pulse 1.5s infinite",
-              boxShadow: "0 0 6px rgba(232,119,34,0.5)",
+              boxShadow: "0 0 6px rgba(15,118,110,0.5)",
             }}
           />
           <span
@@ -967,7 +967,7 @@ function PanelAnalysis({
                 fontFamily: "var(--font-dm-sans), sans-serif",
                 fontSize: 9,
                 fontWeight: 600,
-                color: "#E87722",
+                color: "#0f766e",
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
                 marginBottom: 7,
@@ -1002,7 +1002,7 @@ function PanelAnalysis({
                   fontFamily: "var(--font-dm-sans), sans-serif",
                   fontSize: 9,
                   fontWeight: 600,
-                  color: "#E87722",
+                  color: "#0f766e",
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
                 }}
@@ -1013,10 +1013,10 @@ function PanelAnalysis({
                 style={{
                   padding: "1px 6px",
                   borderRadius: 9999,
-                  background: "rgba(232,119,34,0.12)",
-                  border: "1px solid rgba(232,119,34,0.3)",
+                  background: "rgba(15,118,110,0.12)",
+                  border: "1px solid rgba(15,118,110,0.3)",
                   fontSize: 8,
-                  color: "#E87722",
+                  color: "#0f766e",
                   fontWeight: 600,
                   whiteSpace: "nowrap",
                 }}
@@ -1036,7 +1036,7 @@ function PanelAnalysis({
                     minWidth: 0,
                   }}
                 >
-                  <span style={{ color: "#E87722", fontSize: 9, marginTop: 1 }}>
+                  <span style={{ color: "#0f766e", fontSize: 9, marginTop: 1 }}>
                     •
                   </span>
                   <span
@@ -1062,7 +1062,7 @@ function PanelAnalysis({
                 fontFamily: "var(--font-dm-sans), sans-serif",
                 fontSize: 9,
                 fontWeight: 600,
-                color: "#E87722",
+                color: "#0f766e",
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
                 marginBottom: 7,
@@ -1079,12 +1079,12 @@ function PanelAnalysis({
                   style={{
                     padding: "3px 10px",
                     borderRadius: 9999,
-                    border: "1px solid rgba(232,119,34,0.4)",
-                    color: "#E87722",
+                    border: "1px solid rgba(15,118,110,0.4)",
+                    color: "#0f766e",
                     fontFamily: "var(--font-dm-sans), sans-serif",
                     fontSize: 10,
                     fontWeight: 500,
-                    background: "rgba(232,119,34,0.06)",
+                    background: "rgba(15,118,110,0.06)",
                     cursor: "default",
                     whiteSpace: "normal",
                     overflowWrap: "anywhere",
@@ -1164,7 +1164,7 @@ function DiagnosisRow({
           style={{
             fontFamily: "var(--font-jetbrains-mono), monospace",
             fontSize: 10,
-            color: "#E87722",
+            color: "#0f766e",
             flexShrink: 0,
           }}
         >
@@ -1185,7 +1185,7 @@ function DiagnosisRow({
           style={{
             height: "100%",
             borderRadius: 2,
-            background: "linear-gradient(90deg, #E87722, #FF9A45)",
+            background: "linear-gradient(90deg, #0f766e, #2dd4bf)",
             width: visible ? `${pct}%` : "0%",
             transition: "width 1s ease",
           }}
@@ -1214,14 +1214,14 @@ function ConnectorLines({ animating }: { animating: boolean }) {
     >
       <defs>
         <marker id="dot-a" markerWidth="6" markerHeight="6" refX="3" refY="3">
-          <circle cx="3" cy="3" r="2.5" fill="#E87722" />
+          <circle cx="3" cy="3" r="2.5" fill="#0f766e" />
         </marker>
       </defs>
 
       {/* Line A → C (from top-right of Panel A to left of Panel C) */}
       <path
         d="M 300 100 C 340 100, 340 100, 360 100"
-        stroke="rgba(232,119,34,0.35)"
+        stroke="rgba(15,118,110,0.35)"
         strokeWidth="1.5"
         strokeDasharray="5 4"
         fill="none"
@@ -1233,7 +1233,7 @@ function ConnectorLines({ animating }: { animating: boolean }) {
 
       {/* Travelling dot A → C */}
       {animating && (
-        <circle r="3" fill="#E87722" opacity="0.9">
+        <circle r="3" fill="#0f766e" opacity="0.9">
           <animateMotion
             path="M 300 100 C 340 100, 340 100, 360 100"
             dur="1.2s"
@@ -1254,7 +1254,7 @@ function ConnectorLines({ animating }: { animating: boolean }) {
       {/* Line B → C (from right of Panel B to left of Panel C) */}
       <path
         d="M 300 350 C 330 350, 330 200, 360 200"
-        stroke="rgba(232,119,34,0.25)"
+        stroke="rgba(15,118,110,0.25)"
         strokeWidth="1.5"
         strokeDasharray="5 4"
         fill="none"
@@ -1266,7 +1266,7 @@ function ConnectorLines({ animating }: { animating: boolean }) {
 
       {/* Travelling dot B → C */}
       {animating && (
-        <circle r="3" fill="#E87722" opacity="0.9">
+        <circle r="3" fill="#0f766e" opacity="0.9">
           <animateMotion
             path="M 300 350 C 330 350, 330 200, 360 200"
             dur="1.2s"

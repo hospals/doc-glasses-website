@@ -45,7 +45,7 @@ function DotGrid() {
           height="28"
           patternUnits="userSpaceOnUse"
         >
-          <circle cx="1" cy="1" r="1" fill="rgba(232,119,34,0.25)" />
+          <circle cx="1" cy="1" r="1" fill="rgba(15, 118, 110, 0.25)" />
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill="url(#dotgrid)" />
@@ -84,7 +84,7 @@ export default function GlobalFirst() {
         overflow: "hidden",
       }}
     >
-      {/* ── Decorative: top orange line ── */}
+      {/* ── Decorative: top brand-teal line ── */}
       <div
         style={{
           position: "absolute",
@@ -93,11 +93,11 @@ export default function GlobalFirst() {
           right: "10%",
           height: "1px",
           background:
-            "linear-gradient(90deg, transparent, rgba(232,119,34,0.5), transparent)",
+            "linear-gradient(90deg, transparent, rgba(15, 118, 110, 0.5), transparent)",
         }}
       />
 
-      {/* ── Decorative: bottom orange line ── */}
+      {/* ── Decorative: bottom brand-teal line ── */}
       <div
         style={{
           position: "absolute",
@@ -106,14 +106,14 @@ export default function GlobalFirst() {
           right: "10%",
           height: "1px",
           background:
-            "linear-gradient(90deg, transparent, rgba(232,119,34,0.5), transparent)",
+            "linear-gradient(90deg, transparent, rgba(15, 118, 110, 0.5), transparent)",
         }}
       />
 
       {/* ── Dot-grid overlay ── */}
       <DotGrid />
 
-      {/* ── Orange radial glow — centred behind text ── */}
+      {/* ── Brand-Teal radial glow — centred behind text ── */}
       <div
         aria-hidden="true"
         style={{
@@ -125,7 +125,7 @@ export default function GlobalFirst() {
           paddingBottom: "80%",
           borderRadius: "50%",
           background:
-            "radial-gradient(ellipse at center, rgba(232,119,34,0.13) 0%, transparent 65%)",
+            "radial-gradient(ellipse at center, rgba(15, 118, 110, 0.13) 0%, transparent 65%)",
           pointerEvents: "none",
         }}
       />
@@ -149,14 +149,14 @@ export default function GlobalFirst() {
               style={{
                 fontFamily: "var(--font-jetbrains-mono)",
                 fontSize: "0.8rem",
-                color: "var(--orange)",
+                color: "var(--brand)",
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "0.5rem",
-                background: "rgba(232,119,34,0.1)",
-                border: "1px solid rgba(232,119,34,0.28)",
+                background: "rgba(15, 118, 110, 0.1)",
+                border: "1px solid rgba(15, 118, 110, 0.28)",
                 borderRadius: "9999px",
                 padding: "6px 18px",
               }}
@@ -166,7 +166,7 @@ export default function GlobalFirst() {
                   width: 6,
                   height: 6,
                   borderRadius: "50%",
-                  background: "var(--orange)",
+                  background: "var(--brand)",
                   display: "inline-block",
                   animation: "recPulse 1.2s ease-in-out infinite",
                 }}
@@ -199,9 +199,9 @@ export default function GlobalFirst() {
                 Any government today has the power to become the
               </span>
 
-              {/* HERO LINE — huge, orange gradient */}
+              {/* HERO LINE — huge, brand-teal gradient */}
               <span
-                className="orange-gradient block"
+                className="brand-gradient block"
                 style={{
                   fontSize: "clamp(2.2rem, 7vw, 4.8rem)",
                   fontWeight: 800,
@@ -272,7 +272,7 @@ export default function GlobalFirst() {
                 {/* Diamond bullet */}
                 <span
                   style={{
-                    color: "var(--orange)",
+                    color: "var(--brand)",
                     fontSize: "0.85rem",
                     marginTop: "0.15rem",
                     flexShrink: 0,
@@ -307,7 +307,7 @@ export default function GlobalFirst() {
           <motion.div variants={itemVariants}>
             <a
               href="#contact"
-              className="btn-ghost-orange"
+              className="btn-ghost-brand"
               style={{
                 display: "inline-flex",
                 alignItems: "center",

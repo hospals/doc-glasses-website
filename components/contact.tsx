@@ -65,7 +65,7 @@ function Field({
     border: `1px solid ${hasError
       ? "rgba(239,68,68,0.6)"
       : focused
-        ? "#E87722"
+        ? "#0f766e"
         : "rgba(255,255,255,0.1)"
       }`,
     borderRadius: 8,
@@ -77,7 +77,7 @@ function Field({
     boxShadow: focused
       ? hasError
         ? "0 0 0 3px rgba(239,68,68,0.15)"
-        : "0 0 0 3px rgba(232,119,34,0.15)"
+        : "0 0 0 3px rgba(15,118,110,0.15)"
       : "none",
     transition: "border-color 0.2s ease, box-shadow 0.2s ease",
     resize: textarea ? "vertical" : undefined,
@@ -92,7 +92,7 @@ function Field({
       >
         {label}
         {REQUIRED_FIELDS.includes(id) && (
-          <span style={{ color: "var(--orange)", marginLeft: 2 }}>*</span>
+          <span style={{ color: "var(--brand)", marginLeft: 2 }}>*</span>
         )}
       </label>
       {textarea ? (
@@ -156,7 +156,7 @@ function SuccessPopup({ onClose }: { onClose: () => void }) {
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         style={{
           background: "var(--navy-deep)",
-          border: "1px solid rgba(232,119,34,0.35)",
+          border: "1px solid rgba(15,118,110,0.35)",
           borderRadius: 24,
           padding: "48px 32px",
           textAlign: "center",
@@ -164,7 +164,7 @@ function SuccessPopup({ onClose }: { onClose: () => void }) {
           width: "100%",
           position: "relative",
           boxShadow:
-            "0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(232,119,34,0.1)",
+            "0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(15,118,110,0.1)",
         }}
       >
         {/* Close Button */}
@@ -185,22 +185,22 @@ function SuccessPopup({ onClose }: { onClose: () => void }) {
           <X size={20} />
         </button>
 
-        {/* Orange checkmark circle */}
+        {/* Brand-Teal checkmark circle */}
         <div
           style={{
             width: 80,
             height: 80,
             borderRadius: "50%",
-            background: "rgba(232,119,34,0.12)",
-            border: "2px solid rgba(232,119,34,0.4)",
+            background: "rgba(15,118,110,0.12)",
+            border: "2px solid rgba(15,118,110,0.4)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             margin: "0 auto 28px",
-            boxShadow: "0 0 24px rgba(232,119,34,0.2)",
+            boxShadow: "0 0 24px rgba(15,118,110,0.2)",
           }}
         >
-          <CheckCircle size={40} color="#E87722" strokeWidth={1.5} />
+          <CheckCircle size={40} color="#0f766e" strokeWidth={1.5} />
         </div>
 
         <h3
@@ -223,7 +223,7 @@ function SuccessPopup({ onClose }: { onClose: () => void }) {
           style={{
             width: "100%",
             padding: "14px 28px",
-            background: "var(--orange)",
+            background: "var(--brand)",
             color: "#fff",
             border: "none",
             borderRadius: 9999,
@@ -471,7 +471,7 @@ export default function Contact() {
           height: "50vw",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(232,119,34,0.06) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(15,118,110,0.06) 0%, transparent 70%)",
           filter: "blur(60px)",
           pointerEvents: "none",
         }}
@@ -489,9 +489,9 @@ export default function Contact() {
           <span
             className="inline-flex items-center gap-2 font-dm text-xs font-semibold tracking-wider uppercase px-4 py-2 rounded-full mb-5"
             style={{
-              background: "rgba(232,119,34,0.08)",
-              border: "1px solid var(--orange-border)",
-              color: "var(--orange)",
+              background: "rgba(15,118,110,0.08)",
+              border: "1px solid var(--brand-border)",
+              color: "var(--brand)",
             }}
           >
             Get in Touch
@@ -504,7 +504,7 @@ export default function Contact() {
               color: "var(--text-primary)",
             }}
           >
-            Partner <span className="orange-gradient">With Us</span>
+            Partner <span className="brand-gradient">With Us</span>
           </h2>
 
           <p
@@ -538,7 +538,7 @@ export default function Contact() {
               style={{
                 height: 2,
                 background:
-                  "linear-gradient(90deg, transparent, var(--orange), var(--orange-light), transparent)",
+                  "linear-gradient(90deg, transparent, var(--brand), var(--brand-light), transparent)",
                 borderRadius: "1px",
                 marginBottom: 28,
                 opacity: 0.7,
@@ -645,7 +645,7 @@ export default function Contact() {
                   disabled={isSubmitting}
                   whileHover={{
                     boxShadow:
-                      "0 0 30px rgba(232,119,34,0.5), 0 0 60px rgba(232,119,34,0.2)",
+                      "0 0 30px rgba(15,118,110,0.5), 0 0 60px rgba(15,118,110,0.2)",
                   }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.2 }}
@@ -653,8 +653,8 @@ export default function Contact() {
                     width: "100%",
                     padding: "16px 32px",
                     background: isSubmitting
-                      ? "rgba(232,119,34,0.7)"
-                      : "var(--orange)",
+                      ? "rgba(15,118,110,0.7)"
+                      : "var(--brand)",
                     color: "#fff",
                     border: "none",
                     borderRadius: 9999,
@@ -737,7 +737,7 @@ export default function Contact() {
                 className="font-dm text-sm font-medium text-center"
                 style={{ color: "var(--text-primary)" }}
               >
-                <span style={{ color: "var(--orange)", fontWeight: 600 }}>
+                <span style={{ color: "var(--brand)", fontWeight: 600 }}>
                   DocGlasses
                 </span>{" "}
                 <span style={{ color: "var(--text-subtle)" }}>|</span>{" "}
@@ -759,11 +759,11 @@ export default function Contact() {
                   style={{
                     padding: "10px 18px",
                     borderRadius: 8,
-                    background: "rgba(232,119,34,0.06)",
-                    border: "1px solid rgba(232,119,34,0.15)",
+                    background: "rgba(15,118,110,0.06)",
+                    border: "1px solid rgba(15,118,110,0.15)",
                   }}
                 >
-                  <span style={{ color: "var(--orange)", fontSize: 12 }}>
+                  <span style={{ color: "var(--brand)", fontSize: 12 }}>
                     ✦
                   </span>
                   <span

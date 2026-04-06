@@ -152,7 +152,7 @@ function StatItem({ stat, start }: { stat: Stat; start: boolean }) {
     <div className="flex flex-col items-center gap-1">
       <span
         className="font-syne font-bold text-2xl md:text-3xl"
-        style={{ color: "var(--orange)" }}
+        style={{ color: "var(--brand)" }}
       >
         {displayValue}
       </span>
@@ -182,7 +182,7 @@ function GlassesIcon({ size = 40 }: { size?: number }) {
       {/* Bridge */}
       <path
         d="M32 20 Q40 14 48 20"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="2.5"
         strokeLinecap="round"
         fill="none"
@@ -194,9 +194,9 @@ function GlassesIcon({ size = 40 }: { size?: number }) {
         width="26"
         height="20"
         rx="10"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="2.5"
-        fill="rgba(232,119,34,0.08)"
+        fill="rgba(15,118,110,0.08)"
       />
       {/* Right lens */}
       <rect
@@ -205,27 +205,27 @@ function GlassesIcon({ size = 40 }: { size?: number }) {
         width="26"
         height="20"
         rx="10"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="2.5"
-        fill="rgba(232,119,34,0.08)"
+        fill="rgba(15,118,110,0.08)"
       />
       {/* Left arm */}
       <path
         d="M4 20 L0 20"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
       {/* Right arm */}
       <path
         d="M76 20 L80 20"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
       {/* Inner lens glow dots */}
-      <circle cx="17" cy="20" r="3" fill="rgba(232,119,34,0.4)" />
-      <circle cx="63" cy="20" r="3" fill="rgba(232,119,34,0.4)" />
+      <circle cx="17" cy="20" r="3" fill="rgba(15,118,110,0.4)" />
+      <circle cx="63" cy="20" r="3" fill="rgba(15,118,110,0.4)" />
     </svg>
   );
 }
@@ -265,19 +265,19 @@ function TranscriptLine({
                 : isSuccess
                   ? "rgba(34,197,94,0.15)"
                   : isDiagnosis
-                    ? "rgba(232,119,34,0.15)"
-                    : "rgba(232,119,34,0.1)",
+                    ? "rgba(15,118,110,0.15)"
+                    : "rgba(15,118,110,0.1)",
               color: isPatient
                 ? "var(--text-muted)"
                 : isSuccess
                   ? "#22c55e"
                   : isDiagnosis
-                    ? "var(--orange)"
-                    : "var(--orange-light)",
+                    ? "var(--brand)"
+                    : "var(--brand-light)",
               border: isSuccess
                 ? "1px solid rgba(34,197,94,0.3)"
                 : isDiagnosis
-                  ? "1px solid rgba(232,119,34,0.35)"
+                  ? "1px solid rgba(15,118,110,0.35)"
                   : "1px solid rgba(255,255,255,0.06)",
             }}
           >
@@ -290,7 +290,7 @@ function TranscriptLine({
               color: isSuccess
                 ? "#4ade80"
                 : isDiagnosis
-                  ? "var(--orange-light)"
+                  ? "var(--brand-light)"
                   : isWorking
                     ? "rgba(255,154,69,0.8)"
                     : "var(--text-muted)",
@@ -312,7 +312,7 @@ function TranscriptLine({
                       width: 4,
                       height: 4,
                       borderRadius: "50%",
-                      background: "var(--orange)",
+                      background: "var(--brand)",
                       verticalAlign: "middle",
                     }}
                   />
@@ -353,7 +353,7 @@ function AIPreviewCard() {
           inset: "-40px",
           borderRadius: "50%",
           background:
-            "radial-gradient(ellipse at center, rgba(232,119,34,0.22) 0%, transparent 70%)",
+            "radial-gradient(ellipse at center, rgba(15,118,110,0.22) 0%, transparent 70%)",
           filter: "blur(24px)",
           pointerEvents: "none",
           zIndex: 0,
@@ -368,12 +368,12 @@ function AIPreviewCard() {
           position: "relative",
           zIndex: 1,
           background: "rgba(13,21,38,0.72)",
-          border: "1px solid rgba(232,119,34,0.28)",
+          border: "1px solid rgba(15,118,110,0.28)",
           borderRadius: 20,
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
           boxShadow:
-            "0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 60px rgba(232,119,34,0.08)",
+            "0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 60px rgba(15,118,110,0.08)",
           overflow: "hidden",
           padding: "0",
         }}
@@ -383,7 +383,7 @@ function AIPreviewCard() {
           style={{
             height: 2,
             background:
-              "linear-gradient(90deg, transparent, var(--orange), var(--orange-light), transparent)",
+              "linear-gradient(90deg, transparent, var(--brand), var(--brand-light), transparent)",
             opacity: 0.7,
           }}
         />
@@ -394,8 +394,8 @@ function AIPreviewCard() {
             <div className="flex items-center gap-3">
               <div
                 style={{
-                  background: "rgba(232,119,34,0.1)",
-                  border: "1px solid rgba(232,119,34,0.25)",
+                  background: "rgba(15,118,110,0.1)",
+                  border: "1px solid rgba(15,118,110,0.25)",
                   borderRadius: 10,
                   padding: "8px 10px",
                   display: "flex",
@@ -438,8 +438,8 @@ function AIPreviewCard() {
             <div
               className="flex items-center gap-1.5 px-2.5 py-1 rounded-full"
               style={{
-                background: "rgba(232,119,34,0.1)",
-                border: "1px solid rgba(232,119,34,0.2)",
+                background: "rgba(15,118,110,0.1)",
+                border: "1px solid rgba(15,118,110,0.2)",
               }}
             >
               <motion.span
@@ -450,12 +450,12 @@ function AIPreviewCard() {
                   width: 6,
                   height: 6,
                   borderRadius: "50%",
-                  background: "var(--orange)",
+                  background: "var(--brand)",
                 }}
               />
               <span
                 className="font-mono text-[10px] font-medium"
-                style={{ color: "var(--orange)" }}
+                style={{ color: "var(--brand)" }}
               >
                 REC
               </span>
@@ -489,10 +489,10 @@ function AIPreviewCard() {
                   borderRadius: 2,
                   background:
                     i % 3 === 0
-                      ? "var(--orange)"
+                      ? "var(--brand)"
                       : i % 3 === 1
-                        ? "var(--orange-light)"
-                        : "rgba(232,119,34,0.35)",
+                        ? "var(--brand-light)"
+                        : "rgba(15,118,110,0.35)",
                 }}
               />
             ))}
@@ -544,7 +544,7 @@ function AIPreviewCard() {
               </span>
               <span
                 className="font-mono text-[10px] font-medium"
-                style={{ color: "var(--orange)" }}
+                style={{ color: "var(--brand)" }}
               >
                 74%
               </span>
@@ -565,8 +565,8 @@ function AIPreviewCard() {
                   height: "100%",
                   borderRadius: 4,
                   background:
-                    "linear-gradient(90deg, var(--orange), var(--orange-light))",
-                  boxShadow: "0 0 8px rgba(232,119,34,0.5)",
+                    "linear-gradient(90deg, var(--brand), var(--brand-light))",
+                  boxShadow: "0 0 8px rgba(15,118,110,0.5)",
                 }}
               />
             </div>
@@ -583,11 +583,11 @@ function AIPreviewCard() {
                 key={pill.label}
                 className="flex-1 flex items-center justify-center gap-1 py-2 rounded-lg"
                 style={{
-                  background: "rgba(232,119,34,0.07)",
-                  border: "1px solid rgba(232,119,34,0.18)",
+                  background: "rgba(15,118,110,0.07)",
+                  border: "1px solid rgba(15,118,110,0.18)",
                 }}
               >
-                <span style={{ fontSize: 11, color: "var(--orange)" }}>
+                <span style={{ fontSize: 11, color: "var(--brand)" }}>
                   {pill.icon}
                 </span>
                 <span
@@ -611,7 +611,7 @@ function AIPreviewCard() {
               height: 60,
               opacity: 0.15,
               backgroundImage:
-                "radial-gradient(circle, var(--orange) 1px, transparent 1px)",
+                "radial-gradient(circle, var(--brand) 1px, transparent 1px)",
               backgroundSize: "8px 8px",
               pointerEvents: "none",
             }}
@@ -634,7 +634,7 @@ function AIPreviewCard() {
           right: -16,
           zIndex: 0,
           background: "rgba(13,21,38,0.55)",
-          border: "1px solid rgba(232,119,34,0.15)",
+          border: "1px solid rgba(15,118,110,0.15)",
           borderRadius: 14,
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
@@ -711,7 +711,7 @@ export default function Hero() {
         style={{ opacity: 0.03 }}
       />
 
-      {/* Orange radial glow — top right */}
+      {/* Brand-Teal radial glow — top right */}
       <div
         aria-hidden="true"
         style={{
@@ -722,7 +722,7 @@ export default function Hero() {
           height: "55vw",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(232,119,34,0.15) 0%, rgba(232,119,34,0.04) 50%, transparent 70%)",
+            "radial-gradient(circle, rgba(15,118,110,0.15) 0%, rgba(15,118,110,0.04) 50%, transparent 70%)",
           filter: "blur(40px)",
           pointerEvents: "none",
           zIndex: 0,
@@ -767,9 +767,9 @@ export default function Hero() {
               <span
                 className="inline-flex items-center gap-2 font-dm text-xs font-semibold tracking-wider uppercase px-4 py-2 rounded-full"
                 style={{
-                  background: "rgba(232,119,34,0.08)",
-                  border: "1px solid var(--orange-border)",
-                  color: "var(--orange)",
+                  background: "rgba(15,118,110,0.08)",
+                  border: "1px solid var(--brand-border)",
+                  color: "var(--brand)",
                 }}
               >
                 🌐&nbsp; A Global First for Public Healthcare
@@ -777,12 +777,12 @@ export default function Hero() {
               <span
                 className="inline-flex items-center gap-2 font-dm text-xs font-semibold px-4 py-2 rounded-full"
                 style={{
-                  background: "rgba(232,119,34,0.05)",
-                  border: "1px solid rgba(232,119,34,0.2)",
+                  background: "rgba(15,118,110,0.05)",
+                  border: "1px solid rgba(15,118,110,0.2)",
                   color: "var(--text-muted)",
                 }}
               >
-                <span style={{ color: "var(--orange)", fontWeight: 700 }}>
+                <span style={{ color: "var(--brand)", fontWeight: 700 }}>
                   Patent Applied
                 </span>
                 &nbsp;·&nbsp; Global Health Holdings, USA
@@ -811,7 +811,7 @@ export default function Hero() {
                 {displayed.length >= 3 && (
                   <span className="block mt-1">
                     {displayed.length >= 4 && (
-                      <span className="orange-gradient">{displayed[3]}</span>
+                      <span className="brand-gradient">{displayed[3]}</span>
                     )}{" "}
                     {displayed.length >= 5 ? displayed[4] : ""}
                     {!done && displayed.length >= 3 && (
@@ -839,7 +839,7 @@ export default function Hero() {
             >
               <a
                 href="#contact"
-                className="btn-orange inline-flex items-center gap-2 text-sm font-semibold"
+                className="btn-brand inline-flex items-center gap-2 text-sm font-semibold"
               >
                 Request Demo
                 <span aria-hidden="true" style={{ fontSize: "1.1em" }}>
@@ -848,7 +848,7 @@ export default function Hero() {
               </a>
               <a
                 href="#science"
-                className="btn-ghost-orange inline-flex items-center gap-2 text-sm font-semibold"
+                className="btn-ghost-brand inline-flex items-center gap-2 text-sm font-semibold"
               >
                 See the Science
               </a>
@@ -906,7 +906,7 @@ export default function Hero() {
           right: 0,
           height: 1,
           background:
-            "linear-gradient(90deg, transparent 0%, rgba(232,119,34,0.3) 40%, rgba(232,119,34,0.3) 60%, transparent 100%)",
+            "linear-gradient(90deg, transparent 0%, rgba(15,118,110,0.3) 40%, rgba(15,118,110,0.3) 60%, transparent 100%)",
         }}
       />
     </section>

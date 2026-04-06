@@ -14,7 +14,7 @@ interface TeamMember {
   bio: string;
   photoUrl?: string;
   initials?: string;
-  avatarStyle: "orange-gradient" | "navy-bordered";
+  avatarStyle: "brand-gradient" | "navy-bordered";
   linkedin?: string;
 }
 
@@ -29,7 +29,7 @@ const TEAM: TeamMember[] = [
     bio: "Serial pioneer who built multiple industry-defining companies generating over $100 million in revenues.",
     photoUrl:
       "https://healthpaths.ai/_next/image?url=%2Fimages%2Fteam%2Fdanish-ahmed.jpeg&w=256&q=75",
-    avatarStyle: "orange-gradient",
+    avatarStyle: "brand-gradient",
     linkedin: "https://www.linkedin.com/in/danishyebhi",
   },
   {
@@ -39,7 +39,7 @@ const TEAM: TeamMember[] = [
     bio: "AI expert who led technology at top media and community platforms with 800 million site visitors.",
     photoUrl:
       "https://healthpaths.ai/_next/image?url=%2Fimages%2Fteam%2Fashok-pundit.jpeg&w=256&q=75",
-    avatarStyle: "orange-gradient",
+    avatarStyle: "brand-gradient",
     linkedin: "https://www.linkedin.com/in/ashok-gautam-0a6202387/",
   },
   {
@@ -48,7 +48,7 @@ const TEAM: TeamMember[] = [
     // company: "DocGlasses / HealthPaths.ai",
     bio: "Strategic technology leader driving scalable infrastructure and engineering excellence.",
     photoUrl: "/images/team/rajwant.png",
-    avatarStyle: "orange-gradient",
+    avatarStyle: "brand-gradient",
     linkedin: "https://www.linkedin.com/in/rajwant-singh-68b46564/",
   },
   {
@@ -57,7 +57,7 @@ const TEAM: TeamMember[] = [
     // company: "DocGlasses / HealthPaths.ai",
     bio: "Cloud architecture and full-stack veteran focused on high-performance healthcare systems.",
     photoUrl: "/images/team/jafar.png",
-    avatarStyle: "orange-gradient",
+    avatarStyle: "brand-gradient",
     linkedin: "https://www.linkedin.com/in/mohd-jafar-iqbal-khan-8b833645/",
   },
   {
@@ -66,7 +66,7 @@ const TEAM: TeamMember[] = [
     // company: "DocGlasses / HealthPaths.ai",
     bio: "Leading AI research and implementation to transform medical diagnostics and patient care.",
     photoUrl: "/images/team/stuti.png",
-    avatarStyle: "orange-gradient",
+    avatarStyle: "brand-gradient",
     linkedin: "https://www.linkedin.com/in/stuti-sharma-94057122b/",
   },
 ];
@@ -92,19 +92,19 @@ function Avatar({
   initials: string;
   style: TeamMember["avatarStyle"];
 }) {
-  if (style === "orange-gradient") {
+  if (style === "brand-gradient") {
     return (
       <div
         style={{
           width: 80,
           height: 80,
           borderRadius: "50%",
-          background: "linear-gradient(135deg, #E87722, #FF9A45)",
+          background: "linear-gradient(135deg, #0f766e, #2dd4bf)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           flexShrink: 0,
-          boxShadow: "0 0 24px rgba(232,119,34,0.4)",
+          boxShadow: "0 0 24px rgba(15,118,110,0.4)",
         }}
       >
         <span
@@ -125,12 +125,12 @@ function Avatar({
         borderRadius: "50%",
         background:
           "linear-gradient(135deg, var(--navy-mid), var(--navy-card))",
-        border: "2px solid rgba(232,119,34,0.5)",
+        border: "2px solid rgba(15,118,110,0.5)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         flexShrink: 0,
-        boxShadow: "0 0 20px rgba(232,119,34,0.15)",
+        boxShadow: "0 0 20px rgba(15,118,110,0.15)",
       }}
     >
       <span
@@ -151,8 +151,8 @@ function TeamCard({ member }: { member: TeamMember }) {
     <motion.div
       whileHover={{
         y: -4,
-        borderColor: "rgba(232,119,34,0.4)",
-        boxShadow: "0 0 30px rgba(232,119,34,0.15)",
+        borderColor: "rgba(15,118,110,0.4)",
+        boxShadow: "0 0 30px rgba(15,118,110,0.15)",
       }}
       transition={{ duration: 0.25, ease: "easeOut" }}
       style={{
@@ -215,7 +215,7 @@ function TeamCard({ member }: { member: TeamMember }) {
       </h3>
 
       {/* Title */}
-      <p className="font-dm text-sm mt-1" style={{ color: "var(--orange)" }}>
+      <p className="font-dm text-sm mt-1" style={{ color: "var(--brand)" }}>
         {member.title}
       </p>
 
@@ -253,7 +253,7 @@ function TeamCard({ member }: { member: TeamMember }) {
           aria-label={`${member.name} on LinkedIn`}
           onMouseEnter={(e) =>
           ((e.currentTarget as HTMLAnchorElement).style.color =
-            "var(--orange)")
+            "var(--brand)")
           }
           onMouseLeave={(e) =>
           ((e.currentTarget as HTMLAnchorElement).style.color =
@@ -317,7 +317,7 @@ export default function Team() {
           height: "60vw",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(232,119,34,0.04) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(15,118,110,0.04) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -335,9 +335,9 @@ export default function Team() {
           <span
             className="inline-flex items-center gap-2 font-dm text-xs font-semibold tracking-wider uppercase px-4 py-2 rounded-full mb-5"
             style={{
-              background: "rgba(232,119,34,0.08)",
-              border: "1px solid var(--orange-border)",
-              color: "var(--orange)",
+              background: "rgba(15,118,110,0.08)",
+              border: "1px solid var(--brand-border)",
+              color: "var(--brand)",
             }}
           >
             Our Team
@@ -351,7 +351,7 @@ export default function Team() {
             }}
           >
             Built by a Global Healthcare <br className="hidden md:block" />
-            <span className="orange-gradient">Technology Team</span>
+            <span className="brand-gradient">Technology Team</span>
           </h2>
 
           <p

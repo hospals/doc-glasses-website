@@ -28,7 +28,7 @@ const P = {
 //   const pathRef = `#pt-${id}`;
 
 //   return (
-//     <circle r={r} fill="#E87722" opacity={op}>
+//     <circle r={r} fill="#0f766e" opacity={op}>
 //       <animateMotion dur={dur} repeatCount="indefinite" begin={begin}>
 //         <mpath href={pathRef} xlinkHref={pathRef} />
 //       </animateMotion>
@@ -98,7 +98,7 @@ function TravelDot({
     return () => cancelAnimationFrame(rafId);
   }, [id, dur, begin, op]);
 
-  return <circle ref={circleRef} r={r} fill="#E87722" opacity={0} />;
+  return <circle ref={circleRef} r={r} fill="#0f766e" opacity={0} />;
 }
 
 export default function PatentTech() {
@@ -121,7 +121,7 @@ export default function PatentTech() {
           paddingBottom: "40%",
           borderRadius: "50%",
           background:
-            "radial-gradient(ellipse at center,rgba(232,119,34,0.07) 0%,transparent 65%)",
+            "radial-gradient(ellipse at center,rgba(15,118,110,0.07) 0%,transparent 65%)",
           pointerEvents: "none",
         }}
       />
@@ -137,9 +137,9 @@ export default function PatentTech() {
           <span
             className="inline-flex items-center gap-2 font-dm text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full mb-6"
             style={{
-              background: "rgba(232,119,34,0.08)",
-              border: "1px solid rgba(232,119,34,0.35)",
-              color: "var(--orange)",
+              background: "rgba(15,118,110,0.08)",
+              border: "1px solid rgba(15,118,110,0.35)",
+              color: "var(--brand)",
             }}
           >
             <span
@@ -147,7 +147,7 @@ export default function PatentTech() {
                 width: 7,
                 height: 7,
                 borderRadius: "50%",
-                background: "var(--orange)",
+                background: "var(--brand)",
                 display: "inline-block",
                 animation: "recPulse 1.5s ease-in-out infinite",
               }}
@@ -162,7 +162,7 @@ export default function PatentTech() {
             }}
           >
             A Unique Patent Pending{" "}
-            <span className="orange-gradient">Technology</span>
+            <span className="brand-gradient">Technology</span>
           </h2>
           <p
             className="font-dm text-base mt-5 max-w-2xl mx-auto"
@@ -197,7 +197,7 @@ export default function PatentTech() {
               borderRadius: 20,
               pointerEvents: "none",
               background:
-                "radial-gradient(ellipse at 50% 50%,rgba(232,119,34,0.04) 0%,transparent 60%)",
+                "radial-gradient(ellipse at 50% 50%,rgba(15,118,110,0.04) 0%,transparent 60%)",
             }}
           />
 
@@ -221,7 +221,7 @@ export default function PatentTech() {
                 </feMerge>
               </filter>
               <linearGradient id="pt-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="rgba(232,119,34,0.14)" />
+                <stop offset="0%" stopColor="rgba(15,118,110,0.14)" />
                 <stop offset="100%" stopColor="rgba(10,15,30,0.0)" />
               </linearGradient>
             </defs>
@@ -296,7 +296,7 @@ export default function PatentTech() {
                 key={k}
                 d={d}
                 fill="none"
-                stroke="rgba(232,119,34,0.22)"
+                stroke="rgba(15,118,110,0.22)"
                 strokeWidth={1.5}
                 strokeDasharray="5 5"
               />
@@ -307,7 +307,7 @@ export default function PatentTech() {
                 id={`pt-${k}`}
                 d={d}
                 fill="none"
-                stroke="rgba(232,119,34,0.22)"
+                stroke="rgba(15,118,110,0.22)"
                 strokeWidth={1.5}
                 strokeDasharray="5 5"
               />
@@ -361,15 +361,15 @@ export default function PatentTech() {
               height={80}
               rx={12}
               fill="rgba(11,17,32,0.95)"
-              stroke="rgba(232,119,34,0.35)"
+              stroke="rgba(15,118,110,0.35)"
               strokeWidth={1.2}
             />
             <circle
               cx={44}
               cy={105}
               r={19}
-              fill="rgba(232,119,34,0.1)"
-              stroke="rgba(232,119,34,0.2)"
+              fill="rgba(15,118,110,0.1)"
+              stroke="rgba(15,118,110,0.2)"
               strokeWidth={1}
             />
             <rect
@@ -378,16 +378,16 @@ export default function PatentTech() {
               width={14}
               height={18}
               rx={2}
-              stroke="#E87722"
+              stroke="#0f766e"
               strokeWidth={1.5}
-              fill="rgba(232,119,34,0.06)"
+              fill="rgba(15,118,110,0.06)"
             />
             <line
               x1={39}
               y1={99}
               x2={47}
               y2={99}
-              stroke="#E87722"
+              stroke="#0f766e"
               strokeWidth={1.2}
               strokeLinecap="round"
             />
@@ -396,7 +396,7 @@ export default function PatentTech() {
               y1={103}
               x2={47}
               y2={103}
-              stroke="#E87722"
+              stroke="#0f766e"
               strokeWidth={1.2}
               strokeLinecap="round"
             />
@@ -405,7 +405,7 @@ export default function PatentTech() {
               y1={107}
               x2={44}
               y2={107}
-              stroke="#E87722"
+              stroke="#0f766e"
               strokeWidth={1.2}
               strokeLinecap="round"
             />
@@ -428,7 +428,7 @@ export default function PatentTech() {
             >
               X-rays · Lab results
             </text>
-            <circle cx={180} cy={105} r={3.5} fill="#E87722" opacity={0.8} />
+            <circle cx={180} cy={105} r={3.5} fill="#0f766e" opacity={0.8} />
 
             {/* Patient ID */}
             <rect
@@ -438,15 +438,15 @@ export default function PatentTech() {
               height={80}
               rx={12}
               fill="rgba(11,17,32,0.95)"
-              stroke="rgba(232,119,34,0.35)"
+              stroke="rgba(15,118,110,0.35)"
               strokeWidth={1.2}
             />
             <circle
               cx={44}
               cy={230}
               r={19}
-              fill="rgba(232,119,34,0.1)"
-              stroke="rgba(232,119,34,0.2)"
+              fill="rgba(15,118,110,0.1)"
+              stroke="rgba(15,118,110,0.2)"
               strokeWidth={1}
             />
             <rect
@@ -455,17 +455,17 @@ export default function PatentTech() {
               width={18}
               height={13}
               rx={2}
-              stroke="#E87722"
+              stroke="#0f766e"
               strokeWidth={1.5}
-              fill="rgba(232,119,34,0.06)"
+              fill="rgba(15,118,110,0.06)"
             />
-            <circle cx={37} cy={225} r={2.5} fill="#E87722" opacity={0.7} />
+            <circle cx={37} cy={225} r={2.5} fill="#0f766e" opacity={0.7} />
             <line
               x1={41}
               y1={224}
               x2={49}
               y2={224}
-              stroke="#E87722"
+              stroke="#0f766e"
               strokeWidth={1.1}
               strokeLinecap="round"
             />
@@ -474,7 +474,7 @@ export default function PatentTech() {
               y1={227}
               x2={47}
               y2={227}
-              stroke="#E87722"
+              stroke="#0f766e"
               strokeWidth={1.1}
               strokeLinecap="round"
             />
@@ -497,7 +497,7 @@ export default function PatentTech() {
             >
               Health records · History
             </text>
-            <circle cx={180} cy={230} r={3.5} fill="#E87722" opacity={0.8} />
+            <circle cx={180} cy={230} r={3.5} fill="#0f766e" opacity={0.8} />
 
             {/* Consultation Audio */}
             <rect
@@ -507,15 +507,15 @@ export default function PatentTech() {
               height={80}
               rx={12}
               fill="rgba(11,17,32,0.95)"
-              stroke="rgba(232,119,34,0.35)"
+              stroke="rgba(15,118,110,0.35)"
               strokeWidth={1.2}
             />
             <circle
               cx={44}
               cy={355}
               r={19}
-              fill="rgba(232,119,34,0.1)"
-              stroke="rgba(232,119,34,0.2)"
+              fill="rgba(15,118,110,0.1)"
+              stroke="rgba(15,118,110,0.2)"
               strokeWidth={1}
             />
             {[0, 3, 6, 9, 12, 15, 18].map((ox, i) => {
@@ -528,7 +528,7 @@ export default function PatentTech() {
                   y1={355 - h / 2}
                   x2={32 + ox}
                   y2={355 + h / 2}
-                  stroke="#E87722"
+                  stroke="#0f766e"
                   strokeWidth={2}
                   strokeLinecap="round"
                 />
@@ -553,7 +553,7 @@ export default function PatentTech() {
             >
               Real-time voice capture
             </text>
-            <circle cx={180} cy={355} r={3.5} fill="#E87722" opacity={0.8} />
+            <circle cx={180} cy={355} r={3.5} fill="#0f766e" opacity={0.8} />
 
             {/* ── AI GLASSES ── */}
             <g filter="url(#pt-glow)">
@@ -564,7 +564,7 @@ export default function PatentTech() {
                 height={184}
                 rx={16}
                 fill="rgba(10,15,30,0.97)"
-                stroke="#E87722"
+                stroke="#0f766e"
                 strokeWidth={1.5}
                 strokeOpacity={0.65}
               />
@@ -605,7 +605,7 @@ export default function PatentTech() {
                 width={4}
                 height={14}
                 rx={1.5}
-                fill="#E87722"
+                fill="#0f766e"
               />
               <rect
                 x={59}
@@ -613,7 +613,7 @@ export default function PatentTech() {
                 width={12}
                 height={4}
                 rx={1.5}
-                fill="#E87722"
+                fill="#0f766e"
               />
               <rect
                 x={4}
@@ -621,9 +621,9 @@ export default function PatentTech() {
                 width={52}
                 height={36}
                 rx={18}
-                stroke="#E87722"
+                stroke="#0f766e"
                 strokeWidth={2.5}
-                fill="rgba(232,119,34,0.08)"
+                fill="rgba(15,118,110,0.08)"
               />
               <rect
                 x={74}
@@ -631,26 +631,26 @@ export default function PatentTech() {
                 width={52}
                 height={36}
                 rx={18}
-                stroke="#E87722"
+                stroke="#0f766e"
                 strokeWidth={2.5}
-                fill="rgba(232,119,34,0.08)"
+                fill="rgba(15,118,110,0.08)"
               />
               <path
                 d="M 56 30 Q 65 22 74 30"
-                stroke="#E87722"
+                stroke="#0f766e"
                 strokeWidth={2.5}
                 strokeLinecap="round"
                 fill="none"
               />
               <path
                 d="M 4 30 L -5 30"
-                stroke="#E87722"
+                stroke="#0f766e"
                 strokeWidth={2.5}
                 strokeLinecap="round"
               />
               <path
                 d="M 126 30 L 135 30"
-                stroke="#E87722"
+                stroke="#0f766e"
                 strokeWidth={2.5}
                 strokeLinecap="round"
               />
@@ -658,8 +658,8 @@ export default function PatentTech() {
                 cx={30}
                 cy={30}
                 r={5}
-                fill="rgba(232,119,34,0.45)"
-                stroke="#E87722"
+                fill="rgba(15,118,110,0.45)"
+                stroke="#0f766e"
                 strokeWidth={0.5}
               >
                 <animate
@@ -673,8 +673,8 @@ export default function PatentTech() {
                 cx={100}
                 cy={30}
                 r={5}
-                fill="rgba(232,119,34,0.45)"
-                stroke="#E87722"
+                fill="rgba(15,118,110,0.45)"
+                stroke="#0f766e"
                 strokeWidth={0.5}
               >
                 <animate
@@ -706,8 +706,8 @@ export default function PatentTech() {
             >
               DocGlasses Vision AI
             </text>
-            <circle cx={308} cy={230} r={3.5} fill="#E87722" opacity={0.8} />
-            <circle cx={532} cy={230} r={3.5} fill="#E87722" opacity={0.8} />
+            <circle cx={308} cy={230} r={3.5} fill="#0f766e" opacity={0.8} />
+            <circle cx={532} cy={230} r={3.5} fill="#0f766e" opacity={0.8} />
 
             {/* ── DocGlasses AI ENGINE ── */}
             <rect
@@ -717,7 +717,7 @@ export default function PatentTech() {
               height={234}
               rx={16}
               fill="rgba(10,15,30,0.97)"
-              stroke="rgba(232,119,34,0.55)"
+              stroke="rgba(15,118,110,0.55)"
               strokeWidth={1.5}
             />
             <rect
@@ -728,7 +728,7 @@ export default function PatentTech() {
               rx={16}
               fill="url(#pt-grad)"
             />
-            <circle cx={721} cy={172} r={35} fill="rgba(232,119,34,0.05)">
+            <circle cx={721} cy={172} r={35} fill="rgba(15,118,110,0.05)">
               <animate
                 attributeName="r"
                 values="28;42;28"
@@ -746,25 +746,25 @@ export default function PatentTech() {
               cx={721}
               cy={172}
               r={28}
-              fill="rgba(232,119,34,0.12)"
-              stroke="rgba(232,119,34,0.35)"
+              fill="rgba(15,118,110,0.12)"
+              stroke="rgba(15,118,110,0.35)"
               strokeWidth={1.2}
             />
             <g transform="translate(706,157)">
               <polygon
                 points="15,0 28,7.5 28,22.5 15,30 2,22.5 2,7.5"
-                stroke="#E87722"
+                stroke="#0f766e"
                 strokeWidth={1.5}
                 fill="none"
                 strokeLinejoin="round"
               />
-              <circle cx={15} cy={15} r={4} fill="#E87722" opacity={0.8} />
+              <circle cx={15} cy={15} r={4} fill="#0f766e" opacity={0.8} />
               <line
                 x1={15}
                 y1={8}
                 x2={15}
                 y2={11}
-                stroke="#E87722"
+                stroke="#0f766e"
                 strokeWidth={1.2}
                 strokeLinecap="round"
               />
@@ -773,7 +773,7 @@ export default function PatentTech() {
                 y1={19}
                 x2={15}
                 y2={22}
-                stroke="#E87722"
+                stroke="#0f766e"
                 strokeWidth={1.2}
                 strokeLinecap="round"
               />
@@ -782,7 +782,7 @@ export default function PatentTech() {
                 y1={15}
                 x2={11}
                 y2={15}
-                stroke="#E87722"
+                stroke="#0f766e"
                 strokeWidth={1.2}
                 strokeLinecap="round"
               />
@@ -791,7 +791,7 @@ export default function PatentTech() {
                 y1={15}
                 x2={22}
                 y2={15}
-                stroke="#E87722"
+                stroke="#0f766e"
                 strokeWidth={1.2}
                 strokeLinecap="round"
               />
@@ -813,11 +813,11 @@ export default function PatentTech() {
               width={142}
               height={24}
               rx={7}
-              fill="rgba(232,119,34,0.12)"
-              stroke="rgba(232,119,34,0.3)"
+              fill="rgba(15,118,110,0.12)"
+              stroke="rgba(15,118,110,0.3)"
               strokeWidth={1}
             />
-            <circle cx={665} cy={242} r={3.5} fill="#E87722">
+            <circle cx={665} cy={242} r={3.5} fill="#0f766e">
               <animate
                 attributeName="opacity"
                 values="1;0.3;1"
@@ -831,7 +831,7 @@ export default function PatentTech() {
               fontFamily="system-ui,sans-serif"
               fontSize={9.5}
               fontWeight={600}
-              fill="#E87722"
+              fill="#0f766e"
             >
               Patent Applied
             </text>
@@ -872,8 +872,8 @@ export default function PatentTech() {
             >
               Processing in real-time
             </text>
-            <circle cx={622} cy={230} r={3.5} fill="#E87722" opacity={0.8} />
-            <circle cx={820} cy={230} r={3.5} fill="#E87722" opacity={0.8} />
+            <circle cx={622} cy={230} r={3.5} fill="#0f766e" opacity={0.8} />
+            <circle cx={820} cy={230} r={3.5} fill="#0f766e" opacity={0.8} />
 
             {/* ── EHR OUTPUT ── */}
             <rect
@@ -883,15 +883,15 @@ export default function PatentTech() {
               height={86}
               rx={12}
               fill="rgba(11,17,32,0.95)"
-              stroke="rgba(232,119,34,0.35)"
+              stroke="rgba(15,118,110,0.35)"
               strokeWidth={1.2}
             />
             <circle
               cx={931}
               cy={133}
               r={19}
-              fill="rgba(232,119,34,0.1)"
-              stroke="rgba(232,119,34,0.2)"
+              fill="rgba(15,118,110,0.1)"
+              stroke="rgba(15,118,110,0.2)"
               strokeWidth={1}
             />
             <ellipse
@@ -899,19 +899,19 @@ export default function PatentTech() {
               cy={124}
               rx={9}
               ry={3.5}
-              stroke="#E87722"
+              stroke="#0f766e"
               strokeWidth={1.4}
-              fill="rgba(232,119,34,0.08)"
+              fill="rgba(15,118,110,0.08)"
             />
             <path
               d="M 922 124 L 922 134 Q 922 138 931 138 Q 940 138 940 134 L 940 124"
-              stroke="#E87722"
+              stroke="#0f766e"
               strokeWidth={1.4}
-              fill="rgba(232,119,34,0.05)"
+              fill="rgba(15,118,110,0.05)"
             />
             <path
               d="M 922 129 Q 922 133 931 133 Q 940 133 940 129"
-              stroke="#E87722"
+              stroke="#0f766e"
               strokeWidth={1}
               fill="none"
             />
@@ -934,7 +934,7 @@ export default function PatentTech() {
             >
               E-Shrust · ABHA
             </text>
-            <circle cx={902} cy={133} r={3.5} fill="#E87722" opacity={0.8} />
+            <circle cx={902} cy={133} r={3.5} fill="#0f766e" opacity={0.8} />
 
             {/* ── CLINICAL INSIGHTS OUTPUT ── */}
             <rect
@@ -944,28 +944,28 @@ export default function PatentTech() {
               height={86}
               rx={12}
               fill="rgba(11,17,32,0.95)"
-              stroke="rgba(232,119,34,0.35)"
+              stroke="rgba(15,118,110,0.35)"
               strokeWidth={1.2}
             />
             <circle
               cx={931}
               cy={338}
               r={19}
-              fill="rgba(232,119,34,0.1)"
-              stroke="rgba(232,119,34,0.2)"
+              fill="rgba(15,118,110,0.1)"
+              stroke="rgba(15,118,110,0.2)"
               strokeWidth={1}
             />
             <circle
               cx={931}
               cy={332}
               r={7}
-              stroke="#E87722"
+              stroke="#0f766e"
               strokeWidth={1.4}
               fill="none"
             />
             <path
               d="M 928 339 L 928 345 L 934 345 L 934 339"
-              stroke="#E87722"
+              stroke="#0f766e"
               strokeWidth={1.4}
               strokeLinecap="round"
               fill="none"
@@ -975,11 +975,11 @@ export default function PatentTech() {
               y1={342}
               x2={933}
               y2={342}
-              stroke="#E87722"
+              stroke="#0f766e"
               strokeWidth={1}
               strokeLinecap="round"
             />
-            <circle cx={931} cy={332} r={2.5} fill="#E87722" opacity={0.8}>
+            <circle cx={931} cy={332} r={2.5} fill="#0f766e" opacity={0.8}>
               <animate
                 attributeName="opacity"
                 values="0.8;1;0.8"
@@ -1006,7 +1006,7 @@ export default function PatentTech() {
             >
               Diagnosis · Next steps
             </text>
-            <circle cx={902} cy={338} r={3.5} fill="#E87722" opacity={0.8} />
+            <circle cx={902} cy={338} r={3.5} fill="#0f766e" opacity={0.8} />
           </svg>
         </motion.div>
       </div>

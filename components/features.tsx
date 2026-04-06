@@ -21,7 +21,7 @@ function IconCamera() {
         width="30"
         height="14"
         rx="4"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="1.8"
         fill="none"
       />
@@ -29,7 +29,7 @@ function IconCamera() {
         cx="9"
         cy="17"
         r="5"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="1.8"
         fill="none"
       />
@@ -37,7 +37,7 @@ function IconCamera() {
         cx="23"
         cy="17"
         r="5"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="1.8"
         fill="none"
       />
@@ -46,16 +46,16 @@ function IconCamera() {
         y1="17"
         x2="18"
         y2="17"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="1.8"
         strokeLinecap="round"
       />
       {/* Camera shutter dot in right lens */}
-      <circle cx="23" cy="17" r="2" fill="#E87722" opacity="0.7" />
+      <circle cx="23" cy="17" r="2" fill="#0f766e" opacity="0.7" />
       {/* Capture flash arc */}
       <path
         d="M26 8 L28 4 L22 7"
-        stroke="#FF9A45"
+        stroke="#2dd4bf"
         strokeWidth="1.4"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -77,7 +77,7 @@ function IconBrain() {
       {/* Brain outline — simplified left + right hemispheres */}
       <path
         d="M16 6 C10 6 4 10 4 17 C4 22 8 26 13 27 L16 28 L19 27 C24 26 28 22 28 17 C28 10 22 6 16 6 Z"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="1.8"
         fill="none"
       />
@@ -87,14 +87,14 @@ function IconBrain() {
         y1="6"
         x2="16"
         y2="28"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="1.4"
         strokeDasharray="2 2"
       />
       {/* Folds left */}
       <path
         d="M9 13 Q7 17 9 21"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="1.4"
         strokeLinecap="round"
         fill="none"
@@ -102,7 +102,7 @@ function IconBrain() {
       {/* Folds right */}
       <path
         d="M23 13 Q25 17 23 21"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="1.4"
         strokeLinecap="round"
         fill="none"
@@ -110,7 +110,7 @@ function IconBrain() {
       {/* Lightning bolt — AI spark */}
       <path
         d="M18 4 L14 13 L17 13 L13 22"
-        stroke="#FF9A45"
+        stroke="#2dd4bf"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -136,14 +136,14 @@ function IconDocument() {
         width="20"
         height="26"
         rx="3"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="1.8"
         fill="none"
       />
       {/* Folded corner */}
       <path
         d="M20 3 L26 9 L20 9 Z"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="1.4"
         fill="none"
       />
@@ -153,7 +153,7 @@ function IconDocument() {
         y1="14"
         x2="22"
         y2="14"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="1.4"
         strokeLinecap="round"
       />
@@ -162,7 +162,7 @@ function IconDocument() {
         y1="18"
         x2="19"
         y2="18"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="1.4"
         strokeLinecap="round"
       />
@@ -171,7 +171,7 @@ function IconDocument() {
         y1="22"
         x2="21"
         y2="22"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="1.4"
         strokeLinecap="round"
       />
@@ -181,12 +181,12 @@ function IconDocument() {
         cy="25"
         r="5"
         fill="var(--navy-mid)"
-        stroke="#E87722"
+        stroke="#0f766e"
         strokeWidth="1.6"
       />
       <path
         d="M21.5 25 L23.2 26.8 L26.5 23"
-        stroke="#FF9A45"
+        stroke="#2dd4bf"
         strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -243,7 +243,7 @@ export default function Features() {
             }}
           >
             Built for the Reality of <br className="hidden md:block" />
-            <span className="orange-gradient">Indian Public Healthcare</span>
+            <span className="brand-gradient">Indian Public Healthcare</span>
           </h2>
           <p
             className="text-lg max-w-xl mx-auto"
@@ -308,7 +308,7 @@ function FeatureCard({
           overflow: "hidden",
         }}
       >
-        {/* Animated orange bottom border on hover */}
+        {/* Animated brand-teal bottom border on hover */}
         <div
           className="feature-card-border"
           style={{
@@ -318,7 +318,7 @@ function FeatureCard({
             right: "10%",
             height: "2px",
             background:
-              "linear-gradient(90deg, transparent, var(--orange), transparent)",
+              "linear-gradient(90deg, transparent, var(--brand), transparent)",
             borderRadius: "2px",
             opacity: 0,
             transition: "opacity 0.35s ease",
@@ -328,8 +328,8 @@ function FeatureCard({
         {/* Icon */}
         <div
           style={{
-            background: "rgba(232,119,34,0.12)",
-            border: "1px solid rgba(232,119,34,0.3)",
+            background: "rgba(15,118,110,0.12)",
+            border: "1px solid rgba(15,118,110,0.3)",
             width: 64,
             height: 64,
             borderRadius: "50%",

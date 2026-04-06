@@ -28,7 +28,7 @@ function FooterLink({ label, href }: { label: string; href: string }) {
       className="font-dm text-sm transition-colors duration-200"
       style={{ color: "var(--text-muted)", display: "block" }}
       onMouseEnter={(e) =>
-        ((e.currentTarget as HTMLAnchorElement).style.color = "var(--orange)")
+        ((e.currentTarget as HTMLAnchorElement).style.color = "var(--brand)")
       }
       onMouseLeave={(e) =>
       ((e.currentTarget as HTMLAnchorElement).style.color =
@@ -142,7 +142,7 @@ export default function Footer() {
               A platform by Global Health Holdings, USA
             </p>
 
-            {/* Orange accent line */}
+            {/* Brand-Teal accent line */}
             <div
               aria-hidden="true"
               style={{
@@ -151,7 +151,7 @@ export default function Footer() {
                 width: 48,
                 borderRadius: 2,
                 background:
-                  "linear-gradient(90deg, var(--orange), var(--orange-light))",
+                  "linear-gradient(90deg, var(--brand), var(--brand-light))",
                 opacity: 0.7,
               }}
             />
@@ -207,8 +207,8 @@ export default function Footer() {
               gap: 10,
               padding: "10px 18px",
               borderRadius: 8,
-              background: "rgba(232,119,34,0.06)",
-              border: "1px solid rgba(232,119,34,0.18)",
+              background: "rgba(15, 118, 110, 0.06)",
+              border: "1px solid rgba(15, 118, 110, 0.18)",
             }}
           >
             <span
@@ -216,18 +216,18 @@ export default function Footer() {
                 width: 6,
                 height: 6,
                 borderRadius: "50%",
-                background: "var(--orange)",
+                background: "var(--brand)",
                 flexShrink: 0,
-                boxShadow: "0 0 8px rgba(232,119,34,0.6)",
+                boxShadow: "0 0 8px rgba(15, 118, 110, 0.6)",
               }}
             />
             <span
               className="font-dm text-xs font-medium"
-              style={{ color: "var(--orange)" }}
+              style={{ color: "var(--brand)" }}
             >
               Patent Applied Technology
             </span>
-            <span style={{ color: "rgba(232,119,34,0.3)", fontSize: 10 }}>
+            <span style={{ color: "rgba(15, 118, 110, 0.3)", fontSize: 10 }}>
               |
             </span>
             <span

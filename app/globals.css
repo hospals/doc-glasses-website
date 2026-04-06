@@ -4,10 +4,10 @@
 
 /* ─── DARK MODE (default) ──────────────────────────── */
 :root {
-  --orange: #e87722;
-  --orange-light: #ff9a45;
-  --orange-glow: rgba(232, 119, 34, 0.15);
-  --orange-border: rgba(232, 119, 34, 0.4);
+  --brand: #0f766e;
+  --brand-light: #2dd4bf;
+  --brand-glow: rgba(15, 118, 110, 0.15);
+  --brand-border: rgba(15, 118, 110, 0.4);
   --navy-deep: #0a0f1e;
   --navy-mid: #0d1526;
   --navy-card: #111827;
@@ -28,10 +28,10 @@ html.light-theme {
 
 html.light-theme:root,
 html.light-theme {
-  --orange: #d46a10;
-  --orange-light: #e87722;
-  --orange-glow: rgba(212, 106, 16, 0.12);
-  --orange-border: rgba(212, 106, 16, 0.35);
+  --brand: #0d9488;
+  --brand-light: #0f766e;
+  --brand-glow: rgba(13, 148, 136, 0.12);
+  --brand-border: rgba(13, 148, 136, 0.35);
   --navy-deep: #f8f9fc;
   --navy-mid: #eef1f8;
   --navy-card: #ffffff;
@@ -49,8 +49,8 @@ html.light-theme body {
   color: #0f1629;
 }
 
-html.light-theme .orange-gradient {
-  background: linear-gradient(135deg, #d4640a 0%, #e87722 100%);
+html.light-theme .brand-gradient {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -106,13 +106,13 @@ body {
 }
 
 .glass-card:hover {
-  border-color: var(--orange-border);
-  box-shadow: 0 0 30px var(--orange-glow);
+  border-color: var(--brand-border);
+  box-shadow: 0 0 30px var(--brand-glow);
 }
 
-/* Orange gradient text */
-.orange-gradient {
-  background: linear-gradient(135deg, var(--orange), var(--orange-light));
+/* Brand gradient text */
+.brand-gradient {
+  background: linear-gradient(135deg, var(--brand), var(--brand-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -122,7 +122,7 @@ body {
 .dot-grid-bg {
   background-image: radial-gradient(
     circle,
-    rgba(232, 119, 34, 0.12) 1px,
+    rgba(15, 118, 110, 0.12) 1px,
     transparent 1px
   );
   background-size: 28px 28px;
@@ -142,9 +142,9 @@ body {
   transform: translateY(0);
 }
 
-/* Orange glow button */
-.btn-orange {
-  background: var(--orange);
+/* Brand glow button */
+.btn-brand {
+  background: var(--brand);
   color: white;
   border-radius: 9999px;
   padding: 0.75rem 1.75rem;
@@ -155,17 +155,17 @@ body {
     transform 0.2s ease;
 }
 
-.btn-orange:hover {
+.btn-brand:hover {
   box-shadow:
-    0 0 25px rgba(232, 119, 34, 0.5),
-    0 0 50px rgba(232, 119, 34, 0.2);
+    0 0 25px rgba(15, 118, 110, 0.5),
+    0 0 50px rgba(15, 118, 110, 0.2);
   transform: translateY(-1px);
 }
 
-.btn-ghost-orange {
+.btn-ghost-brand {
   background: transparent;
-  color: var(--orange);
-  border: 1px solid var(--orange-border);
+  color: var(--brand);
+  border: 1px solid var(--brand-border);
   border-radius: 9999px;
   padding: 0.75rem 1.75rem;
   font-weight: 600;
@@ -176,10 +176,10 @@ body {
     box-shadow 0.3s ease;
 }
 
-.btn-ghost-orange:hover {
-  background: var(--orange);
+.btn-ghost-brand:hover {
+  background: var(--brand);
   color: white;
-  box-shadow: 0 0 20px rgba(232, 119, 34, 0.4);
+  box-shadow: 0 0 20px rgba(15, 118, 110, 0.4);
 }
 
 /* Scrollbar */
@@ -190,17 +190,17 @@ body {
   background: var(--scrollbar-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(232, 119, 34, 0.4);
+  background: rgba(15, 118, 110, 0.4);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--orange);
+  background: var(--brand);
 }
 
 /* Typewriter cursor */
 .typewriter-cursor::after {
   content: "|";
-  color: var(--orange);
+  color: var(--brand);
   animation: blink 1s step-end infinite;
 }
 

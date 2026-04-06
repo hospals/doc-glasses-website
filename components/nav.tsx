@@ -61,7 +61,7 @@ export default function Nav() {
           backdropFilter: scrolled ? "blur(20px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
           borderBottom: scrolled
-            ? "1px solid rgba(232, 119, 34, 0.25)"
+            ? "1px solid rgba(15, 118, 110, 0.25)"
             : "1px solid transparent",
         }}
       >
@@ -104,19 +104,19 @@ export default function Nav() {
                 }}
                 className="hidden sm:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold font-dm transition-all duration-300"
                 style={{
-                  background: "var(--orange)",
+                  background: "var(--brand)",
                   color: "#fff",
-                  boxShadow: "0 0 0 rgba(232,119,34,0)",
+                  boxShadow: "0 0 0 rgba(15, 118, 110, 0)",
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-                    "0 0 24px rgba(232,119,34,0.55), 0 0 48px rgba(232,119,34,0.2)";
+                    "0 0 24px rgba(15, 118, 110, 0.55), 0 0 48px rgba(15, 118, 110, 0.2)";
                   (e.currentTarget as HTMLAnchorElement).style.transform =
                     "translateY(-1px)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-                    "0 0 0 rgba(232,119,34,0)";
+                    "0 0 0 rgba(15, 118, 110, 0)";
                   (e.currentTarget as HTMLAnchorElement).style.transform =
                     "translateY(0)";
                 }}
@@ -173,7 +173,7 @@ export default function Nav() {
                 height: 300,
                 borderRadius: "50%",
                 background:
-                  "radial-gradient(circle, rgba(232,119,34,0.12) 0%, transparent 70%)",
+                  "radial-gradient(circle, rgba(15, 118, 110, 0.12) 0%, transparent 70%)",
                 pointerEvents: "none",
               }}
             />
@@ -194,7 +194,7 @@ export default function Nav() {
                 style={{ color: "var(--text-muted)" }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.color =
-                    "var(--orange)";
+                    "var(--brand)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.color =
@@ -216,7 +216,7 @@ export default function Nav() {
                 handleNavClick("#contact");
               }}
               className="rounded-full px-8 py-3 text-base font-semibold font-dm mt-4"
-              style={{ background: "var(--orange)", color: "#fff" }}
+              style={{ background: "var(--brand)", color: "#fff" }}
             >
               Request Demo
             </motion.a>
@@ -247,7 +247,7 @@ function NavLink({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="relative font-dm text-sm tracking-wider uppercase transition-colors duration-200"
-      style={{ color: hovered ? "var(--orange)" : "var(--text-muted)" }}
+      style={{ color: hovered ? "var(--brand)" : "var(--text-muted)" }}
     >
       {link.label}
       {/* Underline slide */}
@@ -260,7 +260,7 @@ function NavLink({
           left: 0,
           right: 0,
           height: 1.5,
-          background: "var(--orange)",
+          background: "var(--brand)",
           borderRadius: 2,
           transformOrigin: "left",
           display: "block",

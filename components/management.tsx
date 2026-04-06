@@ -101,7 +101,7 @@ function MemberCard({ member }: { member: TeamMember }) {
               className="w-full h-full object-cover"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-orange/10 text-orange font-syne text-3xl font-bold">
+            <div className="w-full h-full flex items-center justify-center bg-brand/10 text-brand font-syne text-3xl font-bold">
               {member.name
                 .split(" ")
                 .map((n) => n[0])
@@ -124,7 +124,7 @@ function MemberCard({ member }: { member: TeamMember }) {
       <h3 className="text-xl font-bold text-white mb-1 font-syne">
         {member.name}
       </h3>
-      <p className="text-orange font-semibold text-sm mb-2 font-dm">
+      <p className="text-brand font-semibold text-sm mb-2 font-dm">
         {member.role}{" "}
         {member.company && (
           <span className="text-white/40 font-normal">at {member.company}</span>
@@ -147,7 +147,7 @@ export default function Management() {
       className="py-24 bg-navy-deep relative overflow-hidden"
     >
       {/* Decorative gradient */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(232,119,34,0.03)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(15,118,110,0.03)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10" ref={containerRef}>
         <motion.div
@@ -156,7 +156,7 @@ export default function Management() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-syne orange-gradient">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-syne brand-gradient">
             Management Team
           </h2>
           <p className="text-text-muted text-lg max-w-2xl mx-auto font-dm">

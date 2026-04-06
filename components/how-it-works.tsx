@@ -64,7 +64,7 @@ export default function HowItWorks() {
           position: "absolute",
           inset: 0,
           backgroundImage:
-            "radial-gradient(circle, rgba(232,119,34,0.06) 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(15,118,110,0.06) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
           pointerEvents: "none",
         }}
@@ -80,7 +80,7 @@ export default function HowItWorks() {
           height: 500,
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(232,119,34,0.07) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(15,118,110,0.07) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -168,7 +168,7 @@ function DesktopConnectors({ visible }: { visible: boolean }) {
             style={{
               position: "absolute",
               inset: 0,
-              borderTop: "1px dashed rgba(232,119,34,0.3)",
+              borderTop: "1px dashed rgba(15,118,110,0.3)",
               clipPath: visible ? "inset(0 0% 0 0)" : "inset(0 100% 0 0)",
               transition: `clip-path 0.8s ease ${0.2 + i * 0.15}s`,
             }}
@@ -225,14 +225,14 @@ function StepCard({
         position: "relative",
         background: "rgba(255,255,255,0.03)",
         border: hovered
-          ? "1px solid rgba(232,119,34,0.4)"
+          ? "1px solid rgba(15,118,110,0.4)"
           : "1px solid rgba(255,255,255,0.07)",
         borderRadius: 16,
         padding: "24px 20px 22px",
         overflow: "hidden",
         cursor: "default",
         transition: "border-color 0.3s ease, box-shadow 0.3s ease",
-        boxShadow: hovered ? "0 0 24px rgba(232,119,34,0.1)" : "none",
+        boxShadow: hovered ? "0 0 24px rgba(15,118,110,0.1)" : "none",
         zIndex: 1,
         minWidth: 0,
       }}
@@ -247,7 +247,7 @@ function StepCard({
           fontWeight: 800,
           fontSize: 110,
           lineHeight: 1,
-          color: hovered ? "rgba(232,119,34,0.10)" : "rgba(232,119,34,0.06)",
+          color: hovered ? "rgba(15,118,110,0.10)" : "rgba(15,118,110,0.06)",
           userSelect: "none",
           pointerEvents: "none",
           zIndex: 0,
@@ -266,7 +266,7 @@ function StepCard({
             width: 28,
             height: 28,
             borderRadius: "50%",
-            background: "#E87722",
+            background: "#0f766e",
             fontFamily: "var(--font-syne), sans-serif",
             fontWeight: 700,
             fontSize: 12,
@@ -333,7 +333,7 @@ function StepCard({
           right: 0,
           height: 2,
           background: hovered
-            ? "linear-gradient(90deg, transparent, rgba(232,119,34,0.6), transparent)"
+            ? "linear-gradient(90deg, transparent, rgba(15,118,110,0.6), transparent)"
             : "transparent",
           transition: "background 0.3s ease",
         }}
@@ -357,7 +357,7 @@ function DemoSection({ inView }: { inView: boolean }) {
         <div className="how-demo-title-row">
           <div className="how-demo-title-line how-demo-title-line-left" />
           <span
-            className="orange-gradient"
+            className="brand-gradient"
             style={{
               fontFamily: "var(--font-syne), sans-serif",
               fontWeight: 700,
@@ -366,7 +366,7 @@ function DemoSection({ inView }: { inView: boolean }) {
               textAlign: "center",
             }}
           >
-            See It Live <span style={{ color: "#E87722" }}>→</span>
+            See It Live <span style={{ color: "#0f766e" }}>→</span>
           </span>
           <div className="how-demo-title-line how-demo-title-line-right" />
         </div>
@@ -387,7 +387,7 @@ function DemoSection({ inView }: { inView: boolean }) {
             inset: -1,
             borderRadius: 24,
             background:
-              "radial-gradient(ellipse at 50% 50%, rgba(232,119,34,0.08) 0%, transparent 70%)",
+              "radial-gradient(ellipse at 50% 50%, rgba(15,118,110,0.08) 0%, transparent 70%)",
             pointerEvents: "none",
           }}
         />
@@ -425,11 +425,11 @@ function DemoSection({ inView }: { inView: boolean }) {
         }
 
         .how-demo-title-line-left {
-          background: linear-gradient(90deg, transparent, rgba(232,119,34,0.5));
+          background: linear-gradient(90deg, transparent, rgba(15,118,110,0.5));
         }
 
         .how-demo-title-line-right {
-          background: linear-gradient(90deg, rgba(232,119,34,0.5), transparent);
+          background: linear-gradient(90deg, rgba(15,118,110,0.5), transparent);
         }
 
         @media (max-width: 640px) {

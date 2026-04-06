@@ -82,7 +82,7 @@ function CircleRing({
         cy={size / 2}
         r={radius}
         fill="none"
-        stroke="url(#orangeGrad)"
+        stroke="url(#brandGrad)"
         strokeWidth={strokeWidth}
         strokeLinecap="round"
         strokeDasharray={circumference}
@@ -90,9 +90,9 @@ function CircleRing({
         style={{ transition: "none" }}
       />
       <defs>
-        <linearGradient id="orangeGrad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#E87722" />
-          <stop offset="100%" stopColor="#FF9A45" />
+        <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#0f766e" />
+          <stop offset="100%" stopColor="#2dd4bf" />
         </linearGradient>
       </defs>
     </svg>
@@ -152,7 +152,7 @@ function StatCounter({
             }}
           >
             <span
-              className="orange-gradient"
+              className="brand-gradient"
               style={{
                 fontFamily: "var(--font-syne)",
                 fontWeight: 800,
@@ -172,9 +172,9 @@ function StatCounter({
             fontWeight: 800,
             fontSize: "3.5rem",
             lineHeight: 1,
-            color: isLow ? "var(--orange)" : "var(--text-muted)",
+            color: isLow ? "var(--brand)" : "var(--text-muted)",
             background: isLow
-              ? "linear-gradient(135deg,#E87722,#FF9A45)"
+              ? "linear-gradient(135deg,#0f766e,#2dd4bf)"
               : undefined,
             WebkitBackgroundClip: isLow ? "text" : undefined,
             WebkitTextFillColor: isLow ? "transparent" : undefined,
@@ -261,13 +261,13 @@ function ErrorBar({ triggered }: { triggered: boolean }) {
               transition={{ duration: 1.4, delay: 0.7, ease: "easeOut" }}
               style={{
                 height: "100%",
-                background: "linear-gradient(90deg,#E87722,#FF9A45)",
+                background: "linear-gradient(90deg,#0f766e,#2dd4bf)",
                 borderRadius: 7,
               }}
             />
           </div>
           <span
-            className="orange-gradient font-bold"
+            className="brand-gradient font-bold"
             style={{
               fontFamily: "var(--font-syne)",
               fontSize: "1.1rem",
@@ -367,8 +367,8 @@ export default function Science() {
               display: "inline-flex",
               alignItems: "center",
               gap: "0.5rem",
-              background: "rgba(232,119,34,0.1)",
-              border: "1px solid rgba(232,119,34,0.3)",
+              background: "rgba(15,118,110,0.1)",
+              border: "1px solid rgba(15,118,110,0.3)",
               borderRadius: "9999px",
               padding: "6px 16px",
               marginBottom: "1.25rem",
@@ -378,7 +378,7 @@ export default function Science() {
               style={{
                 fontFamily: "var(--font-jetbrains-mono)",
                 fontSize: "0.75rem",
-                color: "var(--orange)",
+                color: "var(--brand)",
                 letterSpacing: "0.1em",
               }}
             >
@@ -394,7 +394,7 @@ export default function Science() {
             }}
           >
             Peer-Reviewed. <br className="hidden md:block" />
-            <span className="orange-gradient">Scientifically Validated.</span>
+            <span className="brand-gradient">Scientifically Validated.</span>
           </h2>
           <p
             className="text-lg max-w-2xl mx-auto"
@@ -474,7 +474,7 @@ export default function Science() {
               height: 200,
               borderRadius: "50%",
               background:
-                "radial-gradient(circle, rgba(232,119,34,0.08) 0%, transparent 70%)",
+                "radial-gradient(circle, rgba(15,118,110,0.08) 0%, transparent 70%)",
               pointerEvents: "none",
             }}
           />
@@ -489,7 +489,7 @@ export default function Science() {
           >
             Flinders University, Australia tested vision-enabled AI scribes
             using{" "}
-            <strong style={{ color: "var(--orange-light)" }}>
+            <strong style={{ color: "var(--brand-light)" }}>
               AI smart glasses
             </strong>{" "}
             on{" "}
@@ -497,13 +497,13 @@ export default function Science() {
               110 simulated clinical consultations
             </strong>
             . Vision AI achieved{" "}
-            <strong className="orange-gradient">98% accuracy</strong> vs{" "}
+            <strong className="brand-gradient">98% accuracy</strong> vs{" "}
             <strong style={{ color: "var(--text-muted)" }}>
               81% for audio-only
             </strong>
             , reducing omission errors from{" "}
             <strong style={{ color: "var(--text-muted)" }}>358</strong> to just{" "}
-            <strong className="orange-gradient">10</strong>.
+            <strong className="brand-gradient">10</strong>.
           </p>
 
           <div style={{ display: "flex", justifyContent: "flex-end" }}>
@@ -517,9 +517,9 @@ export default function Science() {
                 gap: "0.4rem",
                 fontFamily: "var(--font-jetbrains-mono)",
                 fontSize: "0.8rem",
-                color: "var(--orange)",
-                background: "rgba(232,119,34,0.1)",
-                border: "1px solid rgba(232,119,34,0.3)",
+                color: "var(--brand)",
+                background: "rgba(15,118,110,0.1)",
+                border: "1px solid rgba(15,118,110,0.3)",
                 borderRadius: "9999px",
                 padding: "6px 14px",
                 textDecoration: "none",
@@ -537,7 +537,7 @@ export default function Science() {
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
           transition={{ duration: 0.7, delay: 0.65, ease: "easeOut" }}
           style={{
-            borderLeft: "4px solid var(--orange)",
+            borderLeft: "4px solid var(--brand)",
             paddingLeft: "2rem",
             marginBottom: "2.5rem",
           }}
@@ -599,9 +599,9 @@ export default function Science() {
               style={{
                 fontFamily: "var(--font-jetbrains-mono)",
                 fontSize: "0.7rem",
-                color: "var(--orange)",
-                background: "rgba(232,119,34,0.12)",
-                border: "1px solid rgba(232,119,34,0.3)",
+                color: "var(--brand)",
+                background: "rgba(15,118,110,0.12)",
+                border: "1px solid rgba(15,118,110,0.3)",
                 borderRadius: "9999px",
                 padding: "3px 12px",
                 letterSpacing: "0.08em",
