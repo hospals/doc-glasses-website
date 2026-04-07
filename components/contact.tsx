@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, FormEvent, useEffect } from "react";
+import { useState, FormEvent, useEffect, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef } from "react";
 import { submitContactForm } from "@/app/actions";
 import { CheckCircle, XCircle, X } from "lucide-react";
 
@@ -32,6 +31,33 @@ const REQUIRED_FIELDS: FieldKey[] = [
 ];
 
 /* ─────────────────────────────────────────────
+   THEME DETECTION
+───────────────────────────────────────────── */
+function useIsLightTheme() {
+  const [isLight, setIsLight] = useState(false);
+
+  useEffect(() => {
+    const root = document.documentElement;
+
+    const update = () => {
+      setIsLight(root.classList.contains("light-theme"));
+    };
+
+    update();
+
+    const observer = new MutationObserver(update);
+    observer.observe(root, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return isLight;
+}
+
+/* ─────────────────────────────────────────────
    FORM FIELD COMPONENT
 ───────────────────────────────────────────── */
 interface FieldProps {
@@ -42,6 +68,7 @@ interface FieldProps {
   value: string;
   onChange: (id: FieldKey, value: string) => void;
   hasError: boolean;
+  isLight: boolean;
   textarea?: boolean;
   rows?: number;
 }
@@ -54,6 +81,7 @@ function Field({
   value,
   onChange,
   hasError,
+  isLight,
   textarea = false,
   rows = 4,
 }: FieldProps) {
@@ -61,13 +89,16 @@ function Field({
 
   const baseStyle: React.CSSProperties = {
     width: "100%",
-    background: "rgba(255,255,255,0.04)",
-    border: `1px solid ${hasError
-      ? "rgba(239,68,68,0.6)"
-      : focused
-        ? "#0f766e"
-        : "rgba(255,255,255,0.1)"
-      }`,
+    background: isLight ? "rgba(0,0,0,0.04)" : "rgba(255,255,255,0.04)",
+    border: `1px solid ${
+      hasError
+        ? "rgba(239,68,68,0.6)"
+        : focused
+          ? "var(--brand)"
+          : isLight
+            ? "rgba(0,0,0,0.12)"
+            : "rgba(255,255,255,0.1)"
+    }`,
     borderRadius: 8,
     color: "var(--text-primary)",
     padding: "12px 16px",
@@ -79,7 +110,8 @@ function Field({
         ? "0 0 0 3px rgba(239,68,68,0.15)"
         : "0 0 0 3px rgba(15,118,110,0.15)"
       : "none",
-    transition: "border-color 0.2s ease, box-shadow 0.2s ease",
+    transition:
+      "border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease",
     resize: textarea ? "vertical" : undefined,
   };
 
@@ -95,6 +127,7 @@ function Field({
           <span style={{ color: "var(--brand)", marginLeft: 2 }}>*</span>
         )}
       </label>
+
       {textarea ? (
         <textarea
           id={id}
@@ -105,6 +138,9 @@ function Field({
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
           style={baseStyle}
+          className={
+            isLight ? "placeholder:text-slate-500" : "placeholder:text-white/40"
+          }
         />
       ) : (
         <input
@@ -116,11 +152,17 @@ function Field({
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
           style={baseStyle}
+          className={
+            isLight ? "placeholder:text-slate-500" : "placeholder:text-white/40"
+          }
         />
       )}
+
       {hasError && (
         <span style={{ color: "rgba(239,68,68,0.9)", fontSize: 12 }}>
-          This field is required
+          {id === "email" && value.trim()
+            ? "Please enter a valid email"
+            : "This field is required"}
         </span>
       )}
     </div>
@@ -130,7 +172,13 @@ function Field({
 /* ─────────────────────────────────────────────
    SUCCESS POPUP (MODAL)
 ───────────────────────────────────────────── */
-function SuccessPopup({ onClose }: { onClose: () => void }) {
+function SuccessPopup({
+  onClose,
+  isLight,
+}: {
+  onClose: () => void;
+  isLight: boolean;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -144,7 +192,7 @@ function SuccessPopup({ onClose }: { onClose: () => void }) {
         alignItems: "center",
         justifyContent: "center",
         padding: 24,
-        background: "rgba(8, 12, 26, 0.8)",
+        background: isLight ? "rgba(15,22,41,0.18)" : "rgba(8, 12, 26, 0.8)",
         backdropFilter: "blur(8px)",
         WebkitBackdropFilter: "blur(8px)",
       }}
@@ -155,19 +203,21 @@ function SuccessPopup({ onClose }: { onClose: () => void }) {
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         style={{
-          background: "var(--navy-deep)",
-          border: "1px solid rgba(15,118,110,0.35)",
+          background: isLight ? "var(--navy-card)" : "var(--navy-deep)",
+          border: `1px solid ${
+            isLight ? "rgba(15,118,110,0.22)" : "rgba(15,118,110,0.35)"
+          }`,
           borderRadius: 24,
           padding: "48px 32px",
           textAlign: "center",
           maxWidth: 480,
           width: "100%",
           position: "relative",
-          boxShadow:
-            "0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(15,118,110,0.1)",
+          boxShadow: isLight
+            ? "0 24px 60px rgba(15,22,41,0.12), 0 0 24px rgba(15,118,110,0.06)"
+            : "0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(15,118,110,0.1)",
         }}
       >
-        {/* Close Button */}
         <button
           onClick={onClose}
           style={{
@@ -185,19 +235,24 @@ function SuccessPopup({ onClose }: { onClose: () => void }) {
           <X size={20} />
         </button>
 
-        {/* Brand-Teal checkmark circle */}
         <div
           style={{
             width: 80,
             height: 80,
             borderRadius: "50%",
-            background: "rgba(15,118,110,0.12)",
-            border: "2px solid rgba(15,118,110,0.4)",
+            background: isLight
+              ? "rgba(15,118,110,0.08)"
+              : "rgba(15,118,110,0.12)",
+            border: `2px solid ${
+              isLight ? "rgba(15,118,110,0.24)" : "rgba(15,118,110,0.4)"
+            }`,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             margin: "0 auto 28px",
-            boxShadow: "0 0 24px rgba(15,118,110,0.2)",
+            boxShadow: isLight
+              ? "0 0 16px rgba(15,118,110,0.08)"
+              : "0 0 24px rgba(15,118,110,0.2)",
           }}
         >
           <CheckCircle size={40} color="#0f766e" strokeWidth={1.5} />
@@ -207,7 +262,7 @@ function SuccessPopup({ onClose }: { onClose: () => void }) {
           className="font-syne font-bold text-2xl mb-4"
           style={{ color: "var(--text-primary)" }}
         >
-          Thank you contacting DocGlasses!
+          Thank you for contacting DocGlasses!
         </h3>
 
         <p
@@ -244,9 +299,11 @@ function SuccessPopup({ onClose }: { onClose: () => void }) {
 function ErrorToast({
   message,
   onClose,
+  isLight,
 }: {
   message: string;
   onClose: () => void;
+  isLight: boolean;
 }) {
   useEffect(() => {
     const timer = setTimeout(onClose, 5000);
@@ -263,7 +320,9 @@ function ErrorToast({
         bottom: 32,
         right: 32,
         zIndex: 200,
-        background: "rgba(8, 12, 26, 0.95)",
+        background: isLight
+          ? "rgba(255,255,255,0.96)"
+          : "rgba(8, 12, 26, 0.95)",
         border: "1px solid rgba(239, 68, 68, 0.5)",
         borderRadius: 12,
         padding: "16px 20px",
@@ -271,9 +330,11 @@ function ErrorToast({
         alignItems: "center",
         gap: 12,
         maxWidth: 360,
-        boxShadow:
-          "0 12px 40px rgba(0,0,0,0.4), 0 0 20px rgba(239, 68, 68, 0.1)",
+        boxShadow: isLight
+          ? "0 12px 40px rgba(15,22,41,0.12), 0 0 20px rgba(239,68,68,0.06)"
+          : "0 12px 40px rgba(0,0,0,0.4), 0 0 20px rgba(239, 68, 68, 0.1)",
         backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
       }}
     >
       <XCircle size={20} color="#EF4444" />
@@ -296,7 +357,7 @@ function ErrorToast({
         style={{
           background: "none",
           border: "none",
-          color: "rgba(255,255,255,0.4)",
+          color: isLight ? "rgba(15,22,41,0.4)" : "rgba(255,255,255,0.4)",
           cursor: "pointer",
           padding: 4,
           marginLeft: 4,
@@ -337,6 +398,8 @@ export default function Contact() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const mountedRef = useRef(true);
+  const isLight = useIsLightTheme();
+
   useEffect(() => {
     mountedRef.current = true;
     return () => {
@@ -378,7 +441,6 @@ export default function Contact() {
       }
     });
 
-    // Email format check
     if (
       formData.email.trim() &&
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
@@ -419,7 +481,7 @@ export default function Contact() {
         setSubmitError(msg);
         setShowToast(true);
       }
-    } catch (err) {
+    } catch {
       if (mountedRef.current) {
         const msg = "An unexpected error occurred. Please try again.";
         setSubmitError(msg);
@@ -460,7 +522,6 @@ export default function Contact() {
       className="relative overflow-hidden"
       style={{ background: "var(--navy-deep)", padding: "50px 0" }}
     >
-      {/* Background glow */}
       <div
         aria-hidden="true"
         style={{
@@ -478,7 +539,6 @@ export default function Contact() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
         <motion.div
           ref={ref}
           variants={headerVariants}
@@ -516,7 +576,6 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        {/* Form card */}
         <motion.div
           variants={formVariants}
           initial="hidden"
@@ -531,9 +590,9 @@ export default function Contact() {
               padding: "36px 32px",
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
+              boxShadow: isLight ? "0 20px 40px rgba(15,22,41,0.06)" : "none",
             }}
           >
-            {/* Top accent bar */}
             <div
               style={{
                 height: 2,
@@ -547,7 +606,6 @@ export default function Contact() {
 
             <form onSubmit={handleSubmit} noValidate>
               <div className="flex flex-col gap-5">
-                {/* Row 1: Full Name + Organisation */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <Field
                     label="Full Name"
@@ -556,6 +614,7 @@ export default function Contact() {
                     value={formData.fullName}
                     onChange={handleChange}
                     hasError={!!errors.fullName}
+                    isLight={isLight}
                   />
                   <Field
                     label="Organisation / Department"
@@ -564,10 +623,10 @@ export default function Contact() {
                     value={formData.organisation}
                     onChange={handleChange}
                     hasError={!!errors.organisation}
+                    isLight={isLight}
                   />
                 </div>
 
-                {/* Row 2: Designation + Phone */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <Field
                     label="Designation"
@@ -576,6 +635,7 @@ export default function Contact() {
                     value={formData.designation}
                     onChange={handleChange}
                     hasError={!!errors.designation}
+                    isLight={isLight}
                   />
                   <Field
                     label="Phone"
@@ -585,10 +645,10 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     hasError={!!errors.phone}
+                    isLight={isLight}
                   />
                 </div>
 
-                {/* Row 3: Email + State / City */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <Field
                     label="Email"
@@ -598,6 +658,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     hasError={!!errors.email}
+                    isLight={isLight}
                   />
                   <Field
                     label="State / City"
@@ -606,10 +667,10 @@ export default function Contact() {
                     value={formData.stateCity}
                     onChange={handleChange}
                     hasError={!!errors.stateCity}
+                    isLight={isLight}
                   />
                 </div>
 
-                {/* Row 4: Message */}
                 <Field
                   label="Message"
                   id="message"
@@ -617,6 +678,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   hasError={!!errors.message}
+                  isLight={isLight}
                   textarea
                   rows={4}
                 />
@@ -639,7 +701,6 @@ export default function Contact() {
                   </motion.div>
                 )}
 
-                {/* Row 5: Submit */}
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
@@ -701,23 +762,28 @@ export default function Contact() {
           </div>
 
           <AnimatePresence>
-            {submitted && <SuccessPopup onClose={() => setSubmitted(false)} />}
+            {submitted && (
+              <SuccessPopup
+                onClose={() => setSubmitted(false)}
+                isLight={isLight}
+              />
+            )}
             {showToast && (
               <ErrorToast
                 message={submitError || ""}
                 onClose={() => setShowToast(false)}
+                isLight={isLight}
               />
             )}
           </AnimatePresence>
 
-          {/* Below form: direct contact */}
           <div className="mt-10">
-            {/* Divider */}
             <div
               style={{
                 height: 1,
-                background:
-                  "linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)",
+                background: isLight
+                  ? "linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent)"
+                  : "linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)",
                 marginBottom: 28,
               }}
             />
@@ -747,7 +813,6 @@ export default function Contact() {
               </p>
             </div>
 
-            {/* Feature points */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               {[
                 "Government pilot programs available now",
@@ -759,13 +824,17 @@ export default function Contact() {
                   style={{
                     padding: "10px 18px",
                     borderRadius: 8,
-                    background: "rgba(15,118,110,0.06)",
-                    border: "1px solid rgba(15,118,110,0.15)",
+                    background: isLight
+                      ? "rgba(15,118,110,0.05)"
+                      : "rgba(15,118,110,0.06)",
+                    border: `1px solid ${
+                      isLight
+                        ? "rgba(15,118,110,0.14)"
+                        : "rgba(15,118,110,0.15)"
+                    }`,
                   }}
                 >
-                  <span style={{ color: "var(--brand)", fontSize: 12 }}>
-                    ✦
-                  </span>
+                  <span style={{ color: "var(--brand)", fontSize: 12 }}>✦</span>
                   <span
                     className="font-dm text-sm"
                     style={{ color: "var(--text-muted)" }}

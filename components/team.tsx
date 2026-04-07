@@ -24,7 +24,7 @@ interface TeamMember {
 const TEAM: TeamMember[] = [
   {
     name: "Danish Ahmed",
-    title: "Chief Strategy Officer",
+    title: "CEO",
     // company: "DocGlasses / Healthtrip / HealthPaths.ai",
     bio: "Serial pioneer who built multiple industry-defining companies generating over $100 million in revenues.",
     photoUrl:
@@ -252,12 +252,12 @@ function TeamCard({ member }: { member: TeamMember }) {
           style={{ color: "var(--text-muted)", paddingTop: "1.25rem" }}
           aria-label={`${member.name} on LinkedIn`}
           onMouseEnter={(e) =>
-          ((e.currentTarget as HTMLAnchorElement).style.color =
-            "var(--brand)")
+            ((e.currentTarget as HTMLAnchorElement).style.color =
+              "var(--brand)")
           }
           onMouseLeave={(e) =>
-          ((e.currentTarget as HTMLAnchorElement).style.color =
-            "var(--text-muted)")
+            ((e.currentTarget as HTMLAnchorElement).style.color =
+              "var(--text-muted)")
           }
         >
           <LinkedInIcon />
