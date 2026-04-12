@@ -78,7 +78,7 @@ export default function Nav() {
               aria-label="DocGlasses — home"
             >
               <Image
-                src="/docglasses-logo.png"
+                src="/docglasses_white.png"
                 alt="DocGlasses"
                 width={160}
                 height={40}

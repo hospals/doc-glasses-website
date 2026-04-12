@@ -26,12 +26,12 @@ function IconCoaching() {
     >
       <path
         d="M12 2L15 9H22L16.5 13.5L18.5 21L12 17L5.5 21L7.5 13.5L2 9H9Z"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinejoin="round"
         fill="none"
       />
-      <circle cx="12" cy="11" r="2" fill="#0f766e" />
+      <circle cx="12" cy="11" r="2" fill="var(--brand)" />
     </svg>
   );
 }
@@ -51,20 +51,20 @@ function IconZeroData() {
         width="18"
         height="14"
         rx="3"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         fill="none"
       />
       <path
         d="M8 9 L5 12 L8 15"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M16 9 L19 12 L16 15"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -74,7 +74,7 @@ function IconZeroData() {
         y1="8"
         x2="12"
         y2="16"
-        stroke="#2dd4bf"
+        stroke="var(--brand-light)"
         strokeWidth="1.4"
         strokeLinecap="round"
       />
@@ -95,7 +95,7 @@ function IconAccuracy() {
         cx="12"
         cy="12"
         r="9"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         fill="none"
       />
@@ -103,17 +103,17 @@ function IconAccuracy() {
         cx="12"
         cy="12"
         r="5"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.4"
         fill="none"
       />
-      <circle cx="12" cy="12" r="2" fill="#0f766e" />
+      <circle cx="12" cy="12" r="2" fill="var(--brand)" />
       <line
         x1="12"
         y1="2"
         x2="12"
         y2="5"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
       />
@@ -122,7 +122,7 @@ function IconAccuracy() {
         y1="19"
         x2="12"
         y2="22"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
       />
@@ -131,7 +131,7 @@ function IconAccuracy() {
         y1="12"
         x2="5"
         y2="12"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
       />
@@ -140,7 +140,7 @@ function IconAccuracy() {
         y1="12"
         x2="22"
         y2="12"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
       />
@@ -159,21 +159,21 @@ function IconLearning() {
     >
       <path
         d="M12 3 L22 8 L12 13 L2 8 Z"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinejoin="round"
         fill="none"
       />
       <path
         d="M6 10.5 L6 16 Q12 20 18 16 L18 10.5"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
         fill="none"
       />
       <path
         d="M22 8 L22 14"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
       />
@@ -192,7 +192,7 @@ function IconFewerErrors() {
     >
       <path
         d="M12 3 L22 19 H2 Z"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinejoin="round"
         fill="none"
@@ -202,20 +202,20 @@ function IconFewerErrors() {
         y1="10"
         x2="12"
         y2="14"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="2"
         strokeLinecap="round"
       />
-      <circle cx="12" cy="17" r="1.2" fill="#0f766e" />
+      <circle cx="12" cy="17" r="1.2" fill="var(--brand)" />
       <path
         d="M19 6 L21 4"
-        stroke="#2dd4bf"
+        stroke="var(--brand-light)"
         strokeWidth="1.4"
         strokeLinecap="round"
       />
       <path
         d="M20 4 L18 6"
-        stroke="#2dd4bf"
+        stroke="var(--brand-light)"
         strokeWidth="1.4"
         strokeLinecap="round"
       />
@@ -236,13 +236,13 @@ function IconNoWrong() {
         cx="12"
         cy="12"
         r="9"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         fill="none"
       />
       <path
         d="M8 12 L10.5 14.5 L16 9"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -262,20 +262,20 @@ function IconDataCapture() {
     >
       <path
         d="M4 7 L12 3 L20 7 L20 17 L12 21 L4 17 Z"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinejoin="round"
         fill="none"
       />
       <path
         d="M12 3 L12 21"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.2"
         strokeDasharray="2 2"
       />
       <path
         d="M4 7 L20 7"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.2"
         strokeDasharray="2 2"
       />
@@ -284,7 +284,7 @@ function IconDataCapture() {
         cy="12"
         r="2.5"
         fill="none"
-        stroke="#2dd4bf"
+        stroke="var(--brand-light)"
         strokeWidth="1.4"
       />
     </svg>
@@ -306,7 +306,7 @@ function IconFollowUp() {
         width="18"
         height="18"
         rx="3"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         fill="none"
       />
@@ -315,7 +315,7 @@ function IconFollowUp() {
         y1="2"
         x2="8"
         y2="6"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
       />
@@ -324,14 +324,21 @@ function IconFollowUp() {
         y1="2"
         x2="16"
         y2="6"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
       />
-      <line x1="3" y1="9" x2="21" y2="9" stroke="#0f766e" strokeWidth="1.2" />
+      <line
+        x1="3"
+        y1="9"
+        x2="21"
+        y2="9"
+        stroke="var(--brand)"
+        strokeWidth="1.2"
+      />
       <path
         d="M8 14 L10 16 L14 12"
-        stroke="#2dd4bf"
+        stroke="var(--brand-light)"
         strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -351,13 +358,13 @@ function IconStateHealth() {
     >
       <path
         d="M12 2 C7 2 3 6 3 11 C3 16 12 22 12 22 C12 22 21 16 21 11 C21 6 17 2 12 2 Z"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         fill="none"
       />
       <path
         d="M12 8 L12 14 M9 11 L15 11"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="2"
         strokeLinecap="round"
       />
@@ -381,7 +388,7 @@ function IconRichData() {
         height="8"
         rx="1"
         fill="none"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
       />
       <rect
@@ -391,7 +398,7 @@ function IconRichData() {
         height="13"
         rx="1"
         fill="none"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
       />
       <rect
@@ -401,7 +408,7 @@ function IconRichData() {
         height="17"
         rx="1"
         fill="none"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
       />
       <rect
@@ -410,7 +417,7 @@ function IconRichData() {
         width="2"
         height="20"
         rx="1"
-        fill="#2dd4bf"
+        fill="var(--brand-light)"
         opacity="0.6"
       />
     </svg>
@@ -432,23 +439,37 @@ function IconDashboard() {
         width="20"
         height="15"
         rx="2"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         fill="none"
       />
-      <line x1="2" y1="8" x2="22" y2="8" stroke="#0f766e" strokeWidth="1.2" />
-      <line x1="12" y1="8" x2="12" y2="18" stroke="#0f766e" strokeWidth="1.2" />
+      <line
+        x1="2"
+        y1="8"
+        x2="22"
+        y2="8"
+        stroke="var(--brand)"
+        strokeWidth="1.2"
+      />
+      <line
+        x1="12"
+        y1="8"
+        x2="12"
+        y2="18"
+        stroke="var(--brand)"
+        strokeWidth="1.2"
+      />
       <circle
         cx="7"
         cy="13"
         r="2"
-        stroke="#2dd4bf"
+        stroke="var(--brand-light)"
         strokeWidth="1.4"
         fill="none"
       />
       <path
         d="M15 11 L19 11 M15 14 L18 14"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.2"
         strokeLinecap="round"
       />
@@ -457,7 +478,7 @@ function IconDashboard() {
         y1="21"
         x2="16"
         y2="21"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
       />
@@ -466,7 +487,7 @@ function IconDashboard() {
         y1="18"
         x2="12"
         y2="21"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
       />
@@ -485,14 +506,14 @@ function IconRetraining() {
     >
       <path
         d="M4 12 C4 7.6 7.6 4 12 4 C16.4 4 20 7.6 20 12"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
         fill="none"
       />
       <path
         d="M20 12 C20 16.4 16.4 20 12 20 C7.6 20 4 16.4 4 12"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
         strokeDasharray="3 2"
@@ -500,7 +521,7 @@ function IconRetraining() {
       />
       <path
         d="M17 9 L20 12 L23 9"
-        stroke="#0f766e"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -508,7 +529,7 @@ function IconRetraining() {
       />
       <path
         d="M10 12 L11.5 13.5 L14 10"
-        stroke="#2dd4bf"
+        stroke="var(--brand-light)"
         strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -647,8 +668,8 @@ export default function Benefits() {
           <div
             style={{
               display: "inline-flex",
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(255,255,255,0.08)",
+              background: "var(--glass-bg)",
+              border: "1px solid var(--glass-border)",
               borderRadius: "9999px",
               padding: "6px",
               gap: "4px",
@@ -671,21 +692,18 @@ export default function Benefits() {
                     background: isActive ? "var(--brand)" : "transparent",
                     border: "none",
                     cursor: "pointer",
-                    transition: "color 0.25s ease, background 0.25s ease",
-                    boxShadow: isActive
-                      ? "0 0 20px rgba(15,118,110,0.4)"
-                      : "none",
+                    transition:
+                      "color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease",
+                    boxShadow: isActive ? "0 0 20px var(--brand-glow)" : "none",
                   }}
                   onMouseEnter={(e) => {
                     if (!isActive) {
-                      (e.currentTarget as HTMLButtonElement).style.color =
-                        "var(--brand)";
+                      e.currentTarget.style.color = "var(--brand)";
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!isActive) {
-                      (e.currentTarget as HTMLButtonElement).style.color =
-                        "var(--text-muted)";
+                      e.currentTarget.style.color = "var(--text-muted)";
                     }
                   }}
                 >
@@ -736,14 +754,13 @@ function BenefitCard({ card, index }: { card: BenefitCard; index: number }) {
           gap: "0.75rem",
         }}
       >
-        {/* Icon container */}
         <div
           style={{
             width: 48,
             height: 48,
             borderRadius: "12px",
-            background: "rgba(15,118,110,0.1)",
-            border: "1px solid rgba(15,118,110,0.25)",
+            background: "var(--brand-glow)",
+            border: "1px solid var(--brand-border)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -753,7 +770,6 @@ function BenefitCard({ card, index }: { card: BenefitCard; index: number }) {
           {card.icon}
         </div>
 
-        {/* Title */}
         <h3
           className="text-lg font-bold"
           style={{
@@ -764,7 +780,6 @@ function BenefitCard({ card, index }: { card: BenefitCard; index: number }) {
           {card.title}
         </h3>
 
-        {/* Description */}
         <p
           className="text-sm leading-relaxed"
           style={{

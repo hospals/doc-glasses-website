@@ -748,7 +748,7 @@ export default function Hero() {
       />
 
       {/* ── CONTENT ── */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-[50px]">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-[100px] lg:py-[50px]">
         <motion.div
           variants={containerVariants}
           initial="hidden"

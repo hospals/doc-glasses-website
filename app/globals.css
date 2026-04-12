@@ -1,6 +1,69 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+/* Tailwind 4 theme tokens.
+   Using inline is important here because these utilities reference CSS vars
+   that change at runtime for light/dark theme.
+*/
+@theme inline {
+  /* colors -> bg-brand, text-brand, border-brand, bg-navy-deep, etc. */
+  --color-brand: var(--brand);
+  --color-brand-light: var(--brand-light);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-mid: var(--navy-mid);
+  --color-navy-card: var(--navy-card);
+
+  /* fonts -> font-syne, font-dm, font-mono */
+  --font-syne: var(--font-syne-raw);
+  --font-dm: var(--font-dm-sans-raw);
+  --font-mono: var(--font-jetbrains-mono-raw);
+
+  /* custom animations -> animate-pulse-slow, animate-glow-pulse, animate-float, animate-scan */
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-glow-pulse: glowPulse 2s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-scan: scan 2s linear infinite;
+}
+
+/* Keep keyframes available for the custom animation utilities */
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(15, 118, 110, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(15, 118, 110, 0.6);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* Tailwind 4 replacement for your old backgroundImage/backgroundSize token */
+@utility bg-dot-grid {
+  background-image: radial-gradient(
+    circle,
+    rgba(15, 118, 110, 0.15) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
 
 /* ─── DARK MODE (default) ──────────────────────────── */
 :root {
@@ -21,7 +84,7 @@
   color-scheme: dark;
 }
 
-/* ─── LIGHT MODE (system) ──────────────────────────── */
+/* ─── LIGHT MODE ──────────────────────────── */
 html.light-theme {
   color-scheme: light;
 }
@@ -44,56 +107,26 @@ html.light-theme {
   --scrollbar-bg: #eef1f8;
 }
 
-html.light-theme body {
-  background: #f8f9fc;
-  color: #0f1629;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--navy-deep);
+    color: var(--text-primary);
+    font-family: var(--font-dm-sans-raw), sans-serif;
+    overflow-x: hidden;
+  }
 }
 
-html.light-theme .brand-gradient {
-  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-html.light-theme nav {
-  background: rgba(248, 249, 252, 0.9) !important;
-  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
-}
-
-html.light-theme input,
-html.light-theme textarea,
-html.light-theme select {
-  background: rgba(0, 0, 0, 0.04) !important;
-  border-color: rgba(0, 0, 0, 0.12) !important;
-  color: #0f1629 !important;
-}
-
-html.light-theme [style*="rgba(255,255,255,0.04)"],
-html.light-theme [style*="rgba(255,255,255,0.03)"] {
-  background: rgba(0, 0, 0, 0.03) !important;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  background-color: var(--navy-deep);
-  color: var(--text-primary);
-  font-family: var(--font-dm-sans), sans-serif;
-  overflow-x: hidden;
-}
-
-/* Glass card base */
+/* Optional: keep your old helper classes exactly as they were */
 .glass-card {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
@@ -110,7 +143,6 @@ body {
   box-shadow: 0 0 30px var(--brand-glow);
 }
 
-/* Brand gradient text */
 .brand-gradient {
   background: linear-gradient(135deg, var(--brand), var(--brand-light));
   -webkit-background-clip: text;
@@ -118,38 +150,13 @@ body {
   background-clip: text;
 }
 
-/* Dot grid background */
-.dot-grid-bg {
-  background-image: radial-gradient(
-    circle,
-    rgba(15, 118, 110, 0.12) 1px,
-    transparent 1px
-  );
-  background-size: 28px 28px;
-}
-
-/* Section fade-up animation */
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
-}
-
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Brand glow button */
 .btn-brand {
   background: var(--brand);
   color: white;
   border-radius: 9999px;
   padding: 0.75rem 1.75rem;
   font-weight: 600;
-  font-family: var(--font-dm-sans), sans-serif;
+  font-family: var(--font-dm-sans-raw), sans-serif;
   transition:
     box-shadow 0.3s ease,
     transform 0.2s ease;
@@ -169,7 +176,7 @@ body {
   border-radius: 9999px;
   padding: 0.75rem 1.75rem;
   font-weight: 600;
-  font-family: var(--font-dm-sans), sans-serif;
+  font-family: var(--font-dm-sans-raw), sans-serif;
   transition:
     background 0.3s ease,
     color 0.3s ease,
@@ -182,120 +189,11 @@ body {
   box-shadow: 0 0 20px rgba(15, 118, 110, 0.4);
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--scrollbar-bg);
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(15, 118, 110, 0.4);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--brand);
-}
-
-/* Typewriter cursor */
-.typewriter-cursor::after {
-  content: "|";
-  color: var(--brand);
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
-/* Animated connector line */
-@keyframes drawLine {
-  from {
-    stroke-dashoffset: 1000;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-.draw-line {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: drawLine 2s ease forwards;
-}
-
-/* Travelling dot on SVG path */
-@keyframes travelDot {
-  0% {
-    offset-distance: 0%;
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
-  95% {
-    opacity: 1;
-  }
-  100% {
-    offset-distance: 100%;
-    opacity: 0;
-  }
-}
-
-/* Bar fill animation */
-@keyframes fillBar {
-  from {
-    width: 0%;
-  }
-  to {
-    width: var(--target-width);
-  }
-}
-
-/* REC pulse */
-@keyframes recPulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-}
-
-.rec-dot {
-  animation: recPulse 1.2s ease-in-out infinite;
-}
-
-/* Demo scan line */
-@keyframes scanLine {
-  0% {
-    top: 0%;
-  }
-  100% {
-    top: 100%;
-  }
-}
-
-/* Staggered delays */
-.delay-100 {
-  animation-delay: 100ms;
-}
-.delay-200 {
-  animation-delay: 200ms;
-}
-.delay-300 {
-  animation-delay: 300ms;
-}
-.delay-400 {
-  animation-delay: 400ms;
-}
-.delay-500 {
-  animation-delay: 500ms;
+.dot-grid-bg {
+  background-image: radial-gradient(
+    circle,
+    rgba(15, 118, 110, 0.12) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
 }

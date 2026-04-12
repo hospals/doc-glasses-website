@@ -31,8 +31,8 @@ function FooterLink({ label, href }: { label: string; href: string }) {
         ((e.currentTarget as HTMLAnchorElement).style.color = "var(--brand)")
       }
       onMouseLeave={(e) =>
-      ((e.currentTarget as HTMLAnchorElement).style.color =
-        "var(--text-muted)")
+        ((e.currentTarget as HTMLAnchorElement).style.color =
+          "var(--text-muted)")
       }
     >
       {label}
@@ -108,7 +108,7 @@ export default function Footer() {
             {/* Logo */}
             <a href="#home" aria-label="DocGlasses home">
               <Image
-                src="/docglasses-logo.png"
+                src="/docglasses_white.png"
                 alt="DocGlasses"
                 width={140}
                 height={36}
