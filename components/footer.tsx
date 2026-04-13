@@ -111,7 +111,7 @@ export default function Footer() {
 						{/* Logo */}
 						<a href='#home' aria-label='DocGlasses home'>
 							<Image
-								src='/docglasses_white.png'
+								src='/doc-glasses-logo.jpeg'
 								alt='DocGlasses'
 								width={140}
 								height={36}

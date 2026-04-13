@@ -70,7 +70,7 @@ const ADVISORS: Advisors[] = [
 		designation: 'Managing Partner',
 		hospital: 'Ansan Holding',
 		department: '',
-		photoUrl: '/images/advisors/tarun_malik.jpg',
+		photoUrl: '/images/advisors/tarun-malik.jpeg',
 		avatarStyle: 'brand-gradient',
 	},
 ];
