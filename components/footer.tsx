@@ -11,12 +11,13 @@ import { useRef } from 'react';
 ───────────────────────────────────────────── */
 const NAV_COL_A = [
 	{ label: 'How It Works', href: '#how-it-works' },
-	{ label: 'Features', href: '#features' },
 	{ label: 'Benefits', href: '#benefits' },
+	{ label: 'Science', href: '#science' },
 ];
 
 const NAV_COL_B = [
-	{ label: 'Science', href: '#science' },
+	{ label: 'Advisors', href: '#advisors' },
+	{ label: 'Team', href: '#team' },
 	{ label: 'Contact', href: '#contact' },
 ];
 
