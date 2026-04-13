@@ -23,7 +23,7 @@ interface Advisors {
 /* ─────────────────────────────────────────────
    DATA
 ───────────────────────────────────────────── */
-const TEAM: Advisors[] = [
+const ADVISORS: Advisors[] = [
 	{
 		name: 'Dr. Imran Siddiqi',
 		designation: 'Physician',
@@ -306,7 +306,7 @@ export default function Advisors() {
 
 	return (
 		<section
-			id='team'
+			id='advisors'
 			className='relative overflow-hidden'
 			style={{ background: 'var(--navy-mid)', padding: '50px 0' }}
 		>
@@ -376,7 +376,7 @@ export default function Advisors() {
 					animate={inView ? 'visible' : 'hidden'}
 					className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6'
 				>
-					{TEAM.map((member) => (
+					{ADVISORS.map((member) => (
 						<motion.div
 							key={member.name}
 							variants={cardVariants}
