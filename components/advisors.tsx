@@ -12,7 +12,7 @@ import { useRef } from 'react';
 interface Advisors {
 	name: string;
 	designation: string;
-	department: string;
+	department?: string;
 	hospital: string;
 	bio?: string;
 	photoUrl?: string;
@@ -72,6 +72,15 @@ const ADVISORS: Advisors[] = [
 		// company: "DocGlasses / HealthPaths.ai",
 		bio: 'Leading AI research and implementation to transform medical diagnostics and patient care.',
 		photoUrl: '/images/advisors/dr_Jeevan.jpg',
+		avatarStyle: 'brand-gradient',
+	},
+	{
+		name: 'Tarun Malik',
+		designation: 'Managing Partner',
+		hospital: 'Ansan Holding',
+		// company: "DocGlasses / HealthPaths.ai",
+		bio: 'Leading AI research and implementation to transform medical diagnostics and patient care.',
+		photoUrl: '/images/advisors/tarun_malik.jfif',
 		avatarStyle: 'brand-gradient',
 	},
 ];
@@ -374,7 +383,7 @@ export default function Advisors() {
 					variants={containerVariants}
 					initial='hidden'
 					animate={inView ? 'visible' : 'hidden'}
-					className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6'
+					className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'
 				>
 					{ADVISORS.map((member) => (
 						<motion.div
