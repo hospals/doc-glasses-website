@@ -14,7 +14,6 @@ interface Advisors {
 	designation: string;
 	department?: string;
 	hospital: string;
-	bio?: string;
 	photoUrl?: string;
 	initials?: string;
 	avatarStyle: 'brand-gradient' | 'navy-bordered';
@@ -29,8 +28,6 @@ const ADVISORS: Advisors[] = [
 		designation: 'Physician',
 		department: 'Pathology/Hematopathology',
 		hospital: 'University of Southern California',
-		// company: "DocGlasses / Healthtrip / HealthPaths.ai",
-		bio: 'Serial pioneer who built multiple industry-defining companies generating over $100 million in revenues.',
 		photoUrl: '/images/advisors/imran_siddiqui.jfif',
 		avatarStyle: 'brand-gradient',
 	},
@@ -39,8 +36,6 @@ const ADVISORS: Advisors[] = [
 		designation: 'Regional Director',
 		department: 'General Medicine',
 		hospital: 'Saudi German Health',
-		// company: "DocGlasses / HealthPaths.ai",
-		bio: 'AI expert who led technology at top media and community platforms with 800 million site visitors.',
 		photoUrl: '/images/advisors/mohamed-hablas.jfif',
 		avatarStyle: 'brand-gradient',
 	},
@@ -49,19 +44,7 @@ const ADVISORS: Advisors[] = [
 		designation: 'General Physician',
 		department: 'Internal Medicine',
 		hospital: 'Apollo Hospital',
-		// company: "DocGlasses / Healthtrip / HealthPaths.ai",
-		bio: 'Strategic technology leader driving scalable infrastructure and engineering excellence.',
 		photoUrl: '/images/advisors/dr-kamal-ahmad.jpg',
-		avatarStyle: 'brand-gradient',
-	},
-	{
-		name: 'Tarun Malik',
-		designation: 'Managing Partner',
-		hospital: 'Ansan Holding',
-		department: '',
-		// company: "DocGlasses / HealthPaths.ai",
-		bio: 'Leading AI research and implementation to transform medical diagnostics and patient care.',
-		photoUrl: '/images/advisors/tarun_malik.jfif',
 		avatarStyle: 'brand-gradient',
 	},
 	// {
@@ -79,9 +62,15 @@ const ADVISORS: Advisors[] = [
 		designation: 'Director',
 		department: 'Internal Medicine',
 		hospital: 'Max Healthcare',
-		// company: "DocGlasses / HealthPaths.ai",
-		bio: 'Leading AI research and implementation to transform medical diagnostics and patient care.',
 		photoUrl: '/images/advisors/dr_Jeevan.jpg',
+		avatarStyle: 'brand-gradient',
+	},
+	{
+		name: 'Tarun Malik',
+		designation: 'Managing Partner',
+		hospital: 'Ansan Holding',
+		department: '',
+		photoUrl: '/images/advisors/tarun_malik.jpg',
 		avatarStyle: 'brand-gradient',
 	},
 ];
@@ -243,7 +232,6 @@ function AdvisorsCard({ member }: { member: Advisors }) {
 					{member.department}
 				</p>
 			)}
-			{/* Bio */}
 			<p
 				className='font-dm text-sm mt-3 leading-relaxed'
 				style={{
@@ -365,17 +353,17 @@ export default function Advisors() {
 							color: 'var(--text-primary)',
 						}}
 					>
-						Guided by Leading
-						{/* <br className='hidden md:block' /> */}
-						<span className='brand-gradient'> Medical Experts</span>
+						Guided by Industry Leaders
+						<br className='hidden md:block' />
+						<span className='brand-gradient'> & Medical Experts</span>
 					</h2>
 
 					<p
 						className='font-dm text-base mt-4 max-w-xl mx-auto'
 						style={{ color: 'var(--text-muted)' }}
 					>
-						Specialist doctors providing trusted guidance across diverse
-						healthcare domains.
+						A diverse advisory board combining clinical excellence with global
+						strategic insight.
 					</p>
 				</motion.div>
 
