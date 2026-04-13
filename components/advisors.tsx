@@ -27,7 +27,7 @@ const ADVISORS: Advisors[] = [
 	{
 		name: 'Dr. Imran Siddiqi',
 		designation: 'Physician',
-		department: 'Pathology/ Hematopathology',
+		department: 'Pathology/Hematopathology',
 		hospital: 'University of Southern California',
 		// company: "DocGlasses / Healthtrip / HealthPaths.ai",
 		bio: 'Serial pioneer who built multiple industry-defining companies generating over $100 million in revenues.',
@@ -55,15 +55,25 @@ const ADVISORS: Advisors[] = [
 		avatarStyle: 'brand-gradient',
 	},
 	{
-		name: 'Dr. Hisham Hakim',
-		designation: 'Chairman',
-		department: 'Neurology',
-		hospital: 'American Spine Center',
+		name: 'Tarun Malik',
+		designation: 'Managing Partner',
+		hospital: 'Ansan Holding',
+		department: '',
 		// company: "DocGlasses / HealthPaths.ai",
-		bio: 'Cloud architecture and full-stack veteran focused on high-performance healthcare systems.',
-		photoUrl: '/images/advisors/hisham-hakim.jfif',
+		bio: 'Leading AI research and implementation to transform medical diagnostics and patient care.',
+		photoUrl: '/images/advisors/tarun_malik.jfif',
 		avatarStyle: 'brand-gradient',
 	},
+	// {
+	// 	name: 'Dr. Hisham Hakim',
+	// 	designation: 'Chairman',
+	// 	department: 'Neurology',
+	// 	hospital: 'American Spine Center',
+	// 	// company: "DocGlasses / HealthPaths.ai",
+	// 	bio: 'Cloud architecture and full-stack veteran focused on high-performance healthcare systems.',
+	// 	photoUrl: '/images/advisors/hisham-hakim.jfif',
+	// 	avatarStyle: 'brand-gradient',
+	// },
 	{
 		name: 'Dr. Jeevan Aggarwal',
 		designation: 'Director',
@@ -72,15 +82,6 @@ const ADVISORS: Advisors[] = [
 		// company: "DocGlasses / HealthPaths.ai",
 		bio: 'Leading AI research and implementation to transform medical diagnostics and patient care.',
 		photoUrl: '/images/advisors/dr_Jeevan.jpg',
-		avatarStyle: 'brand-gradient',
-	},
-	{
-		name: 'Tarun Malik',
-		designation: 'Managing Partner',
-		hospital: 'Ansan Holding',
-		// company: "DocGlasses / HealthPaths.ai",
-		bio: 'Leading AI research and implementation to transform medical diagnostics and patient care.',
-		photoUrl: '/images/advisors/tarun_malik.jfif',
 		avatarStyle: 'brand-gradient',
 	},
 ];
@@ -383,7 +384,7 @@ export default function Advisors() {
 					variants={containerVariants}
 					initial='hidden'
 					animate={inView ? 'visible' : 'hidden'}
-					className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'
+					className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6'
 				>
 					{ADVISORS.map((member) => (
 						<motion.div
