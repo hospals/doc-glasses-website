@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import CookieBanner from "@/components/cookie/CookieBanner";
+import { CookieConsentProvider } from "@/hooks/useCookieConsent";
+import MicrosoftClarity from "@/components/analytics/MicrosoftClarity";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -134,7 +137,11 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        {children}
+        <CookieConsentProvider>
+          {children}
+          <CookieBanner />
+          <MicrosoftClarity />
+        </CookieConsentProvider>
       </body>
     </html>
   );

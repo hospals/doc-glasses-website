@@ -422,6 +422,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [showToast, setShowToast] = useState(false);
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
 
   function handleChange(id: FieldKey, value: string) {
     setFormData((prev) => ({ ...prev, [id]: value }));
@@ -446,6 +447,14 @@ export default function Contact() {
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
     ) {
       newErrors.email = true;
+      valid = false;
+    }
+
+    if (!agreedToTerms) {
+      setSubmitError(
+        "You must agree to the Terms of Service and Privacy Policy.",
+      );
+      setShowToast(true);
       valid = false;
     }
 
@@ -682,6 +691,37 @@ export default function Contact() {
                   textarea
                   rows={4}
                 />
+
+                <div className="flex items-start gap-2 mt-2">
+                  <input
+                    type="checkbox"
+                    className="mt-1 accent-teal-500 cursor-pointer"
+                    required
+                    checked={agreedToTerms}
+                    onChange={(e) => setAgreedToTerms(e.target.checked)}
+                  />
+
+                  <p
+                    className="text-sm leading-relaxed"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    I agree to the{" "}
+                    <a
+                      href="/terms-of-service"
+                      className="text-teal-400 hover:text-teal-300 underline"
+                    >
+                      Terms of Service
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href="/privacy-policy"
+                      className="text-teal-400 hover:text-teal-300 underline"
+                    >
+                      Privacy Policy
+                    </a>
+                    .
+                  </p>
+                </div>
 
                 {submitError && (
                   <motion.div
