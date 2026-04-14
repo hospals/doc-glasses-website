@@ -58,10 +58,10 @@ export default function TermsOfServiceContent() {
               <li>and its subdomains (the 'Website').</li>
             </ul> */}
             <p className="mt-4">
-              If you disagree with these Terms, we request that you refrain from using the Website. The terms 'DocGlasses' and 'we' refer to Global Patient Tech Pte Ltd., the entity offering services as defined below through the Website.
+              If you disagree with these Terms, we request that you refrain from using the Website. The terms 'DocGlasses' the entity offering services as defined below through the Website.
             </p>
             <p>
-              For the provision of services through the Website, we engage in collaborations with partner companies in various countries, including Vision Health Holdings Inc.<br/>
+              For the provision of services through the Website, we engage in collaborations with partner companies in various countries.<br/>
               Our Privacy Policy describes our collection and use of personal data connected to your Website use.
             </p>
           </Section>
@@ -105,7 +105,7 @@ export default function TermsOfServiceContent() {
               DocGlasses operates independently of clinics, and we do not guarantee the quality or specialization of their services. We are not intermediaries between patients and medical centers, and we do not directly provide medical services. The information on the website does not constitute medical advice and should not be used as a guide for action.
             </p>
             <p>
-              We collaborate with medical centers through direct agreements or in partnership with our business associate, Global Patient Tech Pte Ltd. (UEN: 201838268K; address: VISION EXCHANGE, 2 VENTURE DRIVE, #13-30, Postal 608526). Our role is to facilitate connections and provide information, and we do not endorse or ensure the quality of the services provided by medical centers.
+              We collaborate with medical centers through direct agreements or in partnership with our business associates. Our role is to facilitate connections and provide information, and we do not endorse or ensure the quality of the services provided by medical centers.
             </p>
 
             <h3 className="font-semibold mt-6 mb-2" style={{ color: "var(--text-primary)" }}>Deposit payment terms</h3>
