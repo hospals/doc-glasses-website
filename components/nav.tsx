@@ -5,6 +5,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const NAV_LINKS = [
@@ -34,13 +35,23 @@ export default function Nav() {
 		};
 	}, [menuOpen]);
 
-	const handleNavClick = (href: string) => {
+	const pathname = usePathname();
+	const router = useRouter();
+
+	const handleNavClick = (e: React.MouseEvent, href: string) => {
+		e.preventDefault();
 		setMenuOpen(false);
-		// Give AnimatePresence time to close before scrolling
-		setTimeout(() => {
-			const el = document.querySelector(href);
-			if (el) el.scrollIntoView({ behavior: 'smooth' });
-		}, 300);
+
+		// If we're already on the homepage and clicking a hash link
+		if (pathname === '/' && href.startsWith('#')) {
+			setTimeout(() => {
+				const el = document.querySelector(href);
+				if (el) el.scrollIntoView({ behavior: 'smooth' });
+			}, 300);
+		} else {
+			// Otherwise navigate to the route
+			router.push(href.startsWith('#') ? '/' + href : href);
+		}
 	};
 
 	return (
@@ -72,10 +83,9 @@ export default function Nav() {
 					<div className='flex items-center justify-between h-[72px]'>
 						{/* ── LEFT: Logo ── */}
 						<a
-							href='#home'
+							href='/'
 							onClick={(e) => {
-								e.preventDefault();
-								handleNavClick('#home');
+								handleNavClick(e, '/');
 							}}
 							className='flex-shrink-0 flex items-center'
 							aria-label='DocGlasses — home'
@@ -102,8 +112,7 @@ export default function Nav() {
 							<a
 								href='#contact'
 								onClick={(e) => {
-									e.preventDefault();
-									handleNavClick('#contact');
+									handleNavClick(e, '#contact');
 								}}
 								className='hidden sm:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold font-dm transition-all duration-300'
 								style={{
@@ -190,8 +199,7 @@ export default function Nav() {
 								exit={{ opacity: 0, y: 10 }}
 								transition={{ delay: i * 0.07, duration: 0.3 }}
 								onClick={(e) => {
-									e.preventDefault();
-									handleNavClick(link.href);
+									handleNavClick(e, link.href);
 								}}
 								className='font-dm font-semibold tracking-widest uppercase text-lg transition-colors duration-200'
 								style={{ color: 'var(--text-muted)' }}
@@ -215,8 +223,7 @@ export default function Nav() {
 							exit={{ opacity: 0, y: 10 }}
 							transition={{ delay: NAV_LINKS.length * 0.07, duration: 0.3 }}
 							onClick={(e) => {
-								e.preventDefault();
-								handleNavClick('#contact');
+								handleNavClick(e, '#contact');
 							}}
 							className='rounded-full px-8 py-3 text-base font-semibold font-dm mt-4'
 							style={{ background: 'var(--brand)', color: '#fff' }}
@@ -236,7 +243,7 @@ function NavLink({
 	onClick,
 }: {
 	link: { label: string; href: string };
-	onClick: (href: string) => void;
+	onClick: (e: React.MouseEvent, href: string) => void;
 }) {
 	const [hovered, setHovered] = useState(false);
 
@@ -244,8 +251,7 @@ function NavLink({
 		<a
 			href={link.href}
 			onClick={(e) => {
-				e.preventDefault();
-				onClick(link.href);
+				onClick(e, link.href);
 			}}
 			onMouseEnter={() => setHovered(true)}
 			onMouseLeave={() => setHovered(false)}

@@ -21,6 +21,11 @@ const NAV_COL_B = [
 	{ label: 'Contact', href: '#contact' },
 ];
 
+const FOOTER_LINKS = [
+	{ label: 'Privacy Policy', href: '/privacy-policy' },
+	{ label: 'Terms of Use', href: '/terms-of-service' },
+];
+
 /* ─────────────────────────────────────────────
    FOOTER LINK
 ───────────────────────────────────────────── */
@@ -192,6 +197,23 @@ export default function Footer() {
 								Company
 							</p>
 							{NAV_COL_B.map((link) => (
+								<FooterLink
+									key={link.label}
+									label={link.label}
+									href={link.href}
+								/>
+							))}
+						</div>
+
+						{/* Column C */}
+						<div className='flex flex-col gap-3'>
+							<p
+								className='font-syne font-semibold text-xs uppercase tracking-widest mb-1'
+								style={{ color: 'var(--text-subtle)' }}
+							>
+								Legal
+							</p>
+							{FOOTER_LINKS.map((link) => (
 								<FooterLink
 									key={link.label}
 									label={link.label}
