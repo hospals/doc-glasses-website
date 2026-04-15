@@ -66,6 +66,10 @@ export async function submitContactForm(data: FormData) {
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
       console.error("API Error:", errorData);
+      if(errorData.statusCode == 409){
+        return { success: false, error: "You have already submitted a request." };
+      }
+      else
       return { success: false, error: "Failed to submit request" };
     }
 

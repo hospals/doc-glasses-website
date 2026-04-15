@@ -5,6 +5,7 @@ import HowItWorks from '@/components/how-it-works';
 import Nav from '@/components/nav';
 // import Features from "@/components/features";
 import Benefits from '@/components/benefits';
+import VideoShowcase from '@/components/video-showcase';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
 import Science from '@/components/science';
@@ -19,6 +20,7 @@ export default function Home() {
 			<HowItWorks />
 			{/* <Features /> */}
 			<Benefits />
+			<VideoShowcase />
 			<Science />
 			<Advisors />
 			<Team />

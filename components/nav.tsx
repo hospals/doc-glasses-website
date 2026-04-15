@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 const NAV_LINKS = [
 	{ label: 'How It Works', href: '#how-it-works' },
 	{ label: 'Benefits', href: '#benefits' },
+	{ label: 'Videos', href: '#video-showcase' },
 	{ label: 'Science', href: '#science' },
 	{ label: 'Advisors', href: '#advisors' },
 	{ label: 'Team', href: '#team' },
