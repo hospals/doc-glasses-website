@@ -135,13 +135,13 @@ export default function Footer() {
 						</p>
 
 						{/* Sub */}
-						<p
+						{/* <p
 							className='font-dm text-sm mt-2 leading-relaxed max-w-xs'
 							style={{ color: 'var(--text-muted)' }}
 						>
 							Making AI-assisted consultation accessible to every public doctor
 							in India.
-						</p>
+						</p> */}
 
 						{/* Attribution */}
 						<p
