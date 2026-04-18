@@ -28,7 +28,8 @@ const TEAM: TeamMember[] = [
 		name: 'Danish Ahmed',
 		title: 'Co-founder & CEO',
 		// company: "DocGlasses / Healthtrip / HealthPaths.ai",
-		bio: 'Serial pioneer who built multiple industry-defining companies generating over $100 million in revenues.',
+		// bio: 'Serial pioneer who built multiple industry-defining companies generating over $100 million in revenues.',
+		bio: "Serial entrepreneur with 2 prior exits. Let's 2000 people team delivering $100m in revenue.",
 		photoUrl:
 			'https://healthpaths.ai/_next/image?url=%2Fimages%2Fteam%2Fdanish-ahmed.jpeg&w=256&q=75',
 		avatarStyle: 'brand-gradient',
@@ -49,7 +50,7 @@ const TEAM: TeamMember[] = [
 		title: 'Co-founder - Strategy',
 		// company: "DocGlasses / HealthPaths.ai",
 		bio: 'Stanford, 30 years in San Francisco leading tech sales and services.',
-		photoUrl: '/images/team/satya-misra.jpeg',
+		photoUrl: '/images/team/satya_misra.jpeg',
 		avatarStyle: 'brand-gradient',
 		linkedin:
 			'https://www.linkedin.com/in/satyamisra?utm_source=share_via&utm_content=profile&utm_medium=member_android',
@@ -59,7 +60,7 @@ const TEAM: TeamMember[] = [
 		title: 'Co-founder - Science',
 		// company: "DocGlasses / HealthPaths.ai",
 		bio: 'Pioneering Quantum Inspired algorithms to improve signal capture.',
-		photoUrl: '/images/team/dr-lubna.jpeg',
+		photoUrl: '/images/team/dr_lubna.jpeg',
 		avatarStyle: 'brand-gradient',
 	},
 	{
