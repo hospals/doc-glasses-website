@@ -29,7 +29,7 @@ const TEAM: TeamMember[] = [
 		title: 'Co-founder & CEO',
 		// company: "DocGlasses / Healthtrip / HealthPaths.ai",
 		// bio: 'Serial pioneer who built multiple industry-defining companies generating over $100 million in revenues.',
-		bio: "Serial entrepreneur with 2 prior exits. Let's 2000 people team delivering $100m in revenue.",
+		bio: 'Serial entrepreneur with 2 prior exits. Led 2000 people team delivering $100m in revenue.',
 		photoUrl:
 			'https://healthpaths.ai/_next/image?url=%2Fimages%2Fteam%2Fdanish-ahmed.jpeg&w=256&q=75',
 		avatarStyle: 'brand-gradient',
