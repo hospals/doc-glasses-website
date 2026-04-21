@@ -589,7 +589,7 @@ function PanelTranscript({ messages }: { messages: Message[] }) {
         display: "flex",
         flexDirection: "column",
         overflow: "hidden",
-        minHeight: 280,
+        height: 280,
         minWidth: 0,
       }}
     >
