@@ -30,8 +30,7 @@ const TEAM: TeamMember[] = [
 		// company: "DocGlasses / Healthtrip / HealthPaths.ai",
 		// bio: 'Serial pioneer who built multiple industry-defining companies generating over $100 million in revenues.',
 		bio: 'Serial entrepreneur with 2 prior exits. Led 2000 people team delivering $100m in revenue.',
-		photoUrl:
-			'https://healthpaths.ai/_next/image?url=%2Fimages%2Fteam%2Fdanish-ahmed.jpeg&w=256&q=75',
+		photoUrl: '/images/team/danish-ahmed.jpeg',
 		avatarStyle: 'brand-gradient',
 		linkedin: 'https://www.linkedin.com/in/danishyebhi',
 	},
@@ -40,8 +39,7 @@ const TEAM: TeamMember[] = [
 		title: 'CTO',
 		// company: "DocGlasses / HealthPaths.ai",
 		bio: 'AI expert who led technology at top media and community platforms with 800 million site visitors.',
-		photoUrl:
-			'https://healthpaths.ai/_next/image?url=%2Fimages%2Fteam%2Fashok-pundit.jpeg&w=256&q=75',
+		photoUrl: '/images/team/ashok-pundit.jpeg',
 		avatarStyle: 'brand-gradient',
 		linkedin: 'https://www.linkedin.com/in/ashok-gautam-0a6202387/',
 	},
