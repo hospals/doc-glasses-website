@@ -30,6 +30,7 @@ const ADVISORS: Advisors[] = [
 		hospital: 'University of Southern California',
 		photoUrl: '/images/advisors/imran_siddiqui.jfif',
 		avatarStyle: 'brand-gradient',
+		linkedin: 'https://www.linkedin.com/in/imran-siddiqi-863a823/',
 	},
 	{
 		name: 'Dr. Mohamed Hablas',
@@ -38,6 +39,7 @@ const ADVISORS: Advisors[] = [
 		hospital: 'Saudi German Health',
 		photoUrl: '/images/advisors/mohamed-hablas.jfif',
 		avatarStyle: 'brand-gradient',
+		linkedin: 'https://www.linkedin.com/in/mohamed-hablas-6323376/',
 	},
 	{
 		name: 'Dr. Kamal Ahmad',
@@ -72,6 +74,7 @@ const ADVISORS: Advisors[] = [
 		department: '',
 		photoUrl: '/images/advisors/tarun-malik.jpeg',
 		avatarStyle: 'brand-gradient',
+		linkedin: 'https://www.linkedin.com/in/tarunma/',
 	},
 ];
 
