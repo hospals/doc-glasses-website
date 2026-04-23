@@ -36,7 +36,7 @@ const TEAM: TeamMember[] = [
 	},
 	{
 		name: 'Ashok Gautam',
-		title: 'CTO',
+		title: 'Technology & AI',
 		// company: "DocGlasses / HealthPaths.ai",
 		bio: 'AI expert who led technology at top media and community platforms with 800 million site visitors.',
 		photoUrl: '/images/team/ashok-pundit.jpeg',
@@ -45,7 +45,7 @@ const TEAM: TeamMember[] = [
 	},
 	{
 		name: 'Satya Misra',
-		title: 'Co-founder - Strategy',
+		title: 'Strategy',
 		// company: "DocGlasses / HealthPaths.ai",
 		bio: 'Stanford, 30 years in San Francisco leading tech sales and services.',
 		photoUrl: '/images/team/satya_misra.jpeg',
@@ -55,7 +55,7 @@ const TEAM: TeamMember[] = [
 	},
 	{
 		name: 'Lubna Siddiqui',
-		title: 'Co-founder - Science',
+		title: 'Science',
 		// company: "DocGlasses / HealthPaths.ai",
 		bio: 'Research scientist pioneering Quantum Inspired algorithms to improve signal capture.',
 		photoUrl: '/images/team/dr_lubna.jpeg',
