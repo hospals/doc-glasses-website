@@ -115,6 +115,7 @@ export default function VideoShowcase() {
               return (
                 <button
                   key={tab.key}
+                  suppressHydrationWarning
                   onClick={() => setActiveTab(tab.key)}
                   style={{
                     position: "relative",

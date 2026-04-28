@@ -131,6 +131,7 @@ function Field({
       {textarea ? (
         <textarea
           id={id}
+          suppressHydrationWarning
           rows={rows}
           value={value}
           placeholder={placeholder}
@@ -145,6 +146,7 @@ function Field({
       ) : (
         <input
           id={id}
+          suppressHydrationWarning
           type={type}
           value={value}
           placeholder={placeholder}
@@ -743,6 +745,7 @@ export default function Contact() {
 
                 <motion.button
                   type="submit"
+                  suppressHydrationWarning
                   disabled={isSubmitting}
                   whileHover={{
                     boxShadow:

@@ -680,6 +680,7 @@ export default function Benefits() {
               return (
                 <button
                   key={tab.key}
+                  suppressHydrationWarning
                   onClick={() => setActiveTab(tab.key)}
                   style={{
                     position: "relative",
