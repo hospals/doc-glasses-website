@@ -24,7 +24,7 @@ const NAV_COL_B = [
 const FOOTER_LINKS = [
 	{ label: 'Privacy Policy', href: '/privacy-policy' },
 	{ label: 'Terms of Use', href: '/terms-of-service' },
-	{ label: 'Data & Security', href: '#data-security' },
+	{ label: 'Data Security', href: '#data-security' },
 ];
 
 /* ─────────────────────────────────────────────
