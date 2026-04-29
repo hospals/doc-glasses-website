@@ -808,33 +808,43 @@ export default function Hero() {
 						{/* 2. H1 typewriter headline */}
 						<motion.div variants={itemVariants}>
 							<h1
-								className='font-syne font-extrabold leading-[1.08] tracking-tight'
+								className='font-syne font-extrabold leading-[1.08] tracking-tight relative'
 								style={{
 									fontSize: 'clamp(2.8rem, 6vw, 4.5rem)',
 									color: 'var(--text-primary)',
 								}}
 							>
-								{/* Build word by word */}
-								<span className='block'>
-									{/* "AI Eyes for" — first 3 words on line 1 */}
-									{displayed.slice(0, 3).join(' ')}
-									{displayed.length < 3 && (
-										<span className='typewriter-cursor' />
-									)}
-								</span>
-
-								{/* "Every Doctor." on line 2 */}
-								{displayed.length >= 3 && (
+								{/* Invisible clone to reserve exact height and layout */}
+								<div aria-hidden='true' className='invisible pointer-events-none select-none'>
+									<span className='block'>AI Eyes for</span>
 									<span className='block mt-1'>
-										{displayed.length >= 4 && (
-											<span className='brand-gradient'>{displayed[3]}</span>
-										)}{' '}
-										{displayed.length >= 5 ? displayed[4] : ''}
-										{!done && displayed.length >= 3 && (
+										<span className='brand-gradient'>Every</span> Doctor.
+									</span>
+								</div>
+
+								{/* Actual typewriter text absolute positioned */}
+								<div className='absolute inset-0'>
+									<span className='block'>
+										{/* "AI Eyes for" — first 3 words on line 1 */}
+										{displayed.slice(0, 3).join(' ')}
+										{displayed.length < 3 && (
 											<span className='typewriter-cursor' />
 										)}
 									</span>
-								)}
+
+									{/* "Every Doctor." on line 2 */}
+									<span className='block mt-1'>
+										{displayed.length >= 3 && (
+											<>
+												{displayed.length >= 4 && (
+													<span className='brand-gradient'>{displayed[3]}</span>
+												)}{' '}
+												{displayed.length >= 5 ? displayed[4] : ''}
+												{!done && <span className='typewriter-cursor' />}
+											</>
+										)}
+									</span>
+								</div>
 							</h1>
 						</motion.div>
 

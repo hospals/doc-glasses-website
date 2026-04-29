@@ -11,6 +11,7 @@ import Footer from '@/components/footer';
 import Science from '@/components/science';
 import Team from '@/components/team';
 import Advisors from '@/components/advisors';
+import DataSecurity from '@/components/data-security';
 
 export default function Home() {
 	return (
@@ -24,6 +25,7 @@ export default function Home() {
 			<Science />
 			<Advisors />
 			<Team />
+			<DataSecurity />
 			<Contact />
 			<Footer />
 		</main>
