@@ -322,7 +322,11 @@ export default function Team() {
 		<section
 			id='team'
 			className='relative overflow-hidden'
-			style={{ background: 'var(--navy-mid)', padding: '50px 0' }}
+			style={{
+				background: 'var(--navy-mid)',
+				padding: '50px 0',
+				borderTop: '1px solid var(--glass-border)',
+			}}
 		>
 			{/* Subtle background glow */}
 			<div
