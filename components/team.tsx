@@ -30,7 +30,7 @@ const TEAM: TeamMember[] = [
 		// company: "DocGlasses / Healthtrip / HealthPaths.ai",
 		// bio: 'Serial pioneer who built multiple industry-defining companies generating over $100 million in revenues.',
 		bio: 'Serial entrepreneur with 2 prior exits. Led 2000 people team delivering $100m in revenue.',
-		photoUrl: '/images/team/danish-ahmed.jpeg',
+		photoUrl: '/images/team/danish_ahmed.jpeg',
 		avatarStyle: 'brand-gradient',
 		linkedin: 'https://www.linkedin.com/in/danishyebhi',
 	},
