@@ -2,28 +2,26 @@
 trigger: always_on
 ---
 
-<!-- @format -->
+# Next.js & React 19 Rules (Tailwind 4)
 
-# Frontend Workspace Rules
+## 🏗️ Technical Standards
+- **Next.js App Router**: Always use the `/app` directory for new pages. Follow the server/client component boundary rules.
+- **React 19**: Use modern hooks and patterns. Prefer functional components with arrow functions.
+- **TypeScript**: Strict typing is required. Use interfaces for props and avoid `any`.
+- **Tailwind 4**: Use `@tailwindcss/postcss` and the `@theme` block in `globals.css` for custom tokens. Use utility classes for layout and spacing.
 
-## 🎯 Primary Directive: Context Preservation
+## 🎨 Styling & UI
+- **Design Tokens**: Never use hardcoded hex values. Use CSS variables defined in `globals.css`:
+  - Colors: `var(--brand)`, `var(--brand-light)`, `var(--navy-deep)`, `var(--navy-mid)`.
+  - Fonts: `font-syne` (for headers), `font-dm` (for body), `font-mono`.
+- **Glassmorphism**: Use the `.glass-card` class for cards and overlays.
+- **Animations**: Use `framer-motion` for all transitions. Follow the existing stagger and variant patterns in `components/team.tsx`.
 
-- **Strict Adherence to Structure:** You are an AI assistant working on an established codebase. Do NOT suggest or implement changes to the folder structure, naming conventions, or architectural patterns.
-- **Style Consistency:** Analyze the existing `tailwind.config.js`, global CSS, and existing components. Any new UI must be indistinguishable from the current design system.
-- **Non-Breaking Changes:** All code must be additive. Do not refactor stable components unless a bug is explicitly identified.
+## 🚦 Component Architecture
+- **Client vs Server**: Use `'use client';` only when interactivity (Framer Motion, hooks) is required.
+- **Icons**: Use `lucide-react` for standard icons. Use native SVG components for custom brand icons (e.g., LinkedInIcon).
+- **Images**: Always use the `next/image` component for optimization, except for SVGs where native `<img>` is preferred.
 
-## 🏗️ Technical Standards (NextJS & React)
-
-- **Component Pattern:** Follow the existing pattern (e.g., if the project uses Functional Components with Arrow functions, do not use `function` keywords).
-- **TypeScript:** Mirror the strictness of the Backend. Interfaces for all props. No `any`.
-- **API Fidelity:** Use the established API client/wrapper. Ensure types match the Global Backend Response: `{ data, message, metadata }`.
-- **State Management:** Respect the chosen state library (Zustand/Redux/Context). Do not introduce alternatives.
-
-## 🎨 Design & UI
-
-- **Component Reuse:** Search for existing UI components in `/components` before writing new JSX.
-- **Design Tokens:** Use existing Tailwind classes or CSS variables for colors and spacing. Do not introduce "one-off" hex codes.
-
-## 🚦 Verification Step
-
-- Before providing code, verify: "Does this match the existing import style and directory nesting of this specific project?"
+## 🔍 Verification
+- Run `npm run lint` before finalizing any UI changes.
+- Check responsiveness across mobile, tablet, and desktop views.
