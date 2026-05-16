@@ -54,7 +54,7 @@ const TEAM: TeamMember[] = [
 			'https://www.linkedin.com/in/satyamisra?utm_source=share_via&utm_content=profile&utm_medium=member_android',
 	},
 	{
-		name: 'Lubna Siddiqui',
+		name: 'Dr. Lubna Siddiqui',
 		title: 'Science',
 		// company: "DocGlasses / HealthPaths.ai",
 		bio: 'Research scientist pioneering Quantum Inspired algorithms to improve signal capture.',
