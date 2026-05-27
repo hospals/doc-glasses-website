@@ -843,7 +843,7 @@ export default function PatentTech() {
               fontSize={9}
               fill="#94A3B8"
             >
-              Global Health Holdings, USA
+              Vision Health Holdings Inc., USA
             </text>
             <rect
               x={637}

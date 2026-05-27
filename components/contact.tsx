@@ -853,7 +853,7 @@ export default function Contact() {
 								</span>{' '}
 								<span style={{ color: 'var(--text-subtle)' }}>|</span>{' '}
 								<span style={{ color: 'var(--text-muted)' }}>
-									Global Health Holdings, USA
+									Vision Health Holdings Inc., USA
 								</span>
 							</p>
 						</div>

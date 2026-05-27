@@ -801,7 +801,7 @@ export default function Hero() {
 								<span style={{ color: 'var(--brand)', fontWeight: 700 }}>
 									Patent Applied
 								</span>
-								&nbsp;·&nbsp; Global Health Holdings, USA
+								&nbsp;·&nbsp; Vision Health Holdings Inc., USA
 							</span>
 						</motion.div>
 

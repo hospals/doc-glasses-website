@@ -149,7 +149,7 @@ export default function Footer() {
 							className='font-dm text-xs mt-3'
 							style={{ color: 'var(--text-subtle)' }}
 						>
-							A platform by Global Health Holdings, USA
+							A platform by Vision Health Holdings Inc., USA
 						</p>
 
 						{/* Brand-Teal accent line */}
@@ -261,7 +261,7 @@ export default function Footer() {
 							className='font-dm text-xs'
 							style={{ color: 'var(--text-muted)' }}
 						>
-							Global Health Holdings, USA
+							Vision Health Holdings Inc., USA
 						</span>
 					</div>
 				</motion.div>
@@ -284,7 +284,7 @@ export default function Footer() {
 							className='font-dm text-xs'
 							style={{ color: 'var(--text-subtle)' }}
 						>
-							&copy; 2026 Global Health Holdings, USA. All rights reserved.
+							&copy; 2026 Vision Health Holdings Inc., USA. All rights reserved.
 						</p>
 					</div>
 				</motion.div>

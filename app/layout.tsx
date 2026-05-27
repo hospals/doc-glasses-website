@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "doctor AI assistant",
     "EHR automation",
     "government healthcare AI",
-    "Global Health Holdings",
+    "Vision Health Holdings Inc.",
   ],
   openGraph: {
     title: "DocGlasses — AI Eyes for Every Doctor",
