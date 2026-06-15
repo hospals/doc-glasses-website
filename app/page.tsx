@@ -12,12 +12,14 @@ import Science from '@/components/science';
 import Team from '@/components/team';
 import Advisors from '@/components/advisors';
 import DataSecurity from '@/components/data-security';
+import Partners from '@/components/partners';
 
 export default function Home() {
 	return (
 		<main className='min-h-screen overflow-x-hidden'>
 			<Nav />
 			<Hero />
+			<Partners />
 			<HowItWorks />
 			{/* <Features /> */}
 			<Benefits />
