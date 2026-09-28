@@ -623,7 +623,7 @@ export default function Contact() {
 									<Field
 										label='Full Name'
 										id='fullName'
-										placeholder='Dr. Ravi Shankar'
+										placeholder='Dr. John Doe'
 										value={formData.fullName}
 										onChange={handleChange}
 										hasError={!!errors.fullName}
@@ -632,7 +632,7 @@ export default function Contact() {
 									<Field
 										label='Organisation / Department'
 										id='organisation'
-										placeholder='PHC, Lucknow District'
+										placeholder='Internal Medicine'
 										value={formData.organisation}
 										onChange={handleChange}
 										hasError={!!errors.organisation}
@@ -644,7 +644,7 @@ export default function Contact() {
 									<Field
 										label='Designation'
 										id='designation'
-										placeholder='Chief Medical Officer'
+										placeholder='Dermatologist'
 										value={formData.designation}
 										onChange={handleChange}
 										hasError={!!errors.designation}
@@ -654,7 +654,7 @@ export default function Contact() {
 										label='Phone'
 										id='phone'
 										type='tel'
-										placeholder='+91 98XXX XXXXX'
+										placeholder='+1 415-123-1234'
 										value={formData.phone}
 										onChange={handleChange}
 										hasError={!!errors.phone}
@@ -674,9 +674,9 @@ export default function Contact() {
 										isLight={isLight}
 									/>
 									<Field
-										label='State / City'
+										label='City / State'
 										id='stateCity'
-										placeholder='e.g. Maharashtra, Mumbai'
+										placeholder='San Francisco, CA'
 										value={formData.stateCity}
 										onChange={handleChange}
 										hasError={!!errors.stateCity}
