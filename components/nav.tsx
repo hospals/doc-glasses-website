@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { PORTAL_LOGIN_URL } from '@/lib/portal';
 
 const NAV_LINKS = [
 	{ label: 'How It Works', href: '#how-it-works' },
@@ -108,8 +109,23 @@ export default function Nav() {
 							))}
 						</div>
 
-						{/* ── RIGHT: CTA + Hamburger ── */}
-						<div className='flex items-center gap-4'>
+						{/* ── RIGHT: Auth + CTA + Hamburger ── */}
+						<div className='flex items-center gap-3 sm:gap-4'>
+							<a
+								href={PORTAL_LOGIN_URL}
+								className='hidden sm:inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold font-dm transition-colors duration-200'
+								style={{ color: 'var(--text-primary)' }}
+								onMouseEnter={(e) => {
+									(e.currentTarget as HTMLAnchorElement).style.color =
+										'var(--brand)';
+								}}
+								onMouseLeave={(e) => {
+									(e.currentTarget as HTMLAnchorElement).style.color =
+										'var(--text-primary)';
+								}}
+							>
+								Login
+							</a>
 							<a
 								href='#contact'
 								onClick={(e) => {
@@ -218,11 +234,27 @@ export default function Nav() {
 						))}
 
 						<motion.a
-							href='#contact'
+							href={PORTAL_LOGIN_URL}
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							exit={{ opacity: 0, y: 10 }}
 							transition={{ delay: NAV_LINKS.length * 0.07, duration: 0.3 }}
+							onClick={() => setMenuOpen(false)}
+							className='font-dm font-semibold tracking-widest uppercase text-lg'
+							style={{ color: 'var(--text-muted)' }}
+						>
+							Login
+						</motion.a>
+
+						<motion.a
+							href='#contact'
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							exit={{ opacity: 0, y: 10 }}
+							transition={{
+								delay: (NAV_LINKS.length + 1) * 0.07,
+								duration: 0.3,
+							}}
 							onClick={(e) => {
 								handleNavClick(e, '#contact');
 							}}
