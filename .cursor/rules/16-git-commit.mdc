@@ -1,0 +1,18 @@
+---
+description: Git author, message format, and approval before commit
+alwaysApply: true
+---
+
+# Git commits
+
+Author/committer only: **Rajwant Singh** `<rajwant@docglasses.ai>`. Do not change git config; pass on the command:
+
+`git -c user.name="Rajwant Singh" -c user.email="rajwant@docglasses.ai" commit --author="Rajwant Singh <rajwant@docglasses.ai>"`
+
+No AI/`Co-authored-by` unless the user names another human. After commit verify `git log -1 --format="%an <%ae>%n%cn <%ce>%n%B"`; fix unpushed bad author/AI trailer; keep approved message.
+
+Subject: one line, imperative, conventional type (`feat|fix|refactor|docs|style|test|chore|ci|build|revert`) + feature + change. No vague subjects (`update`, `wip`, `cursor`).
+
+Before commit/push: skill `pre-commit-security-sonar` → `GATE: PASS` (rule `25`).
+
+Approval: show exact subject/body + author line → stop → commit only after user approves that text (or their replacement).

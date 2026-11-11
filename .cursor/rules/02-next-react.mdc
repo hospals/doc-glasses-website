@@ -1,0 +1,14 @@
+---
+description: Next App Router / React — RSC, Link, Image, lint
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# Next.js / React
+
+Also `.agent/rules/next-react-rules.md`.
+
+- Pages under `app/`; RSC default; `'use client'` only for hooks/motion/events/browser APIs.
+- Internal: `next/link`. External/`mailto:`/`tel:`: `<a>`. Raster: `next/image` + `alt` (decorative: `alt=""` + `aria-hidden`). SVG: `<img>` OK.
+- Icons: `lucide-react` or existing brand SVGs. Tailwind 4 + `globals.css` tokens — no hardcoded hex when a token exists.
+- After UI/logic: `npm run lint`. Route/action/config: also `npm run build`.

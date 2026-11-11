@@ -1,0 +1,12 @@
+---
+description: TypeScript — no any, typed props, clean unused
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# TypeScript
+
+- New code in `.ts`/`.tsx`; props/public shapes via `interface`; no `any` (`unknown` + narrow).
+- Drop unused imports/vars; destructure only used fields.
+- Explicit return types on exported `lib/` helpers and server actions.
+- Prefer `as const`/unions over magic strings; no `@ts-ignore`/`@ts-expect-error` unless commented why.

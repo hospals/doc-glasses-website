@@ -1,0 +1,12 @@
+---
+description: OWASP commit gate + server-only secrets while coding
+alwaysApply: true
+---
+
+# Security gate
+
+No runtime/prod weaken of cookie consent, headers, or contact API without approval.
+
+**Commit/push:** skill `pre-commit-security-sonar` → `GATE: PASS` → rule `16`. Agent: `security-quality-gate`. Full OWASP A01–A10 in the skill.
+
+**Coding:** `PROD_API_URL` / `CONTACT_API_TOKEN` / `CONTACT_API_COOKIE` server-only (never `NEXT_PUBLIC_`). Public OK: `NEXT_PUBLIC_MICROSOFT_CLARITY`, `NEXT_PUBLIC_PORTAL_URL`. Validate form input. No tokens/PII in `console.*`. No unsanitized `dangerouslySetInnerHTML` except approved Clarity init with env project id.

@@ -4,6 +4,8 @@ trigger: always_on
 
 # UI Consistency & Aesthetics (Skill Rule)
 
+Cursor mirror: `.cursor/rules/04-ui-website.mdc`. Component skill: `.cursor/skills/component-generation/SKILL.md`.
+
 ## 🎨 Design Language
 - **Theme**: High-tech, premium, healthcare-focused.
 - **Palette**:

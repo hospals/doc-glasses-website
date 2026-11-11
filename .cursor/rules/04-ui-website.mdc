@@ -1,0 +1,14 @@
+---
+description: Marketing UI tokens, glass, Framer patterns
+globs: components/**/*.{tsx,ts},app/**/*.{tsx,ts}
+alwaysApply: false
+---
+
+# UI
+
+Also `.agent/rules/ui-consistency.md`.
+
+- Tokens: `--brand`, `--brand-light`, `--navy-deep`, `--navy-mid`, `--text-primary`, `--text-muted`, `--glass-border`; fonts `font-syne` / `font-dm`.
+- Classes: `.btn-brand`, `.btn-ghost-brand`, `.glass-card`, `.brand-gradient`.
+- Motion: Framer entrance fade+`y`, ~0.5s easeOut; `whileInView`/`useInView` `once: true`; hover lift ~`y:-4`. Match `components/team.tsx`.
+- Layout: `max-w-7xl`, `px-6 lg:px-8`, section `py-20`/`py-32`. No second design system.

@@ -24,3 +24,19 @@ DocGlasses is an AI-powered smart glasses platform for healthcare. The website i
 - `/hooks`: Custom React hooks (e.g., `useCookieConsent`).
 - `/public`: Static assets (images, icons).
 - `.agent/rules`: Specialized rules for this agent.
+- `.cursor/`: Cursor rules, skills, agents, and commit/OWASP hook (source of truth for Cursor sessions).
+
+## Cursor governance (see `.cursor/`)
+
+| Topic | Path |
+|-------|------|
+| TypeScript | `.cursor/rules/01-typescript.mdc` |
+| Next.js / React | `.cursor/rules/02-next-react.mdc` |
+| UI tokens / motion | `.cursor/rules/04-ui-website.mdc` |
+| Git commits | `.cursor/rules/16-git-commit.mdc` |
+| OWASP gate | `.cursor/rules/25-security-owasp-sonar-gate.mdc` |
+| Pre-commit OWASP skill | `.cursor/skills/pre-commit-security-sonar/SKILL.md` |
+| Reusable components skill | `.cursor/skills/component-generation/SKILL.md` |
+| Security gate agent | `.cursor/agents/security-quality-gate.md` |
+
+Keep `.agent/rules/*` aligned with the Cursor rules above when either side changes.

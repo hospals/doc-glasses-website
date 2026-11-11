@@ -7,7 +7,6 @@ import Link from 'next/link';
 
 export default function CookieBanner() {
 	const {
-		hasConsent,
 		shouldShowBanner,
 		acceptCookieConsent,
 		rejectCookieConsent,
@@ -46,7 +45,7 @@ export default function CookieBanner() {
 									</Link>{' '}
 									and{' '}
 									<Link
-										href='/terms-of-service'
+										href='/terms'
 										className='text-teal-400 hover:text-teal-300 underline underline-offset-4 transition-colors focus:outline-none focus:ring-1 focus:ring-teal-400/50 rounded'
 									>
 										Terms of Service

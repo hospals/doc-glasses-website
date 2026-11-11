@@ -7,6 +7,8 @@ import Nav from '@/components/nav';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
+const NOTICE_ADDRESS = '16192 Coastal Highway Lewes, DE 19958';
+
 export default function TermsOfServiceContent() {
 	return (
 		<main
@@ -45,39 +47,168 @@ export default function TermsOfServiceContent() {
 						className='font-syne text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4'
 						style={{ color: 'var(--text-primary)' }}
 					>
-						Terms of Use
+						Terms of Service
 					</h1>
 					<p
 						className='font-dm tracking-wider uppercase text-xs sm:text-sm font-semibold'
 						style={{ color: 'var(--brand)' }}
 					>
-						Last updated: April 14, 2026
+						Effective date: November 1, 2026
+					</p>
+					<p
+						className='font-dm tracking-wider uppercase text-xs sm:text-sm font-semibold mt-2'
+						style={{ color: 'var(--brand)' }}
+					>
+						Last updated: November 1, 2026
 					</p>
 				</div>
 
 				<div className='flex-1 w-full space-y-12'>
-					<Section title='1. Introduction'>
+					<div className='font-dm space-y-6 text-base text-white/70 leading-relaxed'>
 						<p>
-							These Terms of Use (“Terms”) govern access to and use of the
-							DocGlasses website, applications, smart-device integrations,
-							clinical-support services, Center of Excellence platform, patient
-							applications, APIs, and related technology services collectively
-							referred to as the “DocGlasses Platform” or “Services.”
+							These Terms of Service (the &quot;Terms&quot;) set the rules for
+							using the website at docglasses.ai and any page that links to these
+							Terms (the &quot;Website&quot;). The Website is operated by Vision
+							Health Holdings Inc, a Delaware corporation (the
+							&quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; or
+							&quot;our&quot;). In these Terms, &quot;you&quot; means the person
+							using the Website. If you use the Website for an organization,
+							&quot;you&quot; also means that organization.
 						</p>
 						<p>
-							DocGlasses is operated by{' '}
-							<strong>Vision Health Holdings Inc.</strong> (“DocGlasses”,
-							“we”, “our”, or “us”).
+							Please read these Terms with our{' '}
+							<Link
+								href='/privacy-policy'
+								className='text-teal-400 hover:underline'
+							>
+								Privacy Policy
+							</Link>
+							. The Privacy Policy explains how we handle personal information
+							collected through the Website.
+						</p>
+					</div>
+
+					<Section title='1. Accepting these Terms'>
+						<p>
+							By visiting or using the Website, you agree to these Terms. If you
+							do not agree, please do not use the Website.
 						</p>
 						<p>
-							The DocGlasses Platform is an AI-enabled healthcare technology
-							platform intended to support healthcare professionals, frontline
-							healthcare workers, healthcare institutions, government healthcare
-							programs, and patients.
+							You must be at least 18 years old to use the Website. If you use
+							the Website for an organization, you confirm that you have
+							authority to accept these Terms for it.
+						</p>
+					</Section>
+
+					<Section title='2. Who we are and what the Website is'>
+						<p>
+							The Company builds clinical documentation and artificial
+							intelligence assistant technology for healthcare professionals and
+							organizations. The Website is an informational site. It describes
+							the Company, lets you learn about our work, and lets you contact
+							us.
+						</p>
+						<p>The Website is not a healthcare service. In particular:</p>
+						<BulletList
+							items={[
+								'Nothing on the Website is medical advice, diagnosis, or treatment.',
+								'Using the Website does not create a clinician and patient relationship with us or with anyone else.',
+								'The Website is not for emergencies. If you or someone else may have a medical emergency, call 911 or your local emergency number right away.',
+							]}
+						/>
+					</Section>
+
+					<Section title='3. Changes to the Website and to these Terms'>
+						<p>
+							We may change, pause, or remove any part of the Website at any
+							time. We do not promise that any content or feature will stay
+							available.
 						</p>
 						<p>
-							By accessing or using the Services, you agree to these Terms and
-							our{' '}
+							We may update these Terms from time to time. When we do, we will
+							post the new version on this page and change the &quot;Last
+							updated&quot; date. If a change is significant, we will also make
+							reasonable efforts to point it out, for example with a notice on
+							the Website. Changes apply from the date they are posted and do
+							not apply to any dispute that arose before that date. If you keep
+							using the Website after a change is posted, you accept the updated
+							Terms.
+						</p>
+					</Section>
+
+					<Section title='4. How you may use the Website'>
+						<p>
+							You may use the Website for lawful, personal, or internal business
+							purposes, such as learning about the Company or getting in touch
+							with us.
+						</p>
+						<p>When you use the Website, you agree that you will not:</p>
+						<BulletList
+							items={[
+								'break any law or regulation, or help anyone else do so;',
+								'try to gain unauthorized access to the Website, our systems, or any account, or test for weaknesses without our written permission;',
+								'interfere with or disrupt the Website, for example by sending malware, overloading our servers, or getting around security features;',
+								'use bots, scrapers, or other automated tools to collect content or data from the Website, except for standard search engine indexing that follows our robots.txt file;',
+								'copy, sell, or reuse Website content in ways these Terms do not allow;',
+								'use Website content to train, test, or improve any artificial intelligence or machine learning model without our written permission;',
+								'pretend to be another person or organization, or misstate your connection with anyone;',
+								'send spam, chain messages, or other unsolicited promotions through the Website; or',
+								'submit anything that is unlawful, harmful, threatening, abusive, defamatory, or that violates someone else\'s rights.',
+							]}
+						/>
+					</Section>
+
+					<Section title='5. Intellectual property and your limited license'>
+						<p>
+							The Website and its content belong to Vision Health Holdings Inc.
+							or to the people who licensed it to us. This includes text,
+							graphics, logos, images, video, page design, and software. These
+							materials are protected by copyright, trademark, and other laws.
+						</p>
+						<p>
+							We give you a limited, personal, non-exclusive, non-transferable,
+							and revocable license to view and use the Website for the purposes
+							allowed in Section 4. You may print or save a reasonable number of
+							pages for your own reference, as long as you keep all copyright
+							and other notices.
+						</p>
+						<p>
+							This license does not let you modify, republish, distribute, sell,
+							or create derivative works from the Website. All rights we do not
+							expressly grant to you are reserved. The DocGlasses name and logo,
+							and any related names and marks, are trademarks of Vision Health
+							Holdings Inc. You may not use them without our written permission.
+						</p>
+					</Section>
+
+					<Section title='6. Feedback and submissions'>
+						<p>
+							If you send us ideas, suggestions, or other feedback about the
+							Company or the Website (&quot;Feedback&quot;), you agree that we
+							may use that Feedback for any purpose without paying you or giving
+							you credit. We are not required to use any Feedback or to keep it
+							confidential.
+						</p>
+						<p>
+							Please do not send us confidential information or unsolicited
+							business proposals through the Website. If you want to share
+							confidential information, ask us first so that we can agree on
+							appropriate terms in writing.
+						</p>
+					</Section>
+
+					<Section title='7. Information you send through contact forms'>
+						<p>
+							The Website may include contact forms and email links. When you
+							send us a message, you are responsible for what it says. You
+							confirm that the information is accurate and that you have the
+							right to share it.
+						</p>
+						<p>
+							You keep any rights you have in your message. You give us
+							permission to store, use, and copy it as needed to read it, reply
+							to you, keep records, and operate the Website. We handle personal
+							information in your message as described in our{' '}
 							<Link
 								href='/privacy-policy'
 								className='text-teal-400 hover:underline'
@@ -86,1187 +217,304 @@ export default function TermsOfServiceContent() {
 							</Link>
 							.
 						</p>
+					</Section>
+
+					<Section title='8. No patient information'>
 						<p>
-							If you use DocGlasses on behalf of a hospital, government
-							department, healthcare institution, organization, or other entity,
-							you represent that you are authorized to use the Services on its
-							behalf.
+							The Website is not designed to receive patient health information.
+							Please do not submit any information about a patient through the
+							Website. This includes names, dates of birth, medical record
+							numbers, diagnoses, treatment details, images, or any other
+							information that could identify a patient or describe a
+							patient&apos;s health.
+						</p>
+						<p>
+							If you are a healthcare professional or organization and want to
+							discuss a specific need, please describe it in general terms only.
+							If we receive patient information through the Website by mistake,
+							we may delete it.
 						</p>
 					</Section>
 
-					<Section title='2. Scope of DocGlasses'>
-						<p>DocGlasses provides technology that may support:</p>
-						<BulletList
-							items={[
-								'patient registration and encounter management;',
-								'clinical documentation;',
-								'AI-assisted history taking;',
-								'AI-assisted triage;',
-								'clinical decision support;',
-								'differential-diagnosis support;',
-								'referral workflows;',
-								'connected diagnostic-device capture;',
-								'medical report and prescription processing;',
-								'consultation audio processing;',
-								'smart-glasses workflows;',
-								'tele-supervision and clinical escalation;',
-								'patient health-record access;',
-								'ABDM interoperability;',
-								'clinical workflow analytics; and',
-								'healthcare program monitoring.',
-							]}
-						/>
+					<Section title='9. No medical, legal, or professional advice'>
 						<p>
-							Specific features available to a user depend on the deployment,
-							healthcare institution, user role, device configuration, and
-							applicable agreements.
+							Website content is for general information only. It is not medical,
+							legal, regulatory, financial, or other professional advice. Do not
+							rely on the Website to make clinical or business decisions. Always
+							ask a qualified professional for advice about your situation.
+						</p>
+						<p>
+							Any description of our technology on the Website is a general
+							overview. It is not a promise about how any product works, what it
+							can do, or whether it is available.
 						</p>
 					</Section>
 
-					<Section title='3. DocGlasses Is a Technology Platform'>
+					<Section title='10. Separate agreements for our products'>
 						<p>
-							DocGlasses is not a hospital, clinic, pharmacy, diagnostic
-							laboratory, ambulance service, or independent medical practitioner.
+							These Terms cover the Website only. Use of any Company product or
+							service, including any software application, platform, or related
+							service, is governed by a separate written agreement between the
+							Company and the customer or user. If these Terms conflict with that
+							agreement, that agreement controls for the use of the product or
+							service.
 						</p>
 						<p>
-							DocGlasses provides technology to assist authorized healthcare
-							professionals and institutions.
-						</p>
-						<p>Except where expressly stated otherwise:</p>
-						<BulletList
-							items={[
-								'medical care is provided by independent healthcare professionals or healthcare institutions;',
-								'DocGlasses does not independently establish a doctor-patient relationship;',
-								'DocGlasses does not independently prescribe medicines;',
-								'DocGlasses does not independently make final diagnoses;',
-								'DocGlasses does not independently determine treatment; and',
-								'DocGlasses does not replace professional clinical judgment.',
-							]}
-						/>
-						<p>
-							Doctors and other appropriately authorized healthcare
-							professionals remain responsible for clinical decisions and
-							patient care.
+							Opening a product through a link on the Website does not make these
+							Terms the terms for that product.
 						</p>
 					</Section>
 
-					<Section title='4. Artificial Intelligence and Clinical Decision Support'>
+					<Section title='11. Links to other websites'>
 						<p>
-							DocGlasses uses artificial intelligence and other computational
-							systems to assist healthcare delivery.
-						</p>
-						<p>AI functionality may include:</p>
-						<BulletList
-							items={[
-								'understanding clinical conversations;',
-								'generating suggested triage questions;',
-								'identifying potentially relevant symptoms or missing information;',
-								'summarizing consultations;',
-								'extracting information from medical documents;',
-								'suggesting possible differential considerations;',
-								'identifying clinical red flags;',
-								'generating draft clinical documentation;',
-								'generating draft referral documentation; and',
-								'providing workflow recommendations.',
-							]}
-						/>
-
-						<SubSection title='4.1 AI Outputs Are Assistive'>
-							<p>
-								AI-generated outputs are supportive recommendations and drafts.
-							</p>
-							<p>They are not substitutes for:</p>
-							<BulletList
-								items={[
-									'clinical examination;',
-									'professional medical judgment;',
-									'diagnostic testing;',
-									'applicable clinical guidelines; or',
-									'emergency medical assessment.',
-								]}
-							/>
-							<p>
-								Authorized healthcare professionals must review clinically
-								relevant AI output before relying on it.
-							</p>
-						</SubSection>
-
-						<SubSection title='4.2 AI May Make Errors'>
-							<p>
-								Users acknowledge that artificial intelligence systems may:
-							</p>
-							<BulletList
-								items={[
-									'misunderstand speech;',
-									'incorrectly transcribe conversations;',
-									'omit important information;',
-									'misinterpret medical documents;',
-									'generate inaccurate recommendations;',
-									'generate incomplete summaries; or',
-									'produce information inconsistent with the clinical situation.',
-								]}
-							/>
-							<p>
-								Users must exercise appropriate professional judgment when
-								reviewing AI-generated information.
-							</p>
-						</SubSection>
-
-						<SubSection title='4.3 Human Oversight'>
-							<p>
-								Where DocGlasses is used to support diagnosis, treatment, triage,
-								referral, or another clinically significant decision, final
-								responsibility remains with the appropriately qualified
-								healthcare professional.
-							</p>
-							<p>DocGlasses may require additional human review where:</p>
-							<BulletList
-								items={[
-									'the AI confidence level is low;',
-									'a potential emergency condition is identified;',
-									'conflicting clinical information is detected; or',
-									'the workflow has been classified as higher risk.',
-								]}
-							/>
-						</SubSection>
-					</Section>
-
-					<Section title='5. Emergency Medical Situations'>
-						<p>
-							DocGlasses must not be relied upon as the sole method for
-							identifying or managing a medical emergency.
-						</p>
-						<p>
-							If a patient appears to require emergency medical attention, users
-							must follow applicable emergency protocols and seek immediate
-							professional medical assistance.
-						</p>
-						<p>Users must not delay:</p>
-						<BulletList
-							items={[
-								'calling emergency services;',
-								'transferring a patient;',
-								'initiating emergency protocols;',
-								'providing clinically indicated treatment; or',
-								'seeking specialist support',
-							]}
-						/>
-						<p>
-							while waiting for DocGlasses, an AI recommendation, network
-							connectivity, or a Center of Excellence response.
+							The Website may link to websites, videos, or services run by other
+							companies. We include these links for convenience only. We do not
+							control those sites, and a link does not mean we endorse them. Your
+							use of another site is governed by that site&apos;s own terms and
+							privacy policy.
 						</p>
 					</Section>
 
-					<Section title='6. Healthcare Professional Users'>
-						<p>Healthcare professionals using DocGlasses represent that they:</p>
-						<BulletList
-							items={[
-								'possess the qualifications, registrations, permissions, or authority required for their role;',
-								'will use DocGlasses within their professional scope of practice;',
-								'will comply with applicable medical and professional standards;',
-								'will independently review clinically significant AI-generated outputs;',
-								'will ensure documentation entered into the patient’s health record is reasonably accurate; and',
-								'will not represent AI-generated output as independently verified medical fact without appropriate review.',
-							]}
-						/>
+					<Section title='12. Disclaimers'>
 						<p>
-							DocGlasses does not independently verify every user’s professional
-							qualification unless such verification forms part of the
-							applicable institutional deployment.
+							THE WEBSITE AND ITS CONTENT ARE PROVIDED &quot;AS IS&quot; AND
+							&quot;AS AVAILABLE.&quot; TO THE FULLEST EXTENT ALLOWED BY LAW, THE
+							COMPANY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS,
+							IMPLIED, OR STATUTORY. THIS INCLUDES ANY WARRANTY OF
+							MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE,
+							NON-INFRINGEMENT, ACCURACY, OR COMPLETENESS.
+						</p>
+						<p>
+							WE DO NOT PROMISE THAT THE WEBSITE WILL BE UNINTERRUPTED, SECURE,
+							OR FREE OF ERRORS, VIRUSES, OR OTHER HARMFUL CODE, OR THAT ANY
+							CONTENT IS CURRENT OR CORRECT.
+						</p>
+						<p>
+							Some places do not allow certain warranties to be excluded. In
+							those places, some of these exclusions may not apply to you.
 						</p>
 					</Section>
 
-					<Section title='7. ASHA Workers, ANMs and Other Frontline Healthcare Workers'>
+					<Section title='13. Limitation of liability'>
 						<p>
-							DocGlasses may be used by ASHA workers, ANMs, Community Health
-							Officers, and other frontline healthcare personnel.
-						</p>
-						<p>The Platform may guide these users through:</p>
-						<BulletList
-							items={[
-								'structured patient intake;',
-								'screening;',
-								'protocol-based questions;',
-								'diagnostic-device capture;',
-								'risk identification;',
-								'referral workflows; and',
-								'escalation to qualified healthcare professionals.',
-							]}
-						/>
-						<p>
-							Such functionality does not expand a worker’s legally permitted
-							clinical scope.
+							TO THE FULLEST EXTENT ALLOWED BY LAW, THE COMPANY AND ITS
+							AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AND LICENSORS
+							WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
+							CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF
+							PROFITS, REVENUE, DATA, OR GOODWILL, THAT ARISE FROM OR RELATE TO
+							THE WEBSITE OR THESE TERMS. THIS APPLIES EVEN IF WE WERE TOLD SUCH
+							DAMAGES WERE POSSIBLE.
 						</p>
 						<p>
-							Frontline workers must follow applicable government protocols,
-							institutional policies, training requirements, and escalation
-							rules.
+							TO THE FULLEST EXTENT ALLOWED BY LAW, OUR TOTAL LIABILITY FOR ALL
+							CLAIMS THAT ARISE FROM OR RELATE TO THE WEBSITE OR THESE TERMS WILL
+							NOT BE MORE THAN ONE HUNDRED U.S. DOLLARS (US $100).
+						</p>
+						<p>
+							These limits do not apply to liability that cannot be limited under
+							applicable law, such as liability for fraud, gross negligence, or
+							willful misconduct. These limits apply to the Website only. Any
+							liability terms for a Company product or service are set by the
+							separate agreement described in Section 10.
 						</p>
 					</Section>
 
-					<Section title='8. Institutional and Government Deployments'>
-						<p>DocGlasses may be deployed by:</p>
-						<BulletList
-							items={[
-								'State Governments;',
-								'government health departments;',
-								'public health programs;',
-								'hospitals;',
-								'PHCs;',
-								'CHCs;',
-								'medical colleges;',
-								'district hospitals; and',
-								'other healthcare organizations.',
-							]}
-						/>
+					<Section title='14. Indemnification'>
 						<p>
-							Where DocGlasses is deployed under a separate master services
-							agreement, government contract, tender, memorandum of
-							understanding, data-processing agreement, business associate
-							arrangement, or similar institutional agreement, that agreement
-							will govern the institutional deployment.
-						</p>
-						<p>
-							If there is a conflict between these public Terms and a signed
-							institutional agreement, the signed institutional agreement will
-							prevail for that deployment to the extent of the conflict.
-						</p>
-						<p>Institutions are responsible for:</p>
-						<BulletList
-							items={[
-								'providing appropriate user authorization;',
-								'defining permitted clinical workflows;',
-								'training authorized users;',
-								'configuring access according to staff roles; and',
-								'ensuring use complies with applicable healthcare regulations and institutional policies.',
-							]}
-						/>
-					</Section>
-
-					<Section title='9. Smart Glasses and Wearable Devices'>
-						<p>
-							DocGlasses may integrate with Meta glasses or other approved
-							wearable devices.
-						</p>
-						<p>These devices may enable:</p>
-						<BulletList
-							items={[
-								'audio capture;',
-								'clinical conversation processing;',
-								'photographs;',
-								'document capture;',
-								'video capture;',
-								'hands-free interaction; and',
-								'remote clinical collaboration.',
-							]}
-						/>
-						<p>
-							Users must use recording capabilities only for approved healthcare
-							purposes.
-						</p>
-						<p>
-							Users must not use DocGlasses-enabled wearable devices for:
-						</p>
-						<BulletList
-							items={[
-								'covert surveillance;',
-								'unauthorized recording;',
-								'recording unrelated individuals;',
-								'recording in prohibited areas;',
-								'personal surveillance;',
-								'harassment; or',
-								'any unlawful purpose.',
-							]}
-						/>
-						<p>
-							Appropriate patient notice and consent must be obtained where
-							required.
+							To the extent allowed by law, you agree to defend, indemnify, and
+							hold harmless Vision Health Holdings Inc. and its affiliates,
+							officers, directors, employees, and agents from any third-party
+							claim, loss, liability, or expense (including reasonable
+							attorneys&apos; fees) that arises from your misuse of the Website,
+							your breach of these Terms, or your violation of any law or the
+							rights of another person. We will tell you about any such claim and
+							may choose to take part in the defense with our own lawyers.
 						</p>
 					</Section>
 
-					<Section title='10. Consultation Audio'>
+					<Section title='15. Suspension and termination'>
 						<p>
-							DocGlasses may process consultation audio through supported smart
-							glasses, mobile applications, tablets, or other approved devices.
-						</p>
-						<p>Audio may be used to:</p>
-						<BulletList
-							items={[
-								'generate transcripts;',
-								'understand clinical context;',
-								'suggest relevant questions;',
-								'create encounter summaries; and',
-								'generate clinical documentation.',
-							]}
-						/>
-						<p>
-							Healthcare professionals and institutions are responsible for
-							following applicable notice and consent requirements before
-							activating recording or audio-processing functionality.
+							We may suspend or end your access to all or part of the Website at
+							any time, without notice, if we reasonably believe you have broken
+							these Terms, created a risk for us or others, or if the law
+							requires it. You may stop using the Website at any time.
 						</p>
 						<p>
-							Raw audio retention may vary by deployment configuration.
+							Sections 5 through 9 and 12 through 22 continue to apply after your
+							access ends.
 						</p>
 					</Section>
 
-					<Section title='11. Images and Video'>
+					<Section title='16. Governing law and venue'>
 						<p>
-							DocGlasses may support capture or processing of clinical images or
-							video including:
-						</p>
-						<BulletList
-							items={[
-								'prescriptions;',
-								'laboratory reports;',
-								'wounds;',
-								'visible clinical findings;',
-								'diagnostic-device screens;',
-								'medical documents; and',
-								'live clinical or tele-supervision video.',
-							]}
-						/>
-						<p>
-							Users should capture only information reasonably required for the
-							healthcare workflow.
-						</p>
-						<p>
-							Users must take reasonable steps to avoid capturing unrelated
-							individuals or unnecessary personal information.
+							These Terms are governed by the laws of the State of Delaware,
+							without regard to its conflict of law rules. Subject to Section 17,
+							any lawsuit that arises from or relates to these Terms or the
+							Website must be filed only in the state or federal courts located
+							in the State of Delaware. You and the Company agree to the personal
+							jurisdiction of those courts.
 						</p>
 					</Section>
 
-					<Section title='12. Connected Medical Devices'>
-						<p>DocGlasses may integrate with devices including:</p>
-						<BulletList
-							items={[
-								'blood-pressure monitors;',
-								'glucometers;',
-								'ECG devices;',
-								'pulse oximeters;',
-								'thermometers;',
-								'digital stethoscopes; and',
-								'other approved diagnostic devices.',
-							]}
-						/>
+					<Section title='17. Resolving disputes'>
 						<p>
-							DocGlasses may display, store, transmit, or analyze readings
-							received from such devices.
-						</p>
-						<p>
-							Unless DocGlasses itself manufactures the device, the underlying
-							medical device remains subject to its manufacturer’s
-							specifications, regulatory status, calibration requirements,
-							warranties, and instructions for use.
-						</p>
-						<p>
-							DocGlasses does not guarantee the accuracy of measurements generated
-							by a third-party device. Users should verify clinically
-							significant extracted information against the original source
-							document where required.
-						</p>
-						<p>
-							Healthcare professionals must verify clinically unexpected or
-							implausible readings where appropriate.
-						</p>
-					</Section>
-
-					<Section title='13. Medical Document Processing'>
-						<p>DocGlasses may use AI systems to process:</p>
-						<BulletList
-							items={[
-								'prescriptions;',
-								'laboratory reports;',
-								'discharge summaries;',
-								'medical records;',
-								'referral documents; and',
-								'other clinical materials.',
-							]}
-						/>
-						<p>Automated document extraction may contain errors.</p>
-						<p>
-							Users should verify clinically significant extracted information
-							against the original source document where required.
-						</p>
-						<p>
-							The original medical document remains the authoritative source
-							where there is a discrepancy between the original and an
-							AI-generated extraction.
-						</p>
-					</Section>
-
-					<Section title='14. ABDM and ABHA Integration'>
-						<p>
-							DocGlasses may integrate with the Ayushman Bharat Digital Mission
-							(“ABDM”).
-						</p>
-						<p>Depending on the deployment, DocGlasses may support:</p>
-						<BulletList
-							items={[
-								'ABHA identification;',
-								'care-context creation or linking;',
-								'health-record creation;',
-								'health-record exchange;',
-								'consent-based access; and',
-								'other approved ABDM workflows.',
-							]}
-						/>
-						<p>
-							Access to an ABHA identifier does not provide unrestricted access
-							to a patient’s health records.
-						</p>
-						<p>
-							All ABDM functionality must be used according to applicable ABDM
-							requirements, consent mechanisms, institutional policies, and law.
-						</p>
-						<p>Users must not:</p>
-						<BulletList
-							items={[
-								'impersonate another person;',
-								'access another person’s ABHA-linked information without authorization;',
-								'attempt to circumvent consent mechanisms; or',
-								'misuse ABDM credentials or health records.',
-							]}
-						/>
-					</Section>
-
-					<Section title='15. Patient Application'>
-						<p>
-							DocGlasses may provide a patient-facing application or portal.
-						</p>
-						<p>Patients may use it to:</p>
-						<BulletList
-							items={[
-								'view consultation summaries;',
-								'access prescriptions;',
-								'view medical reports;',
-								'track referrals;',
-								'view historical encounters;',
-								'receive reminders;',
-								'access follow-up information; and',
-								'participate in consent-based record sharing.',
-							]}
-						/>
-						<p>
-							Information displayed in the patient application does not replace
-							a medical consultation.
-						</p>
-						<p>
-							Patients should contact a qualified healthcare professional for
-							medical advice, diagnosis, treatment, or interpretation of
-							clinically significant information.
-						</p>
-					</Section>
-
-					<Section title='16. Center of Excellence Services'>
-						<p>
-							Certain DocGlasses deployments may include a Center of Excellence
-							(“COE”) through which authorized healthcare professionals provide:
-						</p>
-						<BulletList
-							items={[
-								'case review;',
-								'specialist support;',
-								'clinical escalation;',
-								'supervision;',
-								'referral assistance; and',
-								'quality monitoring.',
-							]}
-						/>
-						<p>
-							Availability of COE support is not guaranteed at all times unless
-							otherwise specified in an institutional service-level agreement.
-						</p>
-						<p>
-							Users must not delay urgent medical care while awaiting COE
-							assistance.
-						</p>
-					</Section>
-
-					<Section title='17. Accounts and Authentication'>
-						<p>Certain Services require a registered user account.</p>
-						<p>Users must:</p>
-						<BulletList
-							items={[
-								'provide accurate registration information;',
-								'maintain the confidentiality of credentials;',
-								'use only accounts assigned to them;',
-								'not share authentication credentials;',
-								'immediately report suspected unauthorized access; and',
-								'comply with applicable multi-factor authentication requirements.',
-							]}
-						/>
-						<p>
-							Institutional administrators may manage account creation,
-							suspension, role assignment, and termination.
-						</p>
-						<p>
-							Users are responsible for activities conducted through their
-							account where such activities result from failure to reasonably
-							protect their credentials.
-						</p>
-					</Section>
-
-					<Section title='18. Role-Based Access'>
-						<p>Access to DocGlasses may depend on user role.</p>
-						<p>Roles may include:</p>
-						<BulletList
-							items={[
-								'patient;',
-								'ASHA worker;',
-								'ANM;',
-								'Community Health Officer;',
-								'doctor;',
-								'nurse;',
-								'specialist;',
-								'hospital administrator;',
-								'COE clinician;',
-								'program administrator; and',
-								'system administrator.',
-							]}
-						/>
-						<p>
-							Users may access only information required for their authorized
-							role.
-						</p>
-						<p>
-							Attempting to access information outside an authorized scope is
-							prohibited.
-						</p>
-					</Section>
-
-					<Section title='19. User Responsibilities'>
-						<p>Users must:</p>
-						<BulletList
-							items={[
-								'provide reasonably accurate information;',
-								'maintain appropriate confidentiality;',
-								'use DocGlasses only for authorized purposes;',
-								'follow clinical and institutional protocols;',
-								'respect patient privacy;',
-								'review clinically relevant AI-generated outputs;',
-								'protect login credentials;',
-								'maintain approved devices reasonably securely;',
-								'report suspected security incidents;',
-								'keep application credentials and login details safe; and',
-								'not deliberately input false or misleading patient information.',
-							]}
-						/>
-					</Section>
-
-					<Section title='20. Prohibited Uses'>
-						<p>You may not use DocGlasses to:</p>
-						<BulletList
-							items={[
-								'violate any applicable law;',
-								'impersonate another person;',
-								'access health records without authorization;',
-								'conduct unauthorized surveillance;',
-								'record patients without required notice or authorization;',
-								'harm or discriminate against another person;',
-								'develop malware;',
-								'circumvent security controls;',
-								'extract credentials;',
-								'perform unauthorized penetration testing;',
-								'scrape or systematically extract protected information;',
-								'reverse engineer restricted portions of the Platform except where legally permitted;',
-								'train competing AI models using protected DocGlasses output or proprietary materials without authorization;',
-								'use the Services to make fully autonomous clinical decisions where human oversight is required;',
-								'intentionally submit harmful or malicious content; or',
-								'interfere with the operation of the Services.',
-							]}
-						/>
-					</Section>
-
-					<Section title='21. Privacy and Personal Data'>
-						<p>
-							Use of personal data through DocGlasses is governed by the{' '}
-							<Link
-								href='/privacy-policy'
+							If you have a concern about the Website, please contact us first at{' '}
+							<a
+								href='mailto:privacy@docglasses.ai'
 								className='text-teal-400 hover:underline'
 							>
-								DocGlasses Privacy Policy
-							</Link>{' '}
-							and, where applicable, agreements with the relevant healthcare
-							institution or government authority.
+								privacy@docglasses.ai
+							</a>
+							. Most issues can be resolved quickly this way. Before either of us
+							starts a formal proceeding, the party with the concern will send
+							the other a written description of the issue. We will then both try
+							in good faith to resolve it for at least 30 days.
 						</p>
-						<p>The Privacy Policy explains, among other things:</p>
-						<BulletList
-							items={[
-								'categories of information processed;',
-								'consultation audio processing;',
-								'image and report processing;',
-								'diagnostic-device information;',
-								'artificial-intelligence processing;',
-								'ABDM integration;',
-								'data sharing;',
-								'data retention;',
-								'individual rights; and',
-								'security practices.',
-							]}
-						/>
-						<p>The Privacy Policy forms part of these Terms.</p>
+						<p>
+							If the issue is not resolved within that time, either of us may
+							bring a claim as described in Section 16.
+						</p>
+						<p>
+							Either of us may ask a court for a temporary or emergency order to
+							protect intellectual property or to stop unauthorized access to the
+							Website. Any claim you have about the Website must be brought
+							within one year after it arises, to the extent the law allows this
+							time limit.
+						</p>
 					</Section>
 
-					<Section title='22. Third-Party Artificial Intelligence Services'>
+					<Section title='18. Copyright complaints'>
 						<p>
-							DocGlasses may use specialized third-party AI technologies.
-						</p>
-						<p>
-							Depending on the deployment, these may include services from
-							providers such as:
+							We respect the rights of copyright owners. If you believe content
+							on the Website infringes your copyright, please send a written
+							notice to our designated copyright agent. Your notice should
+							include:
 						</p>
 						<BulletList
 							items={[
-								'Google / Gemini; and',
-								'Anthropic / Claude.',
+								'your physical or electronic signature;',
+								'a description of the copyrighted work you believe was infringed;',
+								'a description of where the material is located on the Website, such as the page address;',
+								'your name, address, telephone number, and email address;',
+								'a statement that you believe in good faith that the use is not authorized by the copyright owner, its agent, or the law; and',
+								'a statement, under penalty of perjury, that the information in your notice is accurate and that you are the copyright owner or are authorized to act for the owner.',
 							]}
 						/>
 						<p>
-							Other AI services may also be used. Such services may support
-							functions including:
-						</p>
-						<BulletList
-							items={[
-								'consultation understanding;',
-								'real-time triage-question generation;',
-								'summarization;',
-								'OCR;',
-								'medical-document processing; and',
-								'structured information extraction.',
-							]}
-						/>
-						<p>
-							The specific AI architecture may vary by deployment.
+							Designated copyright agent: Copyright Agent, Vision Health Holdings
+							Inc, {NOTICE_ADDRESS},{' '}
+							<a
+								href='mailto:privacy@docglasses.ai'
+								className='text-teal-400 hover:underline'
+							>
+								privacy@docglasses.ai
+							</a>
+							.
 						</p>
 						<p>
-							Government or institutional installations may use different
-							providers, private models, locally hosted models, or restricted
-							AI processing based on contractual and security requirements.
+							We may remove material that we believe in good faith infringes
+							another person&apos;s rights.
 						</p>
 					</Section>
 
-					<Section title='23. Third-Party Platforms and Services'>
-						<p>DocGlasses may interact with third-party technologies including:</p>
-						<BulletList
-							items={[
-								'smart-glasses platforms;',
-								'mobile operating systems;',
-								'cloud providers;',
-								'diagnostic devices;',
-								'laboratories;',
-								'hospital information systems;',
-								'government health systems;',
-								'communications providers; and',
-								'ABDM infrastructure.',
-							]}
-						/>
+					<Section title='19. Events beyond our control'>
 						<p>
-							Third-party products may be governed by their own terms.
-						</p>
-						<p>
-							DocGlasses is not responsible for failures or limitations of
-							independent third-party services outside its reasonable control.
+							We are not responsible for any delay or failure to operate the
+							Website that is caused by events beyond our reasonable control.
+							Examples include natural disasters, fire, flood, pandemics, war,
+							terrorism, civil unrest, labor disputes, government action, power
+							or internet outages, and failures of third-party hosting or
+							communications services.
 						</p>
 					</Section>
 
-					<Section title='24. Service Availability'>
+					<Section title='20. Severability and waiver'>
 						<p>
-							We aim to provide reliable Services but do not guarantee
-							uninterrupted availability.
-						</p>
-						<p>Service may be affected by:</p>
-						<BulletList
-							items={[
-								'internet connectivity;',
-								'mobile-network coverage;',
-								'third-party APIs;',
-								'cloud infrastructure;',
-								'hardware failure;',
-								'maintenance;',
-								'cybersecurity incidents;',
-								'emergency maintenance;',
-								'government infrastructure; or',
-								'circumstances beyond our reasonable control.',
-							]}
-						/>
-						<p>
-							DocGlasses may provide offline or degraded functionality for certain
-							workflows, but such functionality may not be available for every
-							Service.
-						</p>
-						<p>
-							Clinical users should maintain appropriate fallback procedures.
+							If a court finds any part of these Terms unenforceable, that part
+							will be enforced to the greatest extent allowed, and the rest of
+							these Terms will stay in effect. If we do not enforce a part of
+							these Terms at a given time, that does not waive our right to
+							enforce it later.
 						</p>
 					</Section>
 
-					<Section title='25. Service Updates'>
-						<p>DocGlasses may:</p>
-						<BulletList
-							items={[
-								'update the Platform;',
-								'modify AI models;',
-								'update clinical workflows;',
-								'improve security;',
-								'update device integrations;',
-								'discontinue obsolete functionality; or',
-								'introduce new features.',
-							]}
-						/>
+					<Section title='21. Entire agreement and assignment'>
 						<p>
-							Material changes affecting an institutional deployment may be
-							governed by the applicable institutional agreement or
-							change-management procedure.
-						</p>
-						<p>
-							High-impact clinical AI changes may be subject to additional
-							validation or governance before deployment.
-						</p>
-					</Section>
-
-					<Section title='26. Clinical Protocols'>
-						<p>DocGlasses may incorporate:</p>
-						<BulletList
-							items={[
-								'government health protocols;',
-								'institutional protocols;',
-								'clinical pathways;',
-								'public-health guidelines; and',
-								'other approved healthcare guidance.',
-							]}
-						/>
-						<p>Protocols may differ by:</p>
-						<BulletList
-							items={[
-								'geography;',
-								'institution;',
-								'patient population;',
-								'user role; and',
-								'healthcare program.',
-							]}
-						/>
-						<p>
-							The presence of a protocol in DocGlasses does not eliminate the need
-							for professional clinical judgment.
-						</p>
-						<p>
-							Where institutional policies conflict with generic DocGlasses
-							guidance, authorized institutional protocols should govern subject
-							to applicable law.
-						</p>
-					</Section>
-
-					<Section title='27. Intellectual Property'>
-						<p>The DocGlasses Platform, including its:</p>
-						<BulletList
-							items={[
-								'software;',
-								'user interfaces;',
-								'models developed by DocGlasses;',
-								'workflows;',
-								'algorithms;',
-								'prompts;',
-								'protocol engines;',
-								'designs;',
-								'documentation;',
-								'trademarks;',
-								'logos;',
-								'analytics; and',
-								'proprietary technology',
-							]}
-						/>
-						<p>is owned by DocGlasses or its licensors.</p>
-						<p>
-							Subject to these Terms and applicable institutional agreements,
-							users receive a limited, non-exclusive, non-transferable right to
-							use the Services for authorized purposes.
-						</p>
-						<p>No ownership rights are transferred to users.</p>
-					</Section>
-
-					<Section title='28. User and Institutional Data'>
-						<p>
-							As between DocGlasses and the relevant patient, healthcare provider,
-							institution, or government authority, ownership and control of
-							clinical data will be determined by applicable law and the
-							relevant institutional agreement.
-						</p>
-						<p>
-							DocGlasses does not claim ownership of a patient’s underlying
-							medical information merely because it is processed through the
-							Platform.
-						</p>
-						<p>
-							Users grant DocGlasses the limited rights necessary to process
-							information for authorized provision, operation, security, and
-							improvement of the Services, subject to applicable privacy
-							requirements and contractual restrictions.
-						</p>
-					</Section>
-
-					<Section title='29. Feedback'>
-						<p>
-							Users may provide suggestions, comments, or feedback about
-							DocGlasses.
-						</p>
-						<p>
-							Unless otherwise agreed, DocGlasses may use general product feedback
-							to improve the Platform without an obligation to compensate the
-							person providing the feedback.
-						</p>
-						<p>
-							This does not grant DocGlasses ownership of patient health
-							information.
-						</p>
-					</Section>
-
-					<Section title='30. Security'>
-						<p>
-							DocGlasses implements reasonable technical and organizational
-							safeguards appropriate to the nature of its Services.
-						</p>
-						<p>These may include:</p>
-						<BulletList
-							items={[
-								'encryption;',
-								'role-based access control;',
-								'multifactor authentication;',
-								'device controls;',
-								'audit logging;',
-								'access monitoring;',
-								'vulnerability management;',
-								'incident response;',
-								'secure backups; and',
-								'business-continuity controls.',
-							]}
-						/>
-						<p>
-							Users must immediately notify DocGlasses or their institutional
-							administrator of suspected:
-						</p>
-						<BulletList
-							items={[
-								'unauthorized access;',
-								'credential compromise;',
-								'device loss;',
-								'privacy breach; or',
-								'cybersecurity incident.',
-							]}
-						/>
-					</Section>
-
-					<Section title='31. Suspension and Termination'>
-						<p>
-							DocGlasses or an authorized institutional administrator may suspend
-							or terminate access where:
-						</p>
-						<BulletList
-							items={[
-								'these Terms are materially violated;',
-								'unauthorized access is suspected;',
-								'patient safety may be at risk;',
-								'security may be compromised;',
-								'required payments remain outstanding under an applicable commercial agreement;',
-								'a user’s institutional authorization ends; or',
-								'suspension is required by law or government authority.',
-							]}
-						/>
-						<p>Where feasible, appropriate notice will be provided.</p>
-						<p>
-							Certain provisions of these Terms will survive termination,
-							including provisions relating to confidentiality, intellectual
-							property, liability, and dispute resolution.
-						</p>
-					</Section>
-
-					<Section title='32. Disclaimer of Warranties'>
-						<p>
-							To the maximum extent permitted by applicable law, the Services
-							are provided on an “as available” basis.
-						</p>
-						<p>DocGlasses does not warrant that:</p>
-						<BulletList
-							items={[
-								'the Platform will always be uninterrupted;',
-								'every transcription will be accurate;',
-								'every AI output will be correct;',
-								'every diagnostic-device transmission will be error-free;',
-								'every third-party integration will always be available; or',
-								'use of DocGlasses will guarantee a particular clinical outcome.',
-							]}
-						/>
-						<p>
-							Nothing in these Terms excludes obligations that cannot lawfully
-							be excluded.
-						</p>
-					</Section>
-
-					<Section title='33. Limitation of Liability'>
-						<p>
-							Nothing in these Terms is intended to exclude or limit liability
-							where such exclusion or limitation is prohibited by applicable
-							law.
-						</p>
-						<p>
-							Subject to applicable law and any separate institutional
-							agreement, DocGlasses will not be liable for indirect, incidental,
-							special, exemplary, punitive, or consequential losses arising
-							solely from use of the Platform.
-						</p>
-						<p>
-							DocGlasses is not responsible for a healthcare professional’s
-							independent clinical decision merely because DocGlasses technology
-							was used during the encounter.
-						</p>
-						<p>
-							However, these Terms do not waive liability arising from
-							DocGlasses’s own obligations where applicable law does not permit
-							such waiver.
-						</p>
-						<p>
-							For institutional deployments, liability limitations should be
-							governed by the applicable signed agreement.
-						</p>
-					</Section>
-
-					<Section title='34. Indemnification'>
-						<p>
-							To the extent permitted by applicable law, users acting outside
-							an institutional deployment agree to indemnify DocGlasses against
-							third-party claims arising from:
-						</p>
-						<BulletList
-							items={[
-								'intentional misuse of the Platform;',
-								'unauthorized access to patient information;',
-								'unlawful recording;',
-								'infringement of third-party rights; or',
-								'material violation of these Terms.',
-							]}
-						/>
-						<p>
-							This provision does not apply where prohibited by applicable law.
-						</p>
-						<p>
-							Institutional indemnification obligations, if any, will be
-							governed by the applicable signed agreement.
-						</p>
-					</Section>
-
-					<Section title='35. Government and Institutional Requirements'>
-						<p>Nothing in these public Terms overrides:</p>
-						<BulletList
-							items={[
-								'mandatory government procurement conditions;',
-								'statutory healthcare obligations;',
-								'applicable government data policies;',
-								'legally binding tenders;',
-								'institutional service agreements;',
-								'data-processing agreements; or',
-								'government cybersecurity requirements.',
-							]}
-						/>
-						<p>
-							Such requirements may impose stronger obligations than these
-							Terms.
-						</p>
-					</Section>
-
-					<Section title='36. Changes to These Terms'>
-						<p>
-							DocGlasses may update these Terms from time to time to reflect:
-						</p>
-						<BulletList
-							items={[
-								'new Services;',
-								'changes in law;',
-								'regulatory developments;',
-								'security requirements;',
-								'changes in technology; or',
-								'changes in business operations.',
-							]}
-						/>
-						<p>
-							Material changes will be communicated through reasonable means.
-						</p>
-						<p>
-							The current version will be published on the DocGlasses website with
-							its effective date.
-						</p>
-						<p>
-							Continued use after the effective date of updated Terms
-							constitutes acceptance where permitted by law.
-						</p>
-					</Section>
-
-					<Section title='37. Electronic Communications'>
-						<p>
-							Users may receive service-related electronic communications
-							including:
-						</p>
-						<BulletList
-							items={[
-								'security notices;',
-								'system alerts;',
-								'account notifications;',
-								'policy updates;',
-								'appointment or follow-up reminders; and',
-								'operational communications.',
-							]}
-						/>
-						<p>
-							Service-related communications may be necessary for use of
-							DocGlasses.
-						</p>
-						<p>
-							Marketing communications, where offered, will be subject to
-							applicable consent and opt-out requirements.
-						</p>
-					</Section>
-
-					<Section title='38. Governing Law'>
-						<p>
-							These Terms will be governed by the laws of India, without
-							prejudice to mandatory rights or laws that apply to a particular
-							user or government deployment.
-						</p>
-						<p>
-							Institutional and government deployments may specify their own
-							governing-law and dispute-resolution provisions in the applicable
-							agreement.
-						</p>
-					</Section>
-
-					<Section title='39. Dispute Resolution'>
-						<p>
-							Users should first attempt to resolve concerns by contacting
-							DocGlasses.
-						</p>
-						<p>
-							If a dispute cannot be resolved amicably, disputes relating to
-							direct use of DocGlasses will be resolved according to the
-							dispute-resolution mechanism and jurisdiction of courts of New
-							Delhi, India.
-						</p>
-						<p>
-							For government, hospital, or institutional deployments, the
-							dispute-resolution provisions of the applicable signed agreement
-							will prevail.
-						</p>
-					</Section>
-
-					<Section title='40. Severability'>
-						<p>
-							If any provision of these Terms is held invalid or unenforceable,
-							the remaining provisions will continue in effect to the maximum
-							extent permitted by law.
-						</p>
-					</Section>
-
-					<Section title='41. No Waiver'>
-						<p>
-							Failure by DocGlasses to enforce a provision of these Terms does not
-							constitute a waiver of that provision or any other right.
-						</p>
-					</Section>
-
-					<Section title='42. Assignment'>
-						<p>
-							DocGlasses may assign its rights or obligations as part of:
-						</p>
-						<BulletList
-							items={[
-								'a corporate restructuring;',
-								'merger;',
-								'acquisition;',
-								'transfer of business; or',
-								'other lawful corporate transaction,',
-							]}
-						/>
-						<p>subject to applicable law and contractual obligations.</p>
-						<p>
-							Users may not transfer institutional access credentials or rights
-							without authorization.
-						</p>
-					</Section>
-
-					<Section title='43. Entire Agreement'>
-						<p>
-							For ordinary website and direct-user use, these Terms together
-							with the{' '}
+							These Terms and our{' '}
 							<Link
 								href='/privacy-policy'
 								className='text-teal-400 hover:underline'
 							>
 								Privacy Policy
 							</Link>{' '}
-							constitute the agreement governing use of the DocGlasses Platform.
+							are the entire agreement between you and the Company about the
+							Website. They replace any earlier understanding about the Website.
+							They do not replace any separate written agreement for a Company
+							product or service, as described in Section 10.
 						</p>
 						<p>
-							For institutional deployments, these Terms should be read together
-							with the applicable:
-						</p>
-						<BulletList
-							items={[
-								'master services agreement;',
-								'government contract;',
-								'statement of work;',
-								'data-processing agreement;',
-								'business associate or confidentiality agreement;',
-								'service-level agreement; and',
-								'other signed contractual documents.',
-							]}
-						/>
-						<p>
-							Where those documents conflict with these Terms, the signed
-							institutional documents will prevail for that deployment.
+							You may not transfer your rights or duties under these Terms without
+							our written consent. We may transfer ours, for example as part of a
+							merger, acquisition, or sale of assets. Section headings are for
+							convenience only and do not change the meaning of these Terms.
 						</p>
 					</Section>
 
-					<Section title='44. Contact Information'>
-						<p>Questions concerning these Terms may be directed to:</p>
+					<Section title='22. Notice to California users'>
+						<p>
+							Under California Civil Code Section 1789.3, California users are
+							entitled to the following notice. The Website is provided by Vision
+							Health Holdings Inc, {NOTICE_ADDRESS}. We do not charge any fee to
+							use the Website. If you have a complaint or question about the
+							Website, please contact us at{' '}
+							<a
+								href='mailto:privacy@docglasses.ai'
+								className='text-teal-400 hover:underline'
+							>
+								privacy@docglasses.ai
+							</a>
+							. You may also contact the Complaint Assistance Unit of the
+							Division of Consumer Services of the California Department of
+							Consumer Affairs in writing at 1625 North Market Boulevard, Suite N
+							112, Sacramento, California 95834, or by telephone at (800)
+							952-5210.
+						</p>
+					</Section>
+
+					<Section title='23. Contact us'>
+						<p>
+							If you have questions about these Terms, please contact us:
+						</p>
 						<ul className='list-disc pl-5 space-y-3'>
 							<li>
-								<strong>Platform:</strong> DocGlasses
+								<strong>Vision Health Holdings Inc</strong>
 							</li>
 							<li>
-								<strong>Legal Entity:</strong> Vision Health Holdings Inc.
-							</li>
-							<li>
-								<strong>Registered Address:</strong> 16192 Coastal Highway Lewes, DE 19958
-							</li>
-							<li>
-								<strong>Legal Email:</strong>{' '}
+								<strong>Email:</strong>{' '}
 								<a
-									href='mailto:danish@docglasses.ai'
+									href='mailto:privacy@docglasses.ai'
 									className='text-teal-400 hover:underline'
 								>
-									danish@docglasses.ai
-								</a>
-							</li>
-							<li>
-								<strong>Privacy Email:</strong>{' '}
-								<a
-									href='mailto:danish@docglasses.ai'
-									className='text-teal-400 hover:underline'
-								>
-									danish@docglasses.ai
-								</a>
-							</li>
-							<li>
-								<strong>Support Email:</strong>{' '}
-								<a
-									href='mailto:danish@docglasses.ai'
-									className='text-teal-400 hover:underline'
-								>
-									danish@docglasses.ai
+									privacy@docglasses.ai
 								</a>
 							</li>
 						</ul>
 						<p>
-							For questions concerning patient care or a medical record created
-							by a specific hospital, PHC, CHC, doctor, or government program,
-							users should also contact the relevant healthcare provider or
-							institution.
+							For questions about personal information, please email{' '}
+							<a
+								href='mailto:privacy@docglasses.ai'
+								className='text-teal-400 hover:underline'
+							>
+								privacy@docglasses.ai
+							</a>{' '}
+							or see our{' '}
+							<Link
+								href='/privacy-policy'
+								className='text-teal-400 hover:underline'
+							>
+								Privacy Policy
+							</Link>
+							.
 						</p>
 					</Section>
 				</div>
@@ -1304,28 +552,6 @@ function Section({
 	);
 }
 
-function SubSection({
-	id,
-	title,
-	children,
-}: {
-	id?: string;
-	title: string;
-	children: ReactNode;
-}) {
-	return (
-		<div id={id} className='scroll-mt-32'>
-			<h3
-				className='font-syne text-lg md:text-xl font-semibold mt-6 mb-2'
-				style={{ color: 'var(--text-primary)' }}
-			>
-				{title}
-			</h3>
-			<div className='space-y-4'>{children}</div>
-		</div>
-	);
-}
-
 function BulletList({ items }: { items: ReactNode[] }) {
 	return (
 		<ul className='list-disc pl-5 space-y-2'>
@@ -1335,4 +561,3 @@ function BulletList({ items }: { items: ReactNode[] }) {
 		</ul>
 	);
 }
-

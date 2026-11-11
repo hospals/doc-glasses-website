@@ -711,7 +711,7 @@ export default function Contact() {
 									>
 										I agree to the{' '}
 										<a
-											href='/terms-of-service'
+											href='/terms'
 											className='text-teal-400 hover:text-teal-300 underline'
 										>
 											Terms of Service

@@ -4,6 +4,8 @@ trigger: always_on
 
 # Production Safety Protocols
 
+Cursor: commit/OWASP gate via `.cursor/rules/25-security-owasp-sonar-gate.mdc`, skill `pre-commit-security-sonar`, and rule `16-git-commit`.
+
 ## 🛡️ Non-Negotiable Rules
 1. **No Destructive Deletions**: Never delete files or large blocks of code without explicit confirmation from the user.
 2. **Backward Compatibility**: Ensure new changes do not break existing layouts or functionality.

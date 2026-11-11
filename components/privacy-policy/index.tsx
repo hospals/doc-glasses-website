@@ -4,7 +4,94 @@
 
 import Footer from '@/components/footer';
 import Nav from '@/components/nav';
+import Link from 'next/link';
 import type { ReactNode } from 'react';
+
+const NOTICE_ADDRESS = '16192 Coastal Highway Lewes, DE 19958';
+
+const COOKIE_TABLE_HEADERS = [
+	'Category',
+	'What it does',
+	'Can you turn it off?',
+] as const;
+
+const COOKIE_TABLE_ROWS = [
+	[
+		'Strictly necessary',
+		'Makes the Website work and keeps it secure. For example, it stores your cookie choice so that we do not ask again on every page.',
+		'No. The Website needs these to work properly.',
+	],
+	[
+		'Analytics',
+		'Helps us understand how visitors use the Website, such as which pages are viewed and how visitors move through the site.',
+		'Yes. These are off until you accept them.',
+	],
+	[
+		'Embedded content',
+		'Some pages show videos hosted by other companies. Those companies may set their own cookies when you play a video.',
+		'Yes, through your browser settings or by not playing embedded videos.',
+	],
+] as const;
+
+const CALIFORNIA_TABLE_HEADERS = [
+	'Category',
+	'Examples',
+	'Source',
+	'Why we use it',
+	'Who receives it',
+	'Sold or shared?',
+] as const;
+
+const CALIFORNIA_TABLE_ROWS = [
+	[
+		'Identifiers',
+		'Name, email address, phone number, IP address, online identifiers stored in cookies',
+		'You, your device',
+		'Reply to you, operate and secure the Website, and analytics with your consent',
+		'Service providers',
+		'No',
+	],
+	[
+		'Contact and customer records',
+		'Name, phone number, organization, job title, city and state',
+		'You',
+		'Reply to you and follow up on your inquiry',
+		'Service providers',
+		'No',
+	],
+	[
+		'Professional information',
+		'Organization or department and job title',
+		'You',
+		'Understand your inquiry and reply to you',
+		'Service providers',
+		'No',
+	],
+	[
+		'Internet or other electronic activity',
+		'Pages viewed, links clicked, time on page, referring page',
+		'Your device, through cookies and similar technologies',
+		'Operate, secure, and improve the Website',
+		'Service providers',
+		'No',
+	],
+	[
+		'General location',
+		'City or region suggested by your IP address, and the city and state you give us',
+		'You, your device',
+		'Understand where visitors come from and reply to you',
+		'Service providers',
+		'No',
+	],
+	[
+		'Content of messages',
+		'What you write in the contact form or in an email',
+		'You',
+		'Reply to you and keep records',
+		'Service providers',
+		'No',
+	],
+] as const;
 
 export default function PrivacyPolicyContent() {
 	return (
@@ -50,1097 +137,536 @@ export default function PrivacyPolicyContent() {
 						className='font-dm tracking-wider uppercase text-xs sm:text-sm font-semibold'
 						style={{ color: 'var(--brand)' }}
 					>
-						Last updated: April 14, 2026
+						Effective date: November 1, 2026
+					</p>
+					<p
+						className='font-dm tracking-wider uppercase text-xs sm:text-sm font-semibold mt-2'
+						style={{ color: 'var(--brand)' }}
+					>
+						Last updated: November 1, 2026
 					</p>
 				</div>
 
 				<div className='flex-1 w-full space-y-12'>
-					<Section title='1. Introduction'>
+					<div className='font-dm space-y-6 text-base text-white/70 leading-relaxed'>
 						<p>
-							DocGlasses is an AI-enabled healthcare technology platform designed
-							to support healthcare professionals, frontline health workers,
-							healthcare institutions, and patients with clinical documentation,
-							assisted triage, health-record management, diagnostic-data
-							capture, referral workflows, and continuity of care.
+							Web address:{' '}
+							<a
+								href='https://docglasses.ai/privacy'
+								className='text-teal-400 hover:underline'
+							>
+								https://docglasses.ai/privacy
+							</a>
+						</p>
+					</div>
+
+					<Section title='1. Scope and who we are'>
+						<p>
+							This Privacy Policy explains how Vision Health Holdings Inc, a
+							Delaware corporation (the &quot;Company,&quot; &quot;we,&quot;
+							&quot;us,&quot; or &quot;our&quot;), collects, uses, shares, and
+							protects personal information through the website at docglasses.ai
+							and any page that links to this Privacy Policy (the
+							&quot;Website&quot;).
 						</p>
 						<p>
-							DocGlasses is operated by Vision Health Holdings Inc.
-							(“DocGlasses”, “we”, “our”, or “us”).
+							The Company builds clinical documentation and artificial
+							intelligence assistant technology for healthcare professionals and
+							organizations. The Website gives general information about the
+							Company and lets visitors contact us.
 						</p>
 						<p>
-							Protecting the confidentiality, integrity, and privacy of health
-							information is fundamental to the design and operation of
-							DocGlasses.
+							This Privacy Policy covers the Website only. It does not cover any
+							Company product or service, including any software application or
+							platform. Information handled through our products is governed by
+							separate written agreements and by the notices that apply to those
+							products. Please also read our Terms of Service at{' '}
+							<Link
+								href='/terms'
+								className='text-teal-400 hover:underline'
+							>
+								https://docglasses.ai/terms
+							</Link>
+							.
 						</p>
 						<p>
-							This Privacy Policy explains how personal data is collected, used,
-							processed, shared, stored, and protected when individuals interact
-							with:
+							This Privacy Policy also serves as our notice at collection for
+							personal information collected through the Website.
 						</p>
+					</Section>
+
+					<Section title='2. No patient health information through the Website'>
+						<p>
+							The Website is not designed to collect patient health information,
+							and we do not ask for it. Please do not submit any information about
+							a patient through the Website. This includes names, dates of birth,
+							medical record numbers, diagnoses, treatment details, images, or
+							anything else that could identify a patient or describe a
+							patient&apos;s health.
+						</p>
+						<p>
+							If we receive patient information through the Website by mistake, we
+							will delete it once we become aware of it, unless the law requires
+							us to keep it. We do not use the Website to collect consumer health
+							data as defined in state consumer health privacy laws.
+						</p>
+					</Section>
+
+					<Section title='3. Information we collect'>
+						<SubSection title='3.1 Information you give us'>
+							<p>
+								When you fill out our contact form or email us, we collect the
+								information you choose to provide. This may include:
+							</p>
+							<BulletList
+								items={[
+									'your full name;',
+									'your organization or department and your job title;',
+									'your work email address and phone number;',
+									'your city and state; and',
+									'the content of your message and any details you include in it.',
+								]}
+							/>
+							<p>
+								We also keep a record that you agreed to our Terms of Service and
+								this Privacy Policy when you submitted the form.
+							</p>
+						</SubSection>
+
+						<SubSection title='3.2 Information collected automatically'>
+							<p>
+								When you visit the Website, our servers and the tools described in
+								Section 5 may collect certain information automatically, such as:
+							</p>
+							<BulletList
+								items={[
+									'your IP address and the approximate location it suggests, such as city or region;',
+									'your browser type, device type, operating system, and screen size;',
+									'the pages you view, the links you click, the time you spend on pages, and the page that sent you to the Website;',
+									'dates and times of your visits.',
+								]}
+							/>
+							<p>
+								We collect analytics information only if you accept analytics
+								cookies, as described in Section 5.
+							</p>
+							<p>
+								We do not collect precise location data through the Website.
+							</p>
+						</SubSection>
+
+						<SubSection title='3.3 Cookies and similar technologies'>
+							<p>
+								We use cookies and similar technologies, such as small scripts and
+								local storage. Section 5 explains the types we use and your
+								choices.
+							</p>
+						</SubSection>
+					</Section>
+
+					<Section title='4. How we use information'>
+						<p>We use personal information to:</p>
 						<BulletList
 							items={[
-								'the DocGlasses website;',
-								'DocGlasses Primary application;',
-								'DocGlasses Capture application;',
-								'DocGlasses Patient application;',
-								'DocGlasses smart-glasses and connected-device workflows;',
-								'DocGlasses Center of Excellence (“COE”) platform;',
-								'integrations with healthcare institutions and government health systems; and',
-								'related DocGlasses services.',
+								'read and reply to your messages and requests;',
+								'follow up on business inquiries, such as a request for a presentation or a meeting;',
+								'operate, maintain, and secure the Website, including detecting and preventing fraud, spam, and abuse;',
+								'understand how visitors use the Website so that we can improve its content and design;',
+								'remember your cookie choices;',
+								'comply with the law, respond to lawful requests, and enforce our Terms of Service; and',
+								'protect the rights, safety, and property of the Company, our visitors, and others.',
 							]}
 						/>
 						<p>
-							DocGlasses is designed to align with applicable Indian privacy and
-							digital-health requirements, including the Digital Personal Data
-							Protection Act, 2023 (“DPDP Act”), applicable provisions of the
-							Digital Personal Data Protection Rules, 2025 as they come into
-							force, and applicable Ayushman Bharat Digital Mission (“ABDM”)
-							requirements.
+							We do not use personal information collected through the Website to
+							make decisions that produce legal or similarly significant effects
+							about you.
 						</p>
 					</Section>
 
-					<Section title='2. Our Role in Processing Health Data'>
-						<p>
-							DocGlasses may operate in different roles depending on the service
-							being provided.
-						</p>
-
-						<SubSection title='2.1 Services Provided to Hospitals and Government Health Systems'>
+					<Section title='5. Cookies and analytics'>
+						<SubSection title='5.1 Types of cookies we use'>
+							<PolicyTable
+								caption='Types of cookies used on the Website'
+								headers={[...COOKIE_TABLE_HEADERS]}
+								rows={COOKIE_TABLE_ROWS.map((row) => [...row])}
+							/>
 							<p>
-								Where DocGlasses is deployed by a hospital, Primary Health Centre
-								(“PHC”), Community Health Centre (“CHC”), government department,
-								State Health Authority, or other healthcare institution, that
-								institution may determine the purposes for which patient
-								information is processed.
-							</p>
-							<p>
-								In such circumstances, the healthcare institution may act as the
-								Data Fiduciary, and DocGlasses may process data on its behalf as a
-								Data Processor, subject to contractual and legal requirements.
-							</p>
-							<p>
-								Patients should also refer to the privacy notice issued by the
-								relevant healthcare institution.
+								We do not use advertising cookies or advertising pixels on the
+								Website.
 							</p>
 						</SubSection>
 
-						<SubSection title='2.2 Direct DocGlasses Services'>
+						<SubSection title='5.2 Your consent to analytics'>
 							<p>
-								Where DocGlasses directly determines why and how personal data is
-								processed, for example in connection with a DocGlasses patient
-								account, website account, support request, or other
-								direct-to-user service, DocGlasses may act as the Data Fiduciary.
+								When you first visit the Website, we ask whether you accept
+								analytics cookies. Analytics cookies stay off unless you accept
+								them. If you accept, we collect anonymous usage data, such as
+								which pages are viewed and how features of the Website are used,
+								to improve the Website. We never use analytics to collect patient
+								information or the content of your messages.
 							</p>
-						</SubSection>
-					</Section>
-
-					<Section title='3. Categories of Information We Process'>
-						<p>
-							Depending on the DocGlasses service being used, we may process the
-							following categories of information.
-						</p>
-
-						<SubSection title='3.1 Identity and Demographic Information'>
-							<p>This may include:</p>
-							<BulletList
-								items={[
-									'name;',
-									'age or date of birth;',
-									'gender;',
-									'mobile number;',
-									'email address;',
-									'address or geographic area;',
-									'patient or hospital identifier;',
-									'ABHA number or related ABDM identifier, where voluntarily provided or appropriately linked; and',
-									'healthcare facility or healthcare-worker identifiers.',
-								]}
-							/>
-						</SubSection>
-
-						<SubSection
-							id='health-and-clinical-data'
-							title='3.2 Health and Clinical Information'
-						>
-							<p>DocGlasses may process information including:</p>
-							<BulletList
-								items={[
-									'presenting complaints;',
-									'symptoms;',
-									'medical history;',
-									'previous diagnoses;',
-									'allergies;',
-									'current and past medications;',
-									'examination findings;',
-									'clinical observations;',
-									'provisional or confirmed diagnoses entered by healthcare professionals;',
-									'prescriptions;',
-									'referrals;',
-									'follow-up plans;',
-									'discharge information;',
-									'laboratory results;',
-									'diagnostic reports;',
-									'clinical notes; and',
-									'other information generated during healthcare delivery.',
-								]}
-							/>
 							<p>
-								Health information is treated as highly sensitive information
-								and is subject to enhanced technical and organizational
-								safeguards.
+								Your choice is saved for 30 days. You can change it at any time
+								through the Cookie settings link in the Website footer.
 							</p>
 						</SubSection>
 
-						<SubSection title='3.3 Consultation Audio and Transcripts'>
+						<SubSection title='5.3 Other ways to control cookies'>
 							<p>
-								DocGlasses may capture and process audio during a clinical
-								consultation through:
-							</p>
-							<BulletList
-								items={[
-									'Meta or other supported smart glasses;',
-									'a mobile phone;',
-									'a tablet; or',
-									'another approved clinical device.',
-								]}
-							/>
-							<p>Audio may be processed to:</p>
-							<BulletList
-								items={[
-									'transcribe a clinical conversation;',
-									'identify relevant clinical information;',
-									'suggest appropriate follow-up or triage questions;',
-									'generate a structured consultation summary;',
-									'generate draft clinical documentation; and',
-									'support healthcare professionals during an encounter.',
-								]}
-							/>
-							<p>
-								Whether raw audio is retained after processing will depend on
-								the applicable deployment configuration, healthcare-institution
-								policy, legal requirements, and patient consent where required.
-							</p>
-							<p>
-								The application or healthcare professional should provide
-								appropriate notice when consultation audio is being captured.
+								Most browsers let you block or delete cookies in their settings.
+								If you block strictly necessary cookies, parts of the Website may
+								not work. Some analytics providers also offer browser tools that
+								let you opt out of their analytics on all websites.
 							</p>
 						</SubSection>
 
-						<SubSection title='3.4 Images and Video'>
+						<SubSection title='5.4 Global Privacy Control and opt out signals'>
 							<p>
-								Where enabled, DocGlasses may process images or video captured
-								through smart glasses, mobile devices, or other approved
-								equipment.
-							</p>
-							<p>This may include images of:</p>
-							<BulletList
-								items={[
-									'medical reports;',
-									'prescriptions;',
-									'wounds or clinically relevant physical findings;',
-									'diagnostic-device displays; and',
-									'other clinical documents or observations.',
-								]}
-							/>
-							<p>
-								Live video may also be used in approved telemedicine,
-								remote-supervision, or clinical-escalation workflows.
-							</p>
-							<p>
-								DocGlasses should not intentionally capture unrelated individuals
-								or areas where there is a reasonable expectation of privacy.
+								We honor Global Privacy Control (GPC) and similar legally
+								recognized opt out preference signals. We do not sell or share
+								personal information, so these signals do not change how we handle
+								your information for sale or sharing. Even so, when we detect a
+								GPC signal from your browser, we treat it as a request to opt out
+								of sale, sharing, and targeted advertising for that browser, and
+								we do not set analytics cookies for that browser unless you choose
+								to accept them through Cookie settings.
 							</p>
 						</SubSection>
 
-						<SubSection title='3.5 Diagnostic Device Data'>
+						<SubSection title='5.5 Do Not Track'>
 							<p>
-								DocGlasses may receive information from approved connected medical
-								or wellness devices, including:
-							</p>
-							<BulletList
-								items={[
-									'blood pressure monitors;',
-									'glucometers;',
-									'pulse oximeters;',
-									'thermometers;',
-									'ECG devices;',
-									'digital stethoscopes; and',
-									'other compatible diagnostic devices.',
-								]}
-							/>
-							<p>
-								Device data may be associated with the relevant patient
-								encounter.
-							</p>
-						</SubSection>
-
-						<SubSection title='3.6 Uploaded Medical Documents'>
-							<p>Users or healthcare professionals may upload:</p>
-							<BulletList
-								items={[
-									'laboratory reports;',
-									'prescriptions;',
-									'imaging reports;',
-									'previous medical records;',
-									'discharge summaries;',
-									'referral documents; and',
-									'other clinical documents.',
-								]}
-							/>
-							<p>
-								DocGlasses may use document-processing and artificial-intelligence
-								services to extract structured information from these documents.
-							</p>
-						</SubSection>
-
-						<SubSection title='3.7 Technical and Security Information'>
-							<p>
-								We may collect limited technical information necessary to
-								operate and secure the service, including:
-							</p>
-							<BulletList
-								items={[
-									'device type;',
-									'application version;',
-									'operating system;',
-									'IP address;',
-									'login events;',
-									'timestamps;',
-									'security logs;',
-									'device identifiers;',
-									'authentication events;',
-									'API activity;',
-									'crash information; and',
-									'system-performance information.',
-								]}
-							/>
-						</SubSection>
-
-						<SubSection title='3.8 Location Information'>
-							<p>
-								Where required for an approved healthcare workflow, DocGlasses may
-								process approximate or facility-level location information, for
-								example to:
-							</p>
-							<BulletList
-								items={[
-									'assign an ASHA or healthcare worker to a service area;',
-									'identify the facility providing care;',
-									'coordinate referral or emergency workflows; or',
-									'provide program-level analytics.',
-								]}
-							/>
-							<p>
-								Precise device location will only be collected where necessary
-								for an enabled feature and subject to appropriate permissions.
+								Some browsers send a &quot;Do Not Track&quot; signal. There is no
+								common standard for how websites should respond to it, so the
+								Website does not currently respond to Do Not Track signals. We do
+								honor Global Privacy Control as described in Section 5.4.
 							</p>
 						</SubSection>
 					</Section>
 
-					<Section title='4. How We Collect Information'>
-						<p>Information may be collected:</p>
-
-						<SubSection title='Directly from patients'>
-							<p>For example, when a patient:</p>
-							<BulletList
-								items={[
-									'speaks during a consultation;',
-									'enters information into the DocGlasses Patient application;',
-									'uploads a medical document;',
-									'provides consent;',
-									'links an ABHA account; or',
-									'contacts DocGlasses support.',
-								]}
-							/>
-						</SubSection>
-
-						<SubSection title='From healthcare professionals'>
-							<p>
-								Doctors, nurses, ASHA workers, ANMs, Community Health Officers,
-								hospital staff, and other authorized healthcare professionals
-								may enter or capture information during care delivery.
-							</p>
-						</SubSection>
-
-						<SubSection title='From connected healthcare devices'>
-							<p>
-								Diagnostic equipment may transmit measurements directly into an
-								active patient encounter.
-							</p>
-						</SubSection>
-
-						<SubSection title='From healthcare institutions'>
-							<p>
-								Hospitals, PHCs, CHCs, government health programs, laboratories,
-								and other healthcare entities may provide information as part of
-								an authorized integration.
-							</p>
-						</SubSection>
-
-						<SubSection title='Through ABDM'>
-							<p>
-								Where DocGlasses is integrated with ABDM, health information may
-								be exchanged using applicable ABDM workflows, identifiers, and
-								consent mechanisms.
-							</p>
-						</SubSection>
-					</Section>
-
-					<Section title='5. How We Use Personal and Health Information'>
+					<Section title='6. How we share information'>
+						<p>We share personal information only as described below.</p>
 						<p>
-							We process information only for legitimate and specified purposes
-							connected with providing and securing DocGlasses services.
-						</p>
-						<p>These purposes may include:</p>
-
-						<SubSection title='5.1 Supporting Healthcare Delivery'>
-							<p>To:</p>
-							<BulletList
-								items={[
-									'create and manage patient encounters;',
-									'assist healthcare professionals in collecting structured clinical information;',
-									'support triage;',
-									'identify missing clinical questions;',
-									'create clinical summaries;',
-									'support referrals;',
-									'support follow-up care; and',
-									'provide continuity between different levels of healthcare.',
-								]}
-							/>
-							<p>
-								DocGlasses provides clinical decision support. It does not replace
-								the professional judgment of qualified healthcare practitioners.
-							</p>
-						</SubSection>
-
-						<SubSection title='5.2 Clinical Documentation'>
-							<p>Information may be processed to generate draft:</p>
-							<BulletList
-								items={[
-									'consultation notes;',
-									'SOAP notes;',
-									'referral notes;',
-									'clinical summaries;',
-									'prescriptions where approved by the healthcare professional;',
-									'discharge documentation; and',
-									'longitudinal patient records.',
-								]}
-							/>
-							<p>
-								Healthcare professionals remain responsible for reviewing and
-								approving clinical documentation where required.
-							</p>
-						</SubSection>
-
-						<SubSection title='5.3 Artificial Intelligence-Assisted Triage'>
-							<p>
-								During supported consultations, DocGlasses may analyze clinical
-								context to suggest:
-							</p>
-							<BulletList
-								items={[
-									'relevant follow-up questions;',
-									'missing history;',
-									'potential red flags;',
-									'escalation triggers; and',
-									'referral considerations.',
-								]}
-							/>
-							<p>
-								AI-generated information is advisory and is intended to
-								augment, not replace, human clinical judgment.
-							</p>
-						</SubSection>
-
-						<SubSection title='5.4 Processing Medical Reports'>
-							<p>
-								Artificial-intelligence and document-understanding systems may
-								process medical documents to:
-							</p>
-							<BulletList
-								items={[
-									'identify document type;',
-									'extract laboratory values;',
-									'identify medications;',
-									'identify diagnoses or clinical findings; and',
-									'convert unstructured documents into structured data for healthcare-professional review.',
-								]}
-							/>
-						</SubSection>
-
-						<SubSection title='5.5 ABDM and Health-Record Interoperability'>
-							<p>Where enabled, DocGlasses may support:</p>
-							<BulletList
-								items={[
-									'ABHA identification;',
-									'creation or linking of care contexts;',
-									'consent-based exchange of health records;',
-									'health-information-provider or health-information-user workflows; and',
-									'other approved ABDM interoperability functions.',
-								]}
-							/>
-							<p>
-								ABHA participation is voluntary except where otherwise lawfully
-								required by an authorized government program.
-							</p>
-						</SubSection>
-
-						<SubSection title='5.6 Center of Excellence and Clinical Escalation'>
-							<p>
-								Authorized COE clinicians may review appropriately escalated
-								cases for:
-							</p>
-							<BulletList
-								items={[
-									'specialist support;',
-									'remote clinical guidance;',
-									'quality assurance;',
-									'referral management; and',
-									'continuity of care.',
-								]}
-							/>
-							<p>
-								Access is restricted according to authorized roles and
-								healthcare workflows.
-							</p>
-						</SubSection>
-
-						<SubSection title='5.7 Security and Fraud Prevention'>
-							<p>We may process information to:</p>
-							<BulletList
-								items={[
-									'authenticate users and devices;',
-									'detect unauthorized access;',
-									'investigate security incidents;',
-									'prevent misuse or fraud;',
-									'maintain audit trails; and',
-									'protect patients, healthcare professionals, institutions, and the DocGlasses platform.',
-								]}
-							/>
-						</SubSection>
-
-						<SubSection title='5.8 Service Improvement'>
-							<p>
-								We may use appropriately protected, aggregated, anonymized, or
-								de-identified information to:
-							</p>
-							<BulletList
-								items={[
-									'assess system performance;',
-									'improve workflows;',
-									'identify technical errors;',
-									'evaluate AI quality;',
-									'monitor safety;',
-									'measure program outcomes; and',
-									'improve DocGlasses services.',
-								]}
-							/>
-							<p>
-								Identifiable patient health information will not be used for
-								advertising.
-							</p>
-						</SubSection>
-					</Section>
-
-					<Section title='6. Artificial Intelligence and Automated Processing'>
-						<p>
-							Artificial intelligence is an important component of DocGlasses.
+							<strong>Service providers.</strong> We use companies that help us
+							host and run the Website, deliver email, store records, analyze
+							Website use, and keep the Website secure. They may use personal
+							information only to provide services to us and must protect it.
 						</p>
 						<p>
-							Depending on the feature and deployment, AI may be used for:
+							<strong>Professional advisers.</strong> We may share information
+							with our lawyers, accountants, and auditors when needed for their
+							work for us.
+						</p>
+						<p>
+							<strong>Legal compliance and protection.</strong> We may share
+							information if we believe in good faith that the law requires it,
+							for example to respond to a subpoena or court order, or if it is
+							needed to protect the rights, safety, or property of the Company or
+							others.
+						</p>
+						<p>
+							<strong>Business transfers.</strong> If the Company is involved in
+							a merger, acquisition, financing, reorganization, bankruptcy, or
+							sale of assets, personal information may be transferred as part of
+							that transaction. We will require the recipient to protect it in
+							line with this Privacy Policy.
+						</p>
+						<p>
+							<strong>With your direction.</strong> We may share information when
+							you ask us to or agree that we may.
+						</p>
+						<p>
+							We do not sell personal information. We do not share personal
+							information for cross-context behavioral advertising, and we do not
+							use it for targeted advertising. We have not done so in the past 12
+							months. We do not use advertising cookies.
+						</p>
+					</Section>
+
+					<Section title='7. California categories of personal information'>
+						<p>
+							The table below describes the personal information we have
+							collected through the Website in the past 12 months, where it comes
+							from, why we use it, and who receives it.
+						</p>
+						<PolicyTable
+							caption='California categories of personal information collected through the Website'
+							headers={[...CALIFORNIA_TABLE_HEADERS]}
+							rows={CALIFORNIA_TABLE_ROWS.map((row) => [...row])}
+						/>
+						<p>
+							We do not intend to collect sensitive personal information through
+							the Website. We do not use or disclose sensitive personal
+							information for purposes that would give you a right to limit its
+							use under California law. We do not create profiles or inferences
+							about visitors.
+						</p>
+					</Section>
+
+					<Section title='8. How long we keep information'>
+						<p>
+							We keep personal information only as long as we need it for the
+							purposes in this Privacy Policy, unless the law requires us to keep
+							it longer.
 						</p>
 						<BulletList
 							items={[
-								'speech recognition;',
-								'translation;',
-								'consultation understanding;',
-								'triage-question generation;',
-								'clinical summarization;',
-								'document extraction;',
-								'OCR;',
-								'report interpretation support;',
-								'clinical-information structuring; and',
-								'operational analytics.',
+								'Contact form messages and emails: up to 24 months after our last communication with you.',
+								'Analytics data: up to 14 months.',
+								'Server and security logs: up to 12 months.',
+								'Your cookie choice: 30 days.',
 							]}
 						/>
 						<p>
-							DocGlasses currently may use specialized third-party AI providers as
-							part of these workflows, including but not limited to:
-						</p>
-						<BulletList
-							items={[
-								<>
-									<strong>Google / Gemini / Google Cloud</strong> for supported
-									real-time consultation, language, transcription, reasoning, and
-									summarization workflows; and
-								</>,
-								<>
-									<strong>Anthropic / Claude</strong> for supported document
-									understanding, OCR, and medical-report processing workflows.
-								</>,
-							]}
-						/>
-						<p>
-							Only information necessary for the applicable function should be
-							transmitted to such providers.
-						</p>
-						<p>
-							Where DocGlasses is deployed under an enterprise, hospital, or
-							government agreement, use of external AI services may be
-							restricted, replaced, locally hosted, or configured according to
-							the institution’s approved deployment architecture.
-						</p>
-						<p>
-							DocGlasses does not permit AI-generated clinical output to
-							independently make final treatment decisions on behalf of
-							healthcare professionals.
-						</p>
-						<p>
-							Where AI-generated information may materially affect clinical
-							care, appropriate human review is required.
+							When we no longer need personal information, we delete it or make
+							it de-identified.
 						</p>
 					</Section>
 
-					<Section title='7. Use of Personal Data for AI Model Training'>
+					<Section title='9. How we protect information'>
 						<p>
-							DocGlasses does not sell identifiable patient health information for
-							AI training or advertising.
-						</p>
-						<p>
-							DocGlasses will not use identifiable patient consultation data to
-							train a generalized commercial AI model unless:
-						</p>
-						<BulletList
-							items={[
-								'such use is legally permitted;',
-								'the purpose has been clearly disclosed;',
-								'appropriate authorization or consent has been obtained where required; and',
-								'applicable contractual, institutional, ethical, and privacy safeguards have been satisfied.',
-							]}
-						/>
-						<p>
-							Where data is used for quality evaluation, research, or
-							improvement, DocGlasses will apply appropriate safeguards such as
-							de-identification, anonymization, aggregation, access restriction,
-							or other privacy-preserving techniques depending on the purpose
-							and risk.
+							We use reasonable administrative, technical, and physical
+							safeguards to protect personal information. For example, the Website
+							uses encrypted connections, and we limit access to personal
+							information to people who need it for their work. No method of
+							sending or storing data is completely secure, so we cannot guarantee
+							the security of information you send us. Please do not send
+							sensitive information through the Website.
 						</p>
 					</Section>
 
-					<Section title='8. Sharing of Information'>
-						<p>We do not sell patient health information.</p>
-						<p>
-							We may share personal data only where necessary for legitimate
-							healthcare, operational, security, or legal purposes.
-						</p>
-
-						<SubSection title='8.1 Healthcare Professionals and Institutions'>
-							<p>Information may be shared with authorized:</p>
-							<BulletList
-								items={[
-									'doctors;',
-									'nurses;',
-									'ASHA workers;',
-									'ANMs;',
-									'Community Health Officers;',
-									'hospitals;',
-									'PHCs;',
-									'CHCs;',
-									'diagnostic facilities;',
-									'referral facilities; and',
-									'authorized COE personnel',
-								]}
-							/>
+					<Section title='10. Your privacy rights'>
+						<SubSection title='10.1 California rights'>
 							<p>
-								where necessary to provide healthcare or support continuity of
-								care.
+								If you live in California, you have the following rights, subject
+								to some exceptions:
+							</p>
+							<p>
+								<strong>Right to know.</strong> You can ask what personal
+								information we have collected about you, the categories of
+								sources, the purposes for collecting it, the categories of third
+								parties we disclose it to, and the specific pieces of personal
+								information we hold.
+							</p>
+							<p>
+								<strong>Right to delete.</strong> You can ask us to delete
+								personal information we collected from you.
+							</p>
+							<p>
+								<strong>Right to correct.</strong> You can ask us to correct
+								personal information that is inaccurate.
+							</p>
+							<p>
+								<strong>Right to opt out of sale or sharing.</strong> We do not
+								sell or share personal information, so there is nothing to opt
+								out of. If you have a question about this, email us at{' '}
+								<a
+									href='mailto:privacy@docglasses.ai'
+									className='text-teal-400 hover:underline'
+								>
+									privacy@docglasses.ai
+								</a>
+								. We also honor opt out preference signals such as Global Privacy
+								Control, as described in Section 5.4.
+							</p>
+							<p>
+								<strong>
+									Right to limit use of sensitive personal information.
+								</strong>{' '}
+								We do not use sensitive personal information in ways that give
+								rise to this right. If that changes, we will update this Privacy
+								Policy and offer a way to limit its use.
+							</p>
+							<p>
+								<strong>Right to non-discrimination.</strong> We will not treat
+								you differently because you exercised a privacy right. For
+								example, we will not deny you access to the Website or respond to
+								you differently.
 							</p>
 						</SubSection>
 
-						<SubSection title='8.2 Government Health Authorities'>
+						<SubSection title='10.2 Rights in other U.S. states'>
 							<p>
-								Where DocGlasses is deployed as part of a government healthcare
-								program, authorized data may be processed or made available to
-								the relevant government healthcare authority according to
-								applicable law, contractual arrangements, program requirements,
-								and access controls.
-							</p>
-						</SubSection>
-
-						<SubSection title='8.3 ABDM'>
-							<p>
-								Where a patient chooses to participate in ABDM-enabled
-								workflows, records may be exchanged through ABDM in accordance
-								with applicable consent and interoperability mechanisms.
-							</p>
-						</SubSection>
-
-						<SubSection title='8.4 Technology Service Providers'>
-							<p>
-								We may engage service providers for functions such as:
+								Residents of some other U.S. states have privacy rights under
+								their state laws. Depending on where you live, these may include
+								the right to:
 							</p>
 							<BulletList
 								items={[
-									'infrastructure hosting;',
-									'communications;',
-									'AI processing;',
-									'document processing;',
-									'security;',
-									'monitoring;',
-									'analytics; and',
-									'technical support.',
+									'confirm whether we process your personal information and get access to it;',
+									'correct inaccurate personal information;',
+									'delete personal information;',
+									'get a copy of your personal information in a portable format; and',
+									'opt out of targeted advertising, the sale of personal information, and profiling that produces legal or similarly significant effects.',
 								]}
 							/>
 							<p>
-								Such providers are permitted to process information only for
-								authorized purposes and are expected to protect it through
-								appropriate contractual and technical safeguards.
-							</p>
-							<p>
-								Depending on the deployment, these providers may include OpenAI
-								/ Google Cloud / Gemini, Anthropic / Claude, cloud-infrastructure
-								providers, communication providers, monitoring providers, and
-								other approved subprocessors.
+								We do not sell personal information, use it for targeted
+								advertising, or use it for that kind of profiling. We will honor
+								these rights for residents of states where they apply.
 							</p>
 						</SubSection>
 
-						<SubSection title='8.5 Legal Requirements'>
+						<SubSection title='10.3 How to make a request'>
 							<p>
-								Information may be disclosed when reasonably necessary to:
+								To make a request, email us at{' '}
+								<a
+									href='mailto:privacy@docglasses.ai'
+									className='text-teal-400 hover:underline'
+								>
+									privacy@docglasses.ai
+								</a>{' '}
+								with the subject line &quot;Privacy Request,&quot; or write to us
+								at the address in Section 17. Please tell us which right you want
+								to use and the state where you live.
 							</p>
-							<BulletList
-								items={[
-									'comply with applicable law;',
-									'comply with a lawful order from a court or competent authority;',
-									'protect the safety of an individual;',
-									'investigate fraud or security incidents; or',
-									'establish, exercise, or defend legal rights.',
-								]}
-							/>
+						</SubSection>
+
+						<SubSection title='10.4 How we verify requests'>
+							<p>
+								To protect your information, we must confirm your identity before
+								we act on a request to know, delete, or correct. We will ask you
+								for information that matches what we already have, such as your
+								name and the email address you used to contact us. We will use
+								the information you give us for verification only for that
+								purpose. We do not need to verify a request to opt out of sale or
+								sharing, but we may deny it if we believe it is fraudulent.
+							</p>
+							<p>
+								We will confirm that we received your request within 10 business
+								days and respond within 45 calendar days. If we need more time,
+								we will tell you why, and we may take up to 45 more days where the
+								law allows.
+							</p>
+						</SubSection>
+
+						<SubSection title='10.5 Authorized agents'>
+							<p>
+								You may have an authorized agent make a request for you. We may
+								ask the agent to show written permission signed by you, and we may
+								ask you to confirm your identity with us directly. This does not
+								apply if the agent has a valid power of attorney under state law.
+							</p>
+						</SubSection>
+
+						<SubSection title='10.6 Appeals'>
+							<p>
+								If we deny your request in whole or in part, you may appeal our
+								decision. To appeal, reply to our decision or email{' '}
+								<a
+									href='mailto:privacy@docglasses.ai'
+									className='text-teal-400 hover:underline'
+								>
+									privacy@docglasses.ai
+								</a>{' '}
+								with the subject line &quot;Privacy Appeal&quot; within a
+								reasonable time. We will respond to your appeal in writing within
+								the time the law requires, usually 45 or 60 days, and explain the
+								reason for our decision. If we deny your appeal, you may contact
+								the attorney general of your state.
+							</p>
 						</SubSection>
 					</Section>
 
-					<Section title='9. Cross-Border Processing'>
+					<Section title='11. Children'>
 						<p>
-							DocGlasses deployments for Indian public-health programs are
-							intended to follow the infrastructure, security, localization, and
-							data-management requirements agreed with the relevant government
-							authority or healthcare institution.
-						</p>
-						<p>
-							Certain third-party cloud or AI services may process information
-							outside India depending on their service configuration.
-						</p>
-						<p>
-							Where cross-border processing occurs, DocGlasses will apply
-							applicable legal requirements and contractual safeguards and will
-							limit such processing to what is necessary for the relevant
-							service.
-						</p>
-						<p>
-							Enterprise and government deployments may be configured to
-							restrict processing to approved infrastructure or jurisdictions.
+							The Website is meant for adults and for healthcare professionals
+							and organizations. It is not directed to children under 16. We do
+							not knowingly collect personal information from children under 13,
+							and we do not knowingly sell or share personal information of anyone
+							under 16. If you believe a child has given us personal information,
+							please contact us at{' '}
+							<a
+								href='mailto:privacy@docglasses.ai'
+								className='text-teal-400 hover:underline'
+							>
+								privacy@docglasses.ai
+							</a>{' '}
+							and we will delete it.
 						</p>
 					</Section>
 
-					<Section title='10. ABDM and ABHA'>
+					<Section title='12. Visitors outside the United States'>
 						<p>
-							DocGlasses may integrate with the Ayushman Bharat Digital Mission.
-						</p>
-						<p>Where such integration is enabled:</p>
-						<BulletList
-							items={[
-								'an ABHA number may be used to identify or link a patient;',
-								'health records may be linked to appropriate care contexts;',
-								'records may be exchanged using approved ABDM standards;',
-								'applicable patient consent mechanisms will be followed; and',
-								'access to health information will be controlled according to applicable ABDM requirements.',
-							]}
-						/>
-						<p>
-							DocGlasses does not treat possession of an ABHA number as
-							unrestricted authorization to access a person’s health records.
+							The Company is based in the United States, and the Website is
+							intended for visitors in the United States. If you visit from
+							another country, your information will be processed and stored in
+							the United States or other places where we or our service providers
+							operate. The privacy laws in those places may differ from the laws
+							where you live. By using the Website, you understand that your
+							information will be handled as described in this Privacy Policy.
 						</p>
 					</Section>
 
-					<Section title='11. Consent'>
+					<Section title='13. Links to other websites'>
 						<p>
-							Where consent is required, DocGlasses or the relevant healthcare
-							institution will provide appropriate notice describing:
-						</p>
-						<BulletList
-							items={[
-								'what information is being collected;',
-								'the purpose of collection;',
-								'how the information will be used;',
-								'relevant data sharing; and',
-								'how consent may be withdrawn where applicable.',
-							]}
-						/>
-						<p>
-							Consent may be obtained digitally, verbally where legally and
-							operationally appropriate, through an ABDM consent workflow, or by
-							another approved method.
-						</p>
-						<p>
-							Withdrawal of consent will not affect processing that was lawful
-							before withdrawal or processing that is otherwise permitted or
-							required under applicable law.
+							The Website may link to websites, videos, and services run by other
+							companies. This Privacy Policy does not apply to them. We encourage
+							you to read their privacy policies before you give them any
+							information.
 						</p>
 					</Section>
 
-					<Section title='12. Recording Through Smart Glasses'>
+					<Section title='14. Email and other communications'>
 						<p>
-							Where Meta glasses or another wearable device is used during a
-							consultation:
-						</p>
-						<BulletList
-							items={[
-								'the wearable acts as a clinical data-capture interface for DocGlasses;',
-								'audio, images, or video should only be captured for an approved healthcare purpose;',
-								'appropriate notice should be provided to the patient;',
-								'capture should be limited to information necessary for the clinical workflow; and',
-								'access to captured information is restricted to authorized users and systems.',
-							]}
-						/>
-						<p>
-							Smart glasses must not be used through DocGlasses for covert
-							surveillance or unrelated recording.
+							If you contact us, we will use your contact details to reply. We
+							will send marketing emails only if you ask for them or agree to
+							receive them, and every marketing email will include a way to
+							unsubscribe.
 						</p>
 					</Section>
 
-					<Section title='13. Children’s Data'>
+					<Section title='15. Changes to this Privacy Policy'>
 						<p>
-							DocGlasses may process children’s health data when the child is
-							receiving healthcare.
-						</p>
-						<p>
-							Where applicable, processing of a child’s personal data will be
-							undertaken through the child’s parent, lawful guardian, healthcare
-							provider, or another mechanism permitted under applicable law.
-						</p>
-						<p>
-							DocGlasses is not intended to allow children to independently create
-							accounts or provide consent where parental or guardian
-							authorization is legally required.
-						</p>
-						<p>Additional safeguards may apply to pediatric data.</p>
-					</Section>
-
-					<Section title='14. Security Measures'>
-						<p>
-							DocGlasses applies technical and organizational safeguards
-							appropriate to the sensitivity of healthcare information.
-						</p>
-						<p>Depending on the deployment, these may include:</p>
-						<BulletList
-							items={[
-								'encryption in transit;',
-								'encryption at rest;',
-								'role-based access controls;',
-								'least-privilege access;',
-								'multi-factor authentication for privileged users;',
-								'secure API authentication;',
-								'device registration and access controls;',
-								'audit logging;',
-								'security monitoring;',
-								'vulnerability management;',
-								'secure backups;',
-								'incident-response procedures;',
-								'data-loss-prevention measures; and',
-								'business-continuity and disaster-recovery controls.',
-							]}
-						/>
-						<p>
-							No information system can guarantee absolute security. We
-							therefore continuously review and improve security controls based
-							on system risk and applicable requirements.
+							We may update this Privacy Policy from time to time. When we do, we
+							will post the new version on this page and change the &quot;Last
+							updated&quot; date. If we make a significant change, we will make
+							reasonable efforts to point it out, for example with a notice on the
+							Website. If a change would let us use personal information we
+							already collected in a materially different way, we will ask for your
+							consent where the law requires it.
 						</p>
 					</Section>
 
-					<Section title='15. Data Retention'>
+					<Section title='16. Accessibility'>
 						<p>
-							DocGlasses retains personal data only for as long as necessary for:
-						</p>
-						<BulletList
-							items={[
-								'providing healthcare services;',
-								'maintaining legally required medical records;',
-								'fulfilling the requirements of the relevant healthcare institution or government health program;',
-								'security and audit purposes;',
-								'complying with law;',
-								'resolving disputes; or',
-								'another disclosed and lawful purpose.',
-							]}
-						/>
-						<p>Retention periods may differ according to:</p>
-						<BulletList
-							items={[
-								'type of information;',
-								'healthcare institution;',
-								'applicable medical-record requirements;',
-								'government-program requirements;',
-								'contractual terms; and',
-								'whether DocGlasses acts as Data Fiduciary or Data Processor.',
-							]}
-						/>
-						<p>
-							Where DocGlasses processes information solely on behalf of a
-							healthcare institution, deletion and retention may be controlled
-							by that institution.
-						</p>
-						<p>
-							Raw audio, video, or images should not be retained longer than
-							necessary for the approved purpose unless retention is required by
-							the applicable healthcare workflow or institution.
-						</p>
-						<p>
-							Data that is securely anonymized such that it can no longer
-							identify an individual may be retained for analytics, safety,
-							statistical, research, or service-improvement purposes as
-							permitted by law.
+							If you need this Privacy Policy in another format, please contact us
+							at{' '}
+							<a
+								href='mailto:privacy@docglasses.ai'
+								className='text-teal-400 hover:underline'
+							>
+								privacy@docglasses.ai
+							</a>
+							.
 						</p>
 					</Section>
 
-					<Section title='16. Data Accuracy'>
+					<Section title='17. Contact us'>
 						<p>
-							Healthcare professionals and patients should provide information
-							that is accurate and complete to the best of their knowledge.
-						</p>
-						<p>
-							AI-generated transcriptions, document extraction, and summaries
-							may occasionally contain errors.
-						</p>
-						<p>
-							Healthcare professionals are responsible for reviewing clinically
-							material AI-generated information before relying upon it for care.
-						</p>
-						<p>
-							Users may request correction of inaccurate personal data in
-							accordance with applicable law and healthcare-record requirements.
-						</p>
-					</Section>
-
-					<Section title='17. Individual Rights'>
-						<p>
-							Subject to applicable law and the role DocGlasses performs in a
-							particular deployment, individuals may have rights concerning
-							their personal data, including the right to:
-						</p>
-						<BulletList
-							items={[
-								'obtain information about personal data being processed;',
-								'request correction of inaccurate or incomplete personal data;',
-								'request erasure of personal data where legally permitted;',
-								'withdraw consent where processing is based on consent;',
-								'raise a grievance regarding processing of personal data; and',
-								'exercise other rights available under applicable law.',
-							]}
-						/>
-						<p>
-							Where DocGlasses processes information on behalf of a hospital,
-							government health authority, or healthcare institution, we may
-							direct the request to that organization as the responsible Data
-							Fiduciary.
-						</p>
-						<p>
-							Identity verification may be required before fulfilling a privacy
-							request.
-						</p>
-					</Section>
-
-					<Section title='18. Grievance Redressal'>
-						<p>
-							Questions, privacy requests, or grievances concerning DocGlasses may
-							be submitted to:
+							If you have questions about this Privacy Policy or our privacy
+							practices, please contact us:
 						</p>
 						<ul className='list-disc pl-5 space-y-3'>
 							<li>
-								<strong>Grievance Officer / Data Protection Contact:</strong>{' '}
-								Grievance Officer
+								<strong>Vision Health Holdings Inc</strong>
 							</li>
 							<li>
-								<strong>Legal Entity:</strong> Vision Health Holdings Inc.
+								<strong>Attention:</strong> Privacy Officer
 							</li>
 							<li>
-								<strong>Address:</strong> 16192 Coastal Highway Lewes, DE 19958
+								<strong>Address:</strong> {NOTICE_ADDRESS}
 							</li>
 							<li>
 								<strong>Email:</strong>{' '}
 								<a
-									href='mailto:danish@docglasses.ai'
+									href='mailto:privacy@docglasses.ai'
 									className='text-teal-400 hover:underline'
 								>
-									danish@docglasses.ai
+									privacy@docglasses.ai
 								</a>
 							</li>
 						</ul>
-						<p>
-							We will acknowledge and process grievances in accordance with
-							applicable law and contractual obligations.
-						</p>
-						<p>
-							Where a healthcare institution is the Data Fiduciary, users may
-							also contact the grievance or privacy officer of that institution.
-						</p>
-					</Section>
-
-					<Section title='19. Website Analytics and Cookies'>
-						<p>
-							The DocGlasses public website may use cookies and similar
-							technologies for:
-						</p>
-						<BulletList
-							items={[
-								'essential website functionality;',
-								'security;',
-								'performance measurement; and',
-								'analytics.',
-							]}
-						/>
-						<p>
-							Non-essential analytics or advertising technologies will be used
-							subject to applicable consent requirements.
-						</p>
-						<p>
-							Health information collected through DocGlasses clinical services
-							will not be used to create advertising profiles.
-						</p>
-						<p>
-							The clinical applications should not use third-party advertising
-							trackers.
-						</p>
-					</Section>
-
-					<Section title='20. Marketing'>
-						<p>
-							DocGlasses does not use patient clinical information for direct
-							advertising.
-						</p>
-						<p>
-							Where users separately subscribe to product communications,
-							newsletters, or other marketing material, contact information may
-							be used for those communications in accordance with applicable law
-							and user preferences.
-						</p>
-						<p>
-							Users may opt out of non-essential marketing communications at any
-							time.
-						</p>
-					</Section>
-
-					<Section title='21. Research, Public Health and Analytics'>
-						<p>
-							Subject to applicable law, institutional approvals, contractual
-							restrictions, and appropriate privacy safeguards, aggregated,
-							anonymized, or de-identified data may be used to:
-						</p>
-						<BulletList
-							items={[
-								'evaluate healthcare-program performance;',
-								'assess referral patterns;',
-								'assess access to healthcare;',
-								'improve clinical workflows;',
-								'identify population-level trends;',
-								'improve AI-system safety and performance; and',
-								'support approved research or public-health activities.',
-							]}
-						/>
-						<p>
-							Such processing will be governed according to the purpose, nature
-							of the data, and applicable legal and ethical requirements.
-						</p>
-					</Section>
-
-					<Section title='22. Security Incidents and Data Breaches'>
-						<p>
-							DocGlasses maintains processes for identifying, investigating,
-							containing, and responding to suspected information-security
-							incidents.
-						</p>
-						<p>
-							Where a personal-data breach occurs, DocGlasses will notify the
-							relevant Data Fiduciary, affected individuals, governmental
-							authority, regulator, or other party when required by applicable
-							law or contract.
-						</p>
-					</Section>
-
-					<Section title='23. Third-Party Systems and Integrations'>
-						<p>DocGlasses may integrate with systems operated by:</p>
-						<BulletList
-							items={[
-								'healthcare institutions;',
-								'ABDM;',
-								'government health platforms;',
-								'laboratories;',
-								'diagnostic providers;',
-								'pharmacies;',
-								'telemedicine platforms; and',
-								'other authorized healthcare systems.',
-							]}
-						/>
-						<p>
-							Information processed directly by those systems may also be
-							governed by their respective privacy policies and legal
-							obligations.
-						</p>
-						<p>
-							DocGlasses is not responsible for independent processing carried out
-							by third parties outside DocGlasses’s control.
-						</p>
-					</Section>
-
-					<Section title='24. Changes to this Privacy Policy'>
-						<p>We may update this Privacy Policy to reflect:</p>
-						<BulletList
-							items={[
-								'changes in DocGlasses services;',
-								'changes in technology;',
-								'regulatory developments;',
-								'security requirements; or',
-								'changes to our data-processing practices.',
-							]}
-						/>
-						<p>
-							Material changes will be communicated through appropriate
-							channels.
-						</p>
-						<p>
-							The current version and its effective date will always be
-							available on the DocGlasses website.
-						</p>
-					</Section>
-
-					<Section title='25. Contact Us'>
-						<p>
-							For questions regarding this Privacy Policy or DocGlasses’s privacy
-							practices, contact:
-						</p>
-						<ul className='list-disc pl-5 space-y-3'>
-							<li>
-								<strong>Platform:</strong> DocGlasses
-							</li>
-							<li>
-								<strong>Legal entity:</strong> Vision Health Holdings Inc.
-							</li>
-							<li>
-								<strong>Address:</strong> 16192 Coastal Highway Lewes, DE 19958
-							</li>
-							<li>
-								<strong>Email:</strong>{' '}
-								<a
-									href='mailto:danish@docglasses.ai'
-									className='text-teal-400 hover:underline'
-								>
-									danish@docglasses.ai
-								</a>
-							</li>
-						</ul>
-						<p>
-							For clinical-record questions relating to care received at a
-							hospital, PHC, CHC, or government health facility, patients should
-							also contact the relevant healthcare institution.
-						</p>
 					</Section>
 				</div>
 			</div>
@@ -1209,3 +735,50 @@ function BulletList({ items }: { items: ReactNode[] }) {
 	);
 }
 
+function PolicyTable({
+	caption,
+	headers,
+	rows,
+}: {
+	caption: string;
+	headers: string[];
+	rows: string[][];
+}) {
+	return (
+		<div className='overflow-x-auto rounded-lg border border-white/10'>
+			<table className='w-full min-w-[40rem] border-collapse text-left text-sm'>
+				<caption className='sr-only'>{caption}</caption>
+				<thead>
+					<tr className='border-b border-white/10 bg-white/5'>
+						{headers.map((header) => (
+							<th
+								key={header}
+								scope='col'
+								className='px-3 py-3 font-syne font-semibold text-white/90'
+							>
+								{header}
+							</th>
+						))}
+					</tr>
+				</thead>
+				<tbody>
+					{rows.map((row) => (
+						<tr
+							key={row[0]}
+							className='border-b border-white/10 last:border-0 align-top'
+						>
+							{row.map((cell, cellIndex) => (
+								<td
+									key={`${row[0]}-${headers[cellIndex]}`}
+									className='px-3 py-3 text-white/70'
+								>
+									{cell}
+								</td>
+							))}
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+	);
+}

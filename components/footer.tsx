@@ -2,6 +2,7 @@
 
 'use client';
 
+import { useCookieConsent } from '@/hooks/useCookieConsent';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
@@ -23,7 +24,7 @@ const NAV_COL_B = [
 
 const FOOTER_LINKS = [
 	{ label: 'Privacy Policy', href: '/privacy-policy' },
-	{ label: 'Terms of Use', href: '/terms-of-service' },
+	{ label: 'Terms of Service', href: '/terms' },
 	{ label: 'Data Security', href: '#data-security' },
 ];
 
@@ -46,6 +47,27 @@ function FooterLink({ label, href }: { label: string; href: string }) {
 		>
 			{label}
 		</a>
+	);
+}
+
+function CookieSettingsLink() {
+	const { openCookieSettings } = useCookieConsent();
+
+	return (
+		<button
+			type='button'
+			onClick={openCookieSettings}
+			className='font-dm text-sm transition-colors duration-200 text-left'
+			style={{ color: 'var(--text-muted)', display: 'block' }}
+			onMouseEnter={(e) => {
+				e.currentTarget.style.color = 'var(--brand)';
+			}}
+			onMouseLeave={(e) => {
+				e.currentTarget.style.color = 'var(--text-muted)';
+			}}
+		>
+			Cookie settings
+		</button>
 	);
 }
 
@@ -221,6 +243,7 @@ export default function Footer() {
 									href={link.href}
 								/>
 							))}
+							<CookieSettingsLink />
 						</div>
 					</motion.div>
 				</div>

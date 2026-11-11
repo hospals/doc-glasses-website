@@ -16,6 +16,20 @@ const nextConfig = {
 			},
 		],
 	},
+	async redirects() {
+		return [
+			{
+				source: '/terms-of-service',
+				destination: '/terms',
+				permanent: true,
+			},
+			{
+				source: '/privacy',
+				destination: '/privacy-policy',
+				permanent: true,
+			},
+		];
+	},
 	async rewrites() {
 		return [
 			{

@@ -4,6 +4,8 @@ trigger: always_on
 
 # Next.js & React 19 Rules (Tailwind 4)
 
+Cursor mirror: `.cursor/rules/02-next-react.mdc` and `.cursor/rules/01-typescript.mdc`.
+
 ## 🏗️ Technical Standards
 - **Next.js App Router**: Always use the `/app` directory for new pages. Follow the server/client component boundary rules.
 - **React 19**: Use modern hooks and patterns. Prefer functional components with arrow functions.

@@ -14,6 +14,7 @@ type CookieConsentContextType = {
   hasConsent: boolean;
   acceptCookieConsent: () => void;
   rejectCookieConsent: () => void;
+  openCookieSettings: () => void;
   shouldShowBanner: boolean;
 };
 
@@ -73,6 +74,10 @@ export const CookieConsentProvider = ({
     }
   };
 
+  const openCookieSettings = (): void => {
+    setShouldShowBanner(true);
+  };
+
   useEffect(() => {
     
     const cookieConsent = getCookie("docglasses_cookie_consent");
@@ -117,7 +122,13 @@ export const CookieConsentProvider = ({
 
   return (
     <CookieConsentContext.Provider
-      value={{ hasConsent, acceptCookieConsent, rejectCookieConsent, shouldShowBanner }}
+      value={{
+        hasConsent,
+        acceptCookieConsent,
+        rejectCookieConsent,
+        openCookieSettings,
+        shouldShowBanner,
+      }}
     >
       {children}
     </CookieConsentContext.Provider>
